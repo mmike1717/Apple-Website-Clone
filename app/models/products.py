@@ -14,7 +14,7 @@ class Product(db.Model, UserMixin):
     price = db.Column(db.Numeric(precision=6, scale=2), nullable=False)
     color = db.Column(db.String, nullable=False)
     storage = db.Column(db.Integer, nullable=False)
-    available = db.Column(db.Boolean, nullable=False)
+    model = db.Column(db.String, nullable=False)
     image = db.Column(db.String)
     category_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('categories.id')), nullable=False)
 
@@ -25,11 +25,11 @@ class Product(db.Model, UserMixin):
         )
 
 
-    review = db.relationship(
-            "Review",
-            cascade = 'all, delete-orphan',
-            back_populates="product"
-        )
+    # review = db.relationship(
+    #         "Review",
+    #         cascade = 'all, delete-orphan',
+    #         back_populates="product"
+    #     )
 
 
     order = db.relationship(
@@ -45,7 +45,7 @@ class Product(db.Model, UserMixin):
             'price': self.price,
             'color': self.color,
             'storage': self.storage,
-            'available': self.available,
+            'model': self.model,
             'image': self.image,
             'category_id': self.category_id
         }

@@ -13,14 +13,21 @@ class Review(db.Model, UserMixin):
     content = db.Column(db.String, nullable=False)
     rating = db.Column(db.Numeric(precision=3, scale=2), nullable=False)
     created_at = db.Column(db.Date, nullable=False)
-    product_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('products.id')), nullable=False)
+    # product_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('products.id')), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')), nullable=False)
+    store_item_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('in_store_items.id')), nullable=False)
 
 
-    product = db.relationship(
-            "Product",
+    store_item = db.relationship(
+            "InStoreItem",
             back_populates="review"
         )
+
+
+    # product = db.relationship(
+    #         "Product",
+    #         back_populates="review"
+    #     )
 
 
     user = db.relationship(
@@ -35,6 +42,8 @@ class Review(db.Model, UserMixin):
             'content': self.content,
             'rating': self.rating,
             'created_at': self.created_at,
-            'product_id': self.product_id,
-            'user_id': self.user_id
+            # 'product_id': self.product_id,
+            'user_id': self.user_id,
+            'store_item_id': self.store_item_id,
+            'user_info': self.user.to_dict()
         }

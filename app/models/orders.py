@@ -38,5 +38,6 @@ class Order(db.Model, UserMixin):
             'created_at': self.created_at,
             'quantity': self.quantity,
             'user_id': self.user_id,
-            'product_id': self.product_id
+            'product_id': self.product_id,
+            'products': self.product.to_dict()
         }
