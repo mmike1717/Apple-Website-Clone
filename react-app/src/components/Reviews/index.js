@@ -27,17 +27,17 @@ export default function Reviews ({itemId}) {
                 {sessionUser && !reviews.find((review) => review.user_id === sessionUser?.id) ? <CreateReviewModal buttonText={'Create A Review'} modalComponent={<CreateReview itemId={itemId} />} /> : false}
             </div>
 
-            <div>{reviews.map((review) => {
+            <div>{ reviews && reviews?.map((review) => {
                 return (
                     <div>
-                        <div>{review.user_info?.first_name}</div>
+                        <div>{review?.user_info?.first_name}</div>
                         <div>{review?.created_at}</div>
                         <div>{review?.rating}</div>
                         <div>{review?.content}</div>
 
-                        {review.user_id === sessionUser.id ? <EditReviewModal buttonText={'Edit'} modalComponent={<EditReview reviewId={review.id} contents={review.content} ratings={review.rating} itemId={itemId} />}/> : null}
+                        {review?.user_id === sessionUser?.id ? <EditReviewModal buttonText={'Edit'} modalComponent={<EditReview reviewId={review.id} contents={review.content} ratings={review.rating} itemId={itemId} />}/> : null}
 
-                        {review.user_id === sessionUser.id ? <DeleteReviewModal buttonText={'Remove'} modalComponent={<DeleteReview reviewId={review.id} />}/> : null}
+                        {review?.user_id === sessionUser?.id ? <DeleteReviewModal buttonText={'Remove'} modalComponent={<DeleteReview reviewId={review.id} />}/> : null}
                     </div>
                 )
             })}</div>

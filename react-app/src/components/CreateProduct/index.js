@@ -37,7 +37,10 @@ function CreateProduct(){
 
 
     useEffect(() => {
-        dispatch(thunkGetOrdersForCart(sessionUser.id))
+        if(sessionUser?.id){
+
+            dispatch(thunkGetOrdersForCart(sessionUser.id))
+        }
 
     }, [dispatch])
 
