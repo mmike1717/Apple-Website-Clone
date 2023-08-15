@@ -47,7 +47,7 @@ function CartOrders() {
     const handleCheckout = () => {
         // e.preventDefault()
         dispatch(thunkDeleteAllOrdersFromCart(sessionUser.id))
-        .then(() => history.push('/home'))
+        .then(() => history.push('/'))
     }
 
 

@@ -43,7 +43,7 @@ function Navigation({ isLoaded }) {
 		e.preventDefault();
 		setOpen8(false)
 		dispatch(logout())
-		.then(() => history.push('/home'));
+		.then(() => history.push('/'));
 	  }
 
 	if(sessionUser && itemsInCart){
@@ -59,7 +59,7 @@ function Navigation({ isLoaded }) {
 		<div className='NavBarContainer'>
 			<div className='ContainerInsideNavBar'>
 				<div>
-					<NavLink className='CategoryNavLink' exact to="/home"> <img className='NavBarAppleLogo' src='https://media.idownloadblog.com/wp-content/uploads/2018/07/Apple-logo-black-and-white.png' /> </NavLink>
+					<NavLink className='CategoryNavLink' exact to="/"> <img className='NavBarAppleLogo' src='https://media.idownloadblog.com/wp-content/uploads/2018/07/Apple-logo-black-and-white.png' /> </NavLink>
 				</div>
 				<div>
 					<NavLink className='CategoryNavLink' onMouseOver={() => setOpen1(true)} onMouseLeave={() => setOpen1(false)} exact to="/">Store
