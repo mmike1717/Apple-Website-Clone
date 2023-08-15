@@ -14,10 +14,17 @@ class InStoreItem(db.Model, UserMixin):
     price = db.Column(db.Numeric(precision=6, scale=2), nullable=False)
     model = db.Column(db.String, nullable=False)
     image = db.Column(db.String)
+    category_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('categories.id')), nullable=False)
+
 
 
     review = db.relationship(
             "Review",
+            back_populates="store_item"
+        )
+
+    category =  db.relationship(
+            "Category",
             back_populates="store_item"
         )
 
@@ -29,5 +36,5 @@ class InStoreItem(db.Model, UserMixin):
             'name': self.name,
             'price': self.price,
             'model': self.model,
-            'image': self.image,
+            'image': self.image
         }

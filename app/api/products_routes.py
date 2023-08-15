@@ -30,7 +30,7 @@ def create_Channel():
             color = form.data['color'],
             storage = form.data['storage'],
             model = form.data['model'],
-            category_id = form.data['category_id'],
+            image = form.data['image']
         )
         # print('backend-----------',channel)
         db.session.add(product)

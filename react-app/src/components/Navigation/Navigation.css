@@ -1,7 +1,142 @@
+body{
+  margin: 0%;
+}
+
 .profile-dropdown {
   position: absolute;
 }
 
 .hidden {
   display: none;
+}
+
+
+.NavBarAppleLogo{
+  width: 14px;
+  margin-right: 20px;
+  background-color: #f6f6f6f7;
+
+}
+
+
+.NavBarATag{
+  display: flex;
+  /* background: gray; */
+  width: 80px;
+  justify-content: center;
+  /* transition: all 1s ease-in; */
+
+}
+
+
+.NavBarATag1{
+  display: flex;
+  width: 50px;
+  justify-content: center;
+}
+
+.CategoryNavLink{
+  color: black;
+}
+
+
+
+.block{
+  position: absolute;
+  width: -webkit-fill-available;
+  height: 300px;
+  left: 10px;
+  right: 10px;
+  background: gray;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 50px;
+  padding-left: 150px;
+  backdrop-filter: blur(4px);
+  /* transform-origin: top center; */
+  transform: translateX(0%) translateY(5%);
+  /* transition: 600ms transform; */
+
+}
+
+/* .NavBarATag:hover .menu{
+  position: absolute;
+  width: -webkit-fill-available;
+  height: 300px;
+  left: 10px;
+  right: 10px;
+  background: gray;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 50px;
+  padding-left: 150px;
+  backdrop-filter: blur(4px);
+  transform: translateX(45%);
+  transition: all 3s ease;
+  transition: .32s
+  transform-origin: top;
+  transition-property: all;
+
+}
+
+.NavBarATag > .menu {
+  display: none;
+} */
+
+
+
+.NavBarContainer{
+  position: fixed;
+  z-index: 999;
+  width: -webkit-fill-available;
+  background-color: #f6f6f6f7;
+  display: flex;
+  justify-content: space-evenly;
+  height: 45px;
+}
+
+.ContainerInsideNavBar{
+  display: flex;
+  width: 985px;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+}
+
+
+.MagnifyingGlassIcon{
+  border: none;
+  background-color: #f6f6f6f7;
+  background: transparent;
+  cursor: pointer;
+}
+
+
+.ShoppingBagButton{
+  border: none;
+  background-color: #f6f6f6f7;
+  background: transparent;
+  cursor: pointer;
+}
+
+
+
+.CartContainer{
+  position: relative;
+}
+
+
+.NumberOfItemsInCart{
+  position: absolute;
+  left: 11px;
+  bottom: -5px;
+  font-size: 13px;
+  background: black;
+  color: white;
+  width: 14px;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
 }

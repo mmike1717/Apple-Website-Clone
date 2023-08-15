@@ -16,13 +16,13 @@ class Product(db.Model, UserMixin):
     storage = db.Column(db.Integer, nullable=False)
     model = db.Column(db.String, nullable=False)
     image = db.Column(db.String)
-    category_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('categories.id')), nullable=False)
+    # category_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('categories.id')), nullable=False)
 
 
-    cat_id = db.relationship(
-            "Category",
-            back_populates="product"
-        )
+    # cat_id = db.relationship(
+    #         "Category",
+    #         back_populates="product"
+    #     )
 
 
     # review = db.relationship(
@@ -46,6 +46,6 @@ class Product(db.Model, UserMixin):
             'color': self.color,
             'storage': self.storage,
             'model': self.model,
-            'image': self.image,
-            'category_id': self.category_id
+            'image': self.image
+            # 'category_id': self.category_id
         }

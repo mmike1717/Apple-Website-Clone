@@ -1,0 +1,549 @@
+.DivBelowNavBar{
+
+    height: 83px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 20px;
+    background-color: #ecebeb;
+    width: -webkit-fill-available;
+}
+
+
+
+
+/* ----------------------------Carrer Container----------------- */
+
+
+.CarrierPromoTextContainer{
+    width: 950px;
+    display: flex;
+    margin: 20px auto;
+    justify-content: center;
+    background-color: #f3f3f3;
+    height: 55px;
+    border-radius: 5px;
+    align-items: center;
+}
+
+.PriceTextForPromo{
+    display: flex;
+    flex-wrap: wrap;
+    width: 115px;
+    font-size: small;
+}
+
+.PriceTextForPromo2{
+    display: flex;
+    flex-wrap: wrap;
+    width: 133px;
+    font-size: small;
+}
+
+.CarrierLogo{
+    width: 19px;
+    margin: 0 9px 0 25px;
+}
+
+
+
+/* ----------------------------Main Title Name------------------------- */
+
+
+.MainTitleOfItem{
+    font-size: 54px;
+    font-weight: bold;
+    height: 140px;
+    margin: 55px 84px 0px;
+}
+
+
+
+
+/* ----------------------------Image, Price, Model, Color of Item-------------- */
+
+
+.MainImageAndPriceContainer{
+    position: relative;
+    margin: 0px 6%;
+    display: flex;
+    flex-direction: row;
+    height: 1045px;
+    grid-column-gap: 70px;
+    column-gap: 70px;
+    max-width: 1189px;
+}
+
+
+.ImageForItem{
+    width: 800px;
+    height: 480px;
+    border-radius: 10px;
+    position: sticky;
+    top: 25%;
+}
+
+.PriceColorStorageContainer{
+    display: flex;
+    flex-direction: column;
+    max-width: 320px;
+}
+
+
+/* ------------------------Model Section-------------- */
+
+.TextOfWordModel{
+    margin: 50px 0px 20px;
+    font-size: 26px;
+    font-weight: bold;
+    display: flex;
+    column-gap: 7px;
+}
+
+.TextOfWordModel > div {
+    font-weight: 400;
+    color: #6f6f6f;
+}
+
+
+.ButtonPickingTheModel{
+    height: 90px;
+    display: flex;
+    /* flex-wrap: wrap; */
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid #227dff;
+    border-radius: 12px;
+    background-color: white;
+    margin-top: 5px;
+    padding: 0px 15px;
+    cursor: pointer;
+}
+
+
+.PricePerMonthContainer{
+    display: flex;
+    flex-wrap: wrap;
+    width: 84px;
+    font-size: 12px;
+    text-align: right;
+}
+
+
+/* --------------------Need Help Button ---------------- */
+
+
+.NeedHelpButton{
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    align-items: center;
+    flex-direction: column;
+    border: none;
+    border-radius: 12px;
+    background-color: rgb(211, 210, 210);
+    margin: 20px 0 70px;
+    padding: 0px 15px;
+    cursor: pointer;
+    justify-content: center;
+}
+
+
+.NeedHelpText{
+    width: -webkit-fill-available;
+    height: 17px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px 0 0;
+}
+
+.TextBelowHelpText{
+    width: 287px;
+    height: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: left;
+}
+
+
+
+/* --------------------------Pick Color Section -------------------- */
+
+
+.TextForColor{
+    font-size: 26px;
+    font-weight: bold;
+    display: flex;
+    grid-column-gap: 7px;
+    column-gap: 7px;
+    margin-bottom: 40px;
+}
+
+
+.Text2ForColor{
+    color: #6f6f6f;
+    font-weight: 100px;
+
+}
+
+
+.ColorBeingPickedText{
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+
+.PickColorMainContainer{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 258px;
+    height: 130px;
+    column-gap: 18px;
+}
+
+.OuterButtonDiv{
+    height: 48px;
+    width: 48px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+}
+
+.OuterButtonDiv:hover {
+    border: 1px solid rgb(184, 183, 183);
+
+}
+
+
+.ColorButton{
+    width: 40px;
+    height: 40px;
+    border-radius: 25px;
+    border-style: inset;
+    cursor: pointer;
+}
+
+
+.b1{
+    background-color: #ff4141;
+}
+
+.b2{
+    background-color: #7070f2;
+}
+
+.b3{
+    background-color: #c47ec4;
+}
+
+.b4{
+    background-color: #474646;
+}
+
+.b5{
+    background-color: #ebebd3;
+}
+
+.red, .red:hover{
+    border: solid 2px blue;
+}
+
+.blue, .blue:hover{
+    border-color: #227dff;
+}
+.purple, .purple:hover{
+    border-color: #227dff;
+}
+.mid, .mid:hover{
+    border-color: #227dff;
+}
+.star, .star:hover{
+    border-color: #227dff;
+}
+
+
+
+/* ----------------------------Storage Section----------------------- */
+
+
+.StorageTextSection{
+    display: flex;
+    column-gap: 5px;
+    font-size: 26px;
+    height: 71px;
+    text-align: left;
+    margin: 85px 0 20px;
+    font-weight: bold;
+}
+
+
+.EachStorageButton{
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid #b0adad;
+    border-radius: 12px;
+    background-color: white;
+    margin-top: 5px;
+    padding: 0px 15px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.stor256{
+    border-color: #227dff;
+}
+
+.stor512{
+    border-color: #227dff;
+}
+
+
+/* -----------------------------Apple Trade In Section ---------------- */
+
+.AppleTradeInText{
+    display: flex;
+    max-width: 1220px;
+    margin: 100px auto 20px;
+    font-size: 26px;
+    column-gap: 7px;
+    font-weight: bold;
+}
+
+
+.AppleTradeInText > div {
+    font-weight: 200;
+    color: #6f6f6f;
+}
+
+
+.ButtonsTradeInContainer{
+    display: flex;
+    max-width: 1190px;
+    margin: 0 auto 0;
+    justify-content: space-between;
+    max-height: 83px;
+}
+
+
+.SelectPhoneTradeInButton{
+    height: 82px;
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #b0adad;
+    border-radius: 12px;
+    background-color: white;
+    cursor: pointer;
+}
+
+#border{
+    border: 2px solid #227dff;
+
+}
+
+
+.HelpTradeInButton{
+    height: 82px;
+    width: 286px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 12px;
+    background-color: #cecccc;
+    cursor: pointer;
+    flex-direction: column;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.MoreTextForButton{
+    font-weight: 200;
+    color: #474646;
+}
+
+
+
+/* -----------------------------Apple Care COntainer ------------------ */
+
+.AppleCareLogo{
+    width: 15px;
+    height: 15px;
+    background-color: transparent;
+}
+
+
+.AppleCareMainContainer{
+    display: flex;
+    max-width: 1190px;
+    margin: 0 auto 0;
+    justify-content: space-between;
+    height: 90px;
+}
+
+.AppleCareButtons{
+    height: 90px;
+    width: 370px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #b0adad;
+    border-radius: 12px;
+    background-color: white;
+    cursor: pointer;
+    flex-direction: column;
+    font-size: 13px;
+    row-gap: 10px;
+}
+
+
+.AppleLogoAndTextInButton{
+    display: flex;
+    font-size: larger;
+    font-weight: bold;
+    column-gap: 5px;
+}
+
+.NoAppleCareButton{
+    height: 90px;
+    width: 370px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #227dff;
+    border-radius: 12px;
+    background-color: white;
+    cursor: pointer;
+    flex-direction: column;
+    font-size: 14px;
+    row-gap: 10px;
+    margin-right: 20px;
+}
+
+
+
+
+/* --------------------------------Checkout section ------------------- */
+
+.MainContainerForCheckout{
+    display: flex;
+    justify-content: center;
+    column-gap: 40px;
+    background-color: #ecebeb;
+    margin: 90px 0;
+    height: 500px;
+}
+
+.ItemNameAndImgContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.ItemNameAndImgContainer > img {
+    width: 267px;
+    height: 245px;
+    border-radius: 65px;
+    margin-top: 20px;
+}
+
+
+.CheckOutItemName{
+    font-size: 40px;
+    width: 230px;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+
+.JustTheWayText{
+    font-size: 40px;
+    color: #7d7979;
+    width: 300px;
+}
+
+
+.ItemDescription{
+    font-size: 22px;
+    width: 235px;
+    margin-top: 37px;
+    margin-bottom: 10px;
+}
+
+
+.PriceForItem{
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+
+.OnePaymentText{
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+
+.DescriptionItemMainContainer{
+    width: 300px;
+}
+
+
+.TruckLogoAndText{
+    margin-top: 40px;
+    font-size: 18px;
+    margin-bottom: 5px;
+    display: flex;
+    column-gap: 5px;
+}
+
+
+
+.DeliveryMonthDate{
+    margin-bottom: 20px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+
+.BagLogoAndText{
+    margin-bottom: 5px;
+    display: flex;
+    column-gap: 7px;
+    font-size: 17px;
+
+}
+
+
+.CurrentlyAvailableText{
+    font-size: 17px;
+    margin-bottom: 70px;
+}
+
+
+
+.AddToBagButtonInItemPage{
+    width: 300px;
+    height: 48px;
+    border-radius: 12px;
+    border: none;
+    background-color: #227dff;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+
+.ErrorDivUnderButton{
+    display: flex;
+    justify-content: center;
+    margin-top: 13px;
+    color: red;
+}

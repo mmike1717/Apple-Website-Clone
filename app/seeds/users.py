@@ -12,85 +12,77 @@ def seed_users():
     bobbie = User(
         first_name='bobbie', last_name='lee', email='bobbie@aa.io', password='password')
     iphone12 = InStoreItem(
-        name='iPhone12', price=599.00, model='reg', image='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/refurb-iphone-12-black-2020_AV1?wid=1144&hei=1144&fmt=jpeg'
+        name='iPhone12', price=599.00, model='reg', category_id=3 , image='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/refurb-iphone-12-black-2020_AV1?wid=1144&hei=1144&fmt=jpeg'
     )
     iphone13mini = InStoreItem(
-        name='iPhone13', price=599.00, model='mini', image='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-13-model-unselect-gallery-1-202207?wid=5120&hei=2880&fmt=p-jpg'
+        name='iPhone13', price=599.00, model='mini', category_id=3 , image='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-13-model-unselect-gallery-1-202207?wid=5120&hei=2880&fmt=p-jpg'
     )
     iphone13 = InStoreItem(
-        name='iPhone13', price=699.00, model='reg', image='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-13-finish-select-202207-6-1inch_GEO_US?wid=5120&hei=2880&fmt=p-jpg'
+        name='iPhone13', price=699.00, model='reg', category_id=3 , image='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-13-finish-select-202207-6-1inch_GEO_US?wid=5120&hei=2880&fmt=p-jpg'
     )
     iphone14 = InStoreItem(
-        name='iPhone14', price=799.00, model='reg', image='https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6505/6505126cv2d.jpg'
+        name='iPhone14', price=799.00, model='reg', category_id=3 , image='https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6505/6505126cv2d.jpg'
     )
     iphone14plus = InStoreItem(
-        name='iPhone14', price=899.00, model='plus', image='https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6505/6505126cv2d.jpg'
+        name='iPhone14', price=899.00, model='plus', category_id=3 , image='https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6505/6505126cv2d.jpg'
     )
     iphone14Pro = InStoreItem(
-        name='iPhone14', price=899.00, model='Pro', image='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-pro-finish-select-202209-6-1inch-deeppurple?wid=5120&hei=2880&fmt=p-jpg'
+        name='iPhone14', price=899.00, model='Pro', category_id= 3, image='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-pro-finish-select-202209-6-1inch-deeppurple?wid=5120&hei=2880&fmt=p-jpg'
     )
     iphone14ProMax = InStoreItem(
-        name='iPhone14', price=899.00, model='Pro max', image='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-pro-finish-select-202209-6-7inch-gold?wid=5120&hei=2880&fmt=p-jpg'
+        name='iPhone14', price=899.00, model='Pro max', category_id= 3, image='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-pro-finish-select-202209-6-7inch-gold?wid=5120&hei=2880&fmt=p-jpg'
     )
     iPadPro = InStoreItem(
-        name='iPad Pro', price=799.00, model='11-inch Display', image='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-pro-model-select-gallery-1-202212?wid=5120&hei=2880&fmt=p-jpg'
+        name='iPad Pro', price=799.00, model='11-inch Display', category_id= 2, image='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-pro-model-select-gallery-1-202212?wid=5120&hei=2880&fmt=p-jpg'
     )
     iPadPro12 = InStoreItem(
-        name='iPad Pro', price=1099.00, model='12-inch Display', image='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-pro-model-select-gallery-1-202212?wid=5120&hei=2880&fmt=p-jpg'
+        name='iPad Pro', price=1099.00, model='12-inch Display', category_id= 2, image='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-pro-model-select-gallery-1-202212?wid=5120&hei=2880&fmt=p-jpg'
     )
     MacBookAir15 = InStoreItem(
-        name='MacBook Air 15', price=1299.00, model='15-inch (M-2 Chip)', image='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mba15-midnight-select-202306?wid=904&hei=840&fmt=jpeg'
+        name='MacBook Air 15', price=1299.00, model='15-inch (M-2 Chip)', category_id= 1, image='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mba15-midnight-select-202306?wid=904&hei=840&fmt=jpeg'
     )
     MacBookAir13 = InStoreItem(
-        name='MacBook Air 13', price=1099.00, model='13-inch (M-2 Chip)', image='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/macbook-air-midnight-select-20220606?wid=904&hei=840&fmt=jpeg'
+        name='MacBook Air 13', price=1099.00, model='13-inch (M-2 Chip)', category_id= 1, image='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/macbook-air-midnight-select-20220606?wid=904&hei=840&fmt=jpeg'
     )
 
     AppleWatchUltra = Product(
-        name='Apple Watch Ultra', price=799.00, color='silver', storage=0, model='apple', category_id= 10,
+        name='Apple Watch Ultra', price=799.00, color='silver', storage=0, model='apple',
         image=''
     )
 
     AirPodsPro2 = Product(
-        name='AirPods Pro (2nd generation)', price=249.00, color='white', storage=0, model='apple', category_id= 11,
+        name='AirPods Pro (2nd generation)', price=249.00, color='white', storage=0, model='apple',
         image=''
     )
 
-    iphone_12 = Category(
-        category_name='iPhone 12'
+    Mac = Category(
+        category_name='Mac'
     )
-    iphone_13 = Category(
-        category_name='iPhone 13'
+    iPad = Category(
+        category_name='iPad'
     )
-    iphone_14_Plus = Category(
-        category_name='iPhone 14 Plus'
+    iphone = Category(
+        category_name='iPhone'
     )
-    iphone_14_ProMax = Category(
-        category_name='iPhone 14 Pro Max'
+    watch = Category(
+        category_name='Watch'
     )
-    MacBookAir = Category(
-        category_name='MacBook Air'
+    Vision = Category(
+        category_name='Vision'
     )
-    iMacs = Category(
-        category_name='iMac'
+    AirPods = Category(
+        category_name='AirPods'
     )
-    MacBook_Pro = Category(
-        category_name='MacBook Pro'
-    )
-
-    iPad_Pro = Category(
-        category_name = 'iPad Pro'
+    Tv_Home = Category(
+        category_name='TV & Home'
     )
 
-    iPad_Air = Category(
-        category_name = 'iPad Air'
+    Entertainment = Category(
+        category_name = 'Entertainment'
     )
 
-    Apple_Watch_Ultra = Category(
-        category_name = 'Apple Watch Ultra'
-    )
-
-    AirPodsPro_2 =Category(
-        category_name = 'AirPods Pro 2'
+    Accessories = Category(
+        category_name = 'Accessories'
     )
 
     review1= Review(
@@ -121,7 +113,7 @@ def seed_users():
     db.session.add(bobbie)
     db.session.add_all([iphone12, iphone13, iphone13mini, iphone14, iphone14plus, iphone14Pro, iphone14ProMax, iPadPro, iPadPro, iPadPro12, MacBookAir13, MacBookAir15])
     db.session.add_all([AppleWatchUltra, AirPodsPro2])
-    db.session.add_all([iphone_12, iphone_13, iphone_14_Plus, iphone_14_ProMax, MacBookAir, iMacs, MacBook_Pro, iPad_Pro, iPad_Air, Apple_Watch_Ultra, AirPodsPro_2])
+    db.session.add_all([Mac, iPad, iphone, watch, Vision, AirPods, Tv_Home, Entertainment, Accessories ])
     db.session.add_all([review1, review2, review3, review4, review5, review6])
     db.session.commit()
 
@@ -137,11 +129,13 @@ def undo_users():
         db.session.execute(f"TRUNCATE table {SCHEMA}.reviews RESTART IDENTITY CASCADE;")
         db.session.execute(f"TRUNCATE table {SCHEMA}.categories RESTART IDENTITY CASCADE;")
         db.session.execute(f"TRUNCATE table {SCHEMA}.products RESTART IDENTITY CASCADE;")
+        db.session.execute(f"TRUNCATE table {SCHEMA}.in_store_items RESTART IDENTITY CASCADE;")
         db.session.execute(f"TRUNCATE table {SCHEMA}.users RESTART IDENTITY CASCADE;")
     else:
         db.session.execute(text("DELETE FROM reviews"))
         db.session.execute(text("DELETE FROM categories"))
         db.session.execute(text("DELETE FROM products"))
+        db.session.execute(text("DELETE FROM in_store_items"))
         db.session.execute(text("DELETE FROM users"))
 
     db.session.commit()

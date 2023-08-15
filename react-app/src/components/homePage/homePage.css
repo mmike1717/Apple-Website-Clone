@@ -1,0 +1,282 @@
+
+
+.GifLogo{
+    display: flex;
+    justify-content: center;
+}
+
+.GifLogo > img {
+    width: -webkit-fill-available;
+}
+
+
+
+
+/* -------------------------------MacBook Picture----------------------------------------- */
+
+.HomePageMacBookContainer {
+    position: relative;
+}
+
+
+.HomePageMacBookPic{
+    width: -webkit-fill-available;
+}
+
+h1{
+    position: absolute;
+    /* z-index: 99; */
+    font-size: 60px;
+    top: 7%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.TextForHomePageMacBookPic{
+    position: absolute;
+    z-index: 99;
+    top: 21%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    font-size: 27px;
+    justify-content: center;
+    /* animation: drop 0.9s linear forwards; */
+
+
+}
+
+.LearnAndBuyATag{
+    position: absolute;
+    width: 240px;
+    top: 26%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    font-size: 22px;
+    justify-content: space-between;
+}
+
+
+
+/* @keyframes drop {
+    0% {
+        transform: translateY(-200px);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    65% {
+        transform: translateY(-17px);
+        opacity: 1;
+    }
+    75% {
+        transform: translateY(-22px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+} */
+
+
+
+
+
+/* -------------------------------Iphone Picture----------------------------------------- */
+
+
+.HomePageIphoneContainer{
+    position: relative;
+}
+
+.HomePageIphoneContainer > img {
+    width: -webkit-fill-available;
+    height: 800px;
+}
+
+
+h2{
+    position: absolute;
+    left: 39%;
+    top: -2%;
+    font-size: 65px;
+}
+
+.AmazingTextForPic{
+    position: absolute;
+    left: 44%;
+    top: 13%;
+    font-size: 35px;
+}
+
+
+.IphonePictureAtags{
+    position: absolute;
+    left: 41%;
+    top: 19%;
+    width: 225px;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+
+
+
+
+.GridContainer{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-auto-flow: row;
+    gap: 5px;
+}
+
+.GridContainer > div > img {
+    height: 500px;
+    width: -webkit-fill-available;
+}
+
+.GridImg{
+    position: relative;
+}
+
+.GridIphonePicText{
+    position: absolute;
+    color: white;
+    font-size: 43px;
+    top: 3%;
+    left: 32%;
+}
+
+
+.GridLearnMoreATag{
+    position: absolute;
+    left: 39%;
+    top: 13%;
+    width: 161px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 17px;
+}
+
+
+
+
+
+
+
+.LearnMoreATagPic2{
+    position: absolute;
+    width: 160px;
+    display: flex;
+    justify-content: space-between;
+    top: 52%;
+    left: 38%;
+}
+
+
+
+
+.LearnMoreATagPic3{
+    position: absolute;
+    width: 160px;
+    display: flex;
+    justify-content: space-between;
+    left: 15%;
+    bottom: 26%;
+    font-size: 17px;
+}
+
+a {
+    color: #0c7fe3;
+    text-decoration: none;
+}
+
+
+
+
+.LearnMoreATagPic4{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    left: 43%;
+    top: 29%;
+    font-size: 19px;
+}
+
+
+
+
+.TitleForGridPic5{
+    position: absolute;
+    font-size: 37px;
+    display: flex;
+    align-items: center;
+    width: 154px;
+    /* height: 34px; */
+    left: 37%;
+    top: 5%;
+}
+
+
+.TitleForGridPic5 > img {
+    width: 27px;
+    height: 30px;
+}
+
+
+.TestForGridPic5{
+    position: absolute;
+    left: 29%;
+    top: 14%;
+    font-size: 20px;
+}
+
+.AtagForPic5{
+    position: absolute;
+    left: 35%;
+    top: 19%;
+}
+
+
+
+
+.LearnMoreATagPic6{
+    position: absolute;
+    width: 205px;
+    display: flex;
+    justify-content: space-between;
+    left: 36%;
+    top: 25%;
+
+}
+
+.TitleForGridPic6{
+    position: absolute;
+    font-size: 42px;
+    font-weight: bold;
+    left: 40%;
+    top: 6%;
+
+}
+
+.TextForGridPic6{
+    position: absolute;
+    font-size: 20px;
+    width: 250px;
+    text-align: center;
+    left: 33%;
+    top: 15%;
+}
+
+.TitleForGridPic6 > img {
+    width: 27px;
+    height: 30px;
+}

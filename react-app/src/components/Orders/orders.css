@@ -1,0 +1,231 @@
+.WholeContainerForCheckOut{
+    max-width: 985px;
+    margin: auto;
+}
+
+
+.TitleForCheckoutBag{
+    height: 165px;
+    display: flex;
+    align-items: flex-end;
+    font-size: 40px;
+    margin-bottom: 18px;
+    font-weight: bold;
+}
+
+
+.ReturnText{
+    margin-bottom: 50px;
+    font-size: 18px;
+
+}
+
+
+.PromoForCard{
+    font-size: 14px;
+    height: 40px;
+    padding: 15px 130px;
+    background-color: #eeeeee;
+    border-radius: 12px;
+    margin-bottom: 70px;
+}
+
+.PromoForCard > img {
+    width: 16px;
+    margin-right: 5px;
+}
+
+
+
+
+/* ---------------------------Each Item In Checkout --------------- */
+
+
+.ImgForEachItem{
+    width: 325px;
+    height: 225px;
+}
+
+.EachItemMainContainer{
+    display: flex;
+    height: 350px;
+    column-gap: 10px;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 80px;
+
+}
+
+
+.ContainerNextToImg{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.ContainerHoldingItemDetails{
+    display: flex;
+    height: 150px;
+    width: 650px;
+    border-bottom: 1px solid lightgray;
+}
+
+
+.ContainerItemNameColor{
+    font-size: 22px;
+}
+
+
+.SelectQuantityInput{
+    height: 40px;
+    margin-left: 40px;
+    border: none;
+    font-size: 20px;
+}
+
+
+.PriceAndRemoveContainer{
+    row-gap: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-left: auto;
+    margin-right: 30px;
+}
+
+
+
+
+
+
+.ContainerDeliverPickupTexts{
+    display: flex;
+    height: 100px;
+    margin-top: 30px;
+    width: 650px;
+    justify-content: space-evenly;
+}
+
+
+.DeliveryText{
+    width: 200px;
+    margin-left: 10px;
+}
+
+.fa-box{
+    margin-right: 5px
+}
+
+.BagLogoForPickUp{
+    width: 17px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.PickUpText{
+    width: 200px;
+}
+
+.PickUpText > a {
+    margin-left: 5px;
+}
+
+
+.DeleteOrderButton{
+    border: none;
+    background-color: white;
+    color: #297cdb;
+    padding-right: 0px;
+    font-size: 14px;
+}
+
+
+
+/* -------------------------------- total taxes Container------------- */
+
+.MainTotalTaxesContainer{
+    height: 300px;
+    width: 650px;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+}
+
+
+.SubtotalContainer{
+    display: flex;
+    font-size: 20px;
+    justify-content: space-between;
+    padding-right: 10px;
+}
+
+.Tax{
+    padding-bottom: 25px;
+    border-bottom: 1px solid lightgray;
+}
+
+
+.FullTotalContainer{
+    display: flex;
+    font-size: 24px;
+    justify-content: space-between;
+    padding-right: 10px;
+    font-weight: bold;
+    margin-top: 7px;
+}
+
+
+.CheckOutButtonInCart{
+    width: 200px;
+    height: 40px;
+    margin-left: auto;
+    margin-top: 15px;
+    border-radius: 10px;
+    background-color: #227dff;
+    border: none;
+    color: white;
+    font-size: 16px;
+}
+
+
+
+/* -----------------------------------New Arrivals Section--------------- */
+
+.ArrivalsContainer{
+    position: relative;
+    margin-bottom: 60px;
+    padding-top: 70px;
+    border-top: 1px solid lightgray;
+}
+
+
+.PictureOfNewArrivals{
+    width: 985px;
+    height: 500px;
+}
+
+
+.NewArrivalsTitle{
+    position: absolute;
+    left: 40%;
+    top: 17%;
+    z-index: 99;
+    font-size: 40px;
+
+}
+
+.ArrivalText{
+    position: absolute;
+    font-size: 19px;
+    left: 39%;
+    top: 28%;
+    z-index: 99;
+}
+
+.AtagForShop{
+    position: absolute;
+    z-index: 99;
+    left: 48%;
+    top: 35%;
+    font-size: 20px;
+}

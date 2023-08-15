@@ -13,14 +13,15 @@ class Category(db.Model, UserMixin):
     category_name = db.Column(db.String, nullable=False)
 
 
-    product = db.relationship(
-            "Product",
-            back_populates="cat_id"
+    store_item = db.relationship(
+            "InStoreItem",
+            back_populates="category"
         )
 
 
     def to_dict(self):
         return {
             'id': self.id,
-            'category_name': self.category_name
+            'category_name': self.category_name,
+            'items_in_cat': [each.to_dict() for each in self.store_item]
         }

@@ -14,7 +14,7 @@ export default function DeleteOrder ({orderId, userId}) {
     return (
 
         <div>
-            <button onClick={(e) => {
+            <button className="DeleteOrderButton" onClick={(e) => {
                 deleteOrder()
             }}
             >Remove</button>

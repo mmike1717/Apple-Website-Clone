@@ -10,4 +10,4 @@ class ProductForm(FlaskForm):
     color=StringField('color')
     storage=IntegerField('storage')
     model=StringField('model')
-    category_id=IntegerField('category_id')
+    image=StringField('image')

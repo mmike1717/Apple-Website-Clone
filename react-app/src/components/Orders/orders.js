@@ -3,12 +3,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect, Link, useParams } from "react-router-dom";
 import { thunkEditOrdersQuantity, thunkGetOrdersForCart } from "../../store/orders";
 import DeleteOrder from "../DeleteOrder/deleteOrder";
+import './orders.css'
 
 
 function CartOrders() {
     const [quant, setQuant] = useState()
     const [editOrderId, setEditOrderId] = useState()
     const dispatch = useDispatch()
+    let subtotal = 0;
+
 
     const sessionUser = useSelector((state) => state.session.user);
 
@@ -39,42 +42,96 @@ function CartOrders() {
 
 
     return (
-        <>
-            <h1>Review Your Bag</h1>
+        <div className="WholeContainerForCheckOut">
+            <div className="TitleForCheckoutBag">Review your bag.</div>
+            <div className="ReturnText">Free delivery and free returns.</div>
+            <div className="PromoForCard"> <img src="https://pbs.twimg.com/profile_images/1163895675513274368/gk5MAZvy_400x400.png" />
+                Items not purchased with a one time payment may be eligible for monthly installments at 0% APR when you check out with Apple Card Monthly Installments.
+                <a href="">Learn more</a>
+            </div>
             {allOrders.map((order) => {
+                subtotal += order?.quantity * order.products?.price
+                subtotal += order.products?.storage === 256 ? 100 : order.products?.storage === 512 ? 200 : 0
                 return (
                     <>
-                        {order && order.products && <div>
-
-                            {order.products?.name}
-                            {order.products?.storage}GB
-                            {order.products?.color}
-                            <select onChange={(e) => {
-                                setEditOrderId(order?.id)
-                                setQuant(e.target.value)
-                            }}>
-                                <option >{order?.quantity}</option>
-                                {order?.quantity !== 1 ? <option value='1' >1</option> : null}
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                            </select>
-                            {/* <OrderQuantity quantity={order.quantity} product_id={order.product_id}/> */}
-                            <div>{order.quantity * order.products?.price}</div>
-                            <DeleteOrder orderId={order?.id} userId={sessionUser.id} />
+                        {order && order.products && <div className="EachItemMainContainer">
+                            <img className="ImgForEachItem" src={order.products?.image} />
+                            <div className="ContainerNextToImg">
+                                <div className="ContainerHoldingItemDetails">
+                                    <div className="ContainerItemNameColor">
+                                        <div>{order.products?.name} {order.products?.storage}GB -</div>
+                                        <div>{order.products?.color}</div>
+                                    </div>
+                                    <select className="SelectQuantityInput" onChange={(e) => {
+                                        setEditOrderId(order?.id)
+                                        setQuant(e.target.value)
+                                    }}>
+                                        <option >{order?.quantity}</option>
+                                        {order?.quantity !== 1 ? <option value='1' >1</option> : null}
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                    </select>
+                                    {/* <OrderQuantity quantity={order.quantity} product_id={order.product_id}/> */}
+                                    <div className="PriceAndRemoveContainer">
+                                        <div>${order.quantity * order.products?.price + (order.products?.storage === 256 ? 100 : order.products?.storage === 512 ? 200 : 0)}.00</div>
+                                        <DeleteOrder orderId={order?.id} userId={sessionUser.id} />
+                                        <a href="">Save for later</a>
+                                    </div>
+                                </div>
+                                <div className="ContainerDeliverPickupTexts">
+                                    <div className="DeliveryText"> <i className="fa fa-box"/>Order today. Delivers to you by tomorrow — Free</div>
+                                    <div className="PickUpText">
+                                        <img className="BagLogoForPickUp" src="https://jackboxgames.b-cdn.net/wp-content/uploads/2019/05/11-Mac-App-Store-e1558564279266.png"/>
+                                        Order now. Pick up, in-store: Today at
+                                        <a href="">You Store</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>}
 
 
                     </>
                 )
             })}
-        </>
+
+
+            <div className="MainTotalTaxesContainer">
+                <div className="SubtotalContainer">
+                    <div>Subtotal</div>
+                    <div>${subtotal}.00</div>
+                </div>
+                <div className="SubtotalContainer">
+                    <div>Shipping</div>
+                    <div>FREE</div>
+                </div>
+                <div className="SubtotalContainer Tax">
+                    <div>Estimated tax</div>
+                    <div>${Number.parseFloat(subtotal * .0887).toFixed(0)}.00</div>
+                </div>
+
+                <div className="FullTotalContainer">
+                    <div>Total</div>
+                    <div>${subtotal + parseInt(Number.parseFloat(subtotal * .0887).toFixed(2))}.00</div>
+                </div>
+                <button className="CheckOutButtonInCart">Check Out</button>
+            </div>
+
+
+            <div className="ArrivalsContainer">
+                <div className="NewArrivalsTitle">New Arrivals</div>
+                <div className="ArrivalText">Check out the lastest accessories.</div>
+                <a className="AtagForShop" href="">{'Shop >'}</a>
+                <img className="PictureOfNewArrivals" src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/apple-new-arrivals-checkout-201804_FMT_WHH?wid=1472&hei=880&fmt=jpeg" />
+
+            </div>
+        </div>
     )
 }
 
