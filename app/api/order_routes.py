@@ -62,3 +62,13 @@ def delete_order(order_id):
     db.session.delete(order_to_delete)
     db.session.commit()
     return {'message':'deleted'}
+
+
+@order_routes.route('/delete/cart/<int:user_id>', methods=['GET','POST','DELETE'])
+@login_required
+def checkout(user_id):
+    all_orders = Order.query.filter(user_id == Order.user_id)
+    for each in all_orders:
+        db.session.delete(each)
+        db.session.commit()
+    return {'message':'deleted all cart'}

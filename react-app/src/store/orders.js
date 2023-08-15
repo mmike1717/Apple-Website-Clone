@@ -3,7 +3,12 @@ const CREATE_ORDER = 'order/CREATE_ORDER'
 const GET_ALL_ORDERS = 'order/GET_ALL_ORDERS'
 const EDIT_QUANTITY = 'order/EDIT_QUANTITY'
 const DELETE_ORDER = 'order/DELETE_ORDER'
+const DELETE_CART = 'order/DELETE_CART'
 
+
+const deleteAllCart = () => ({
+    type: DELETE_CART,
+})
 
 const deleteAOrder = (id) => ({
     type: DELETE_ORDER,
@@ -26,6 +31,23 @@ const createOrders = (data) => ({
     type: CREATE_ORDER,
     data
 })
+
+
+
+
+export const thunkDeleteAllOrdersFromCart = (userId) => async(dispatch) => {
+    const res = await fetch(`/api/orders/delete/cart/${userId}`, {
+        method: 'DELETE'
+    })
+    if(res.ok){
+        const data = await res.json()
+        dispatch(deleteAllCart())
+        return data
+    } else {
+        const err = await res.json()
+        return {errors:err}
+    }
+}
 
 
 export const thunkDeleteAOrder = (orderId) => async(dispatch) => {
@@ -129,6 +151,11 @@ export default function reducer(state = initialState, action) {
         case DELETE_ORDER: {
             const newState = {...state, cart:{...state.cart}}
             delete newState.cart[action.id]
+            return newState
+        }
+
+        case DELETE_CART: {
+            const newState = {...state, cart: {}, newToCart: {}}
             return newState
         }
 

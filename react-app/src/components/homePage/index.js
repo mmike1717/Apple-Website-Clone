@@ -14,7 +14,10 @@ export default function Home(){
 
 
     useEffect(() => {
-        dispatch(thunkGetOrdersForCart(sessionUser.id))
+        if(sessionUser){
+            dispatch(thunkGetOrdersForCart(sessionUser.id))
+
+        }
 
     }, [dispatch])
 

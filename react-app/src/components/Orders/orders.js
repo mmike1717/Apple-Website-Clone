@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect, Link, useParams } from "react-router-dom";
-import { thunkEditOrdersQuantity, thunkGetOrdersForCart } from "../../store/orders";
+import { useHistory } from "react-router-dom";
+import { thunkDeleteAllOrdersFromCart, thunkEditOrdersQuantity, thunkGetOrdersForCart } from "../../store/orders";
 import DeleteOrder from "../DeleteOrder/deleteOrder";
+import ThankYouModal from "../ThankYouModal/modalThanksForPurchase";
+import thankYou from "../ThankYouModal/thankyouPurchase";
 import './orders.css'
 
 
@@ -10,6 +12,7 @@ function CartOrders() {
     const [quant, setQuant] = useState()
     const [editOrderId, setEditOrderId] = useState()
     const dispatch = useDispatch()
+    const history = useHistory()
     let subtotal = 0;
 
 
@@ -38,7 +41,14 @@ function CartOrders() {
     const allOrders = Object.values(useSelector(state => state.orders.cart))
 
     if(!allOrders.length || !allOrders) return null
-    console.log(allOrders,'this-----')
+    // console.log(allOrders,'this-----')
+
+
+    const handleCheckout = () => {
+        // e.preventDefault()
+        dispatch(thunkDeleteAllOrdersFromCart(sessionUser.id))
+        .then(() => history.push('/home'))
+    }
 
 
     return (
@@ -120,7 +130,14 @@ function CartOrders() {
                     <div>Total</div>
                     <div>${subtotal + parseInt(Number.parseFloat(subtotal * .0887).toFixed(2))}.00</div>
                 </div>
-                <button className="CheckOutButtonInCart">Check Out</button>
+                <button className="CheckOutButtonInCart" onClick={() => handleCheckout()}>
+                    Check Out
+                </button>
+                {/* <ThankYouModal
+                    buttonText="Check Out"
+                    modalComponent={<thankYou />}
+                    onButtonClick={() => handleCheckout()}
+                /> */}
             </div>
 
 
