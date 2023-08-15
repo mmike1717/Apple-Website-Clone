@@ -1,7 +1,7 @@
 """empty message
 
 Revision ID: e0cbdd7c6e6c
-Revises: 
+Revises:
 Create Date: 2023-08-10 22:19:27.139580
 
 """
@@ -74,7 +74,19 @@ def upgrade():
     sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
-    # ### end Alembic commands ###
+    import os
+    environment = os.getenv("FLASK_ENV")
+    SCHEMA = os.environ.get("SCHEMA")
+
+
+    if environment == "production":
+            op.execute(f"ALTER TABLE users SET SCHEMA {SCHEMA};")
+            op.execute(f"ALTER TABLE reviews SET SCHEMA {SCHEMA};")
+            op.execute(f"ALTER TABLE in_store_items SET SCHEMA {SCHEMA};")
+            op.execute(f"ALTER TABLE orders SET SCHEMA {SCHEMA};")
+            op.execute(f"ALTER TABLE products SET SCHEMA {SCHEMA};")
+            op.execute(f"ALTER TABLE categories SET SCHEMA {SCHEMA};")
+        # ### end Alembic commands ###
 
 
 def downgrade():
