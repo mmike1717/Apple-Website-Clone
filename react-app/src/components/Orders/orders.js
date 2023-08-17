@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import { thunkDeleteAllOrdersFromCart, thunkEditOrdersQuantity, thunkGetOrdersForCart } from "../../store/orders";
 import DeleteOrder from "../DeleteOrder/deleteOrder";
 import ThankYouModal from "../ThankYouModal/modalThanksForPurchase";
-import thankYou from "../ThankYouModal/thankyouPurchase";
+import ThankYouInfo from "../ThankYouModal/thankyouPurchase";
 import './orders.css'
 
 
@@ -40,7 +40,7 @@ function CartOrders() {
 
     const allOrders = Object.values(useSelector(state => state.orders.cart))
 
-    if(!allOrders.length || !allOrders) return null
+    // if(!allOrders.length || !allOrders) return null
     // console.log(allOrders,'this-----')
 
 
@@ -53,11 +53,11 @@ function CartOrders() {
 
     return (
         <div className="WholeContainerForCheckOut">
-            <div className="TitleForCheckoutBag">Review your bag.</div>
+            <div className="TitleForCheckoutBag">{ !allOrders.length ? 'Your Bag is Empty' : "Review your bag."}</div>
             <div className="ReturnText">Free delivery and free returns.</div>
             <div className="PromoForCard"> <img src="https://pbs.twimg.com/profile_images/1163895675513274368/gk5MAZvy_400x400.png" />
                 Items not purchased with a one time payment may be eligible for monthly installments at 0% APR when you check out with Apple Card Monthly Installments.
-                <a href="">Learn more</a>
+                <a onClick={() => window.alert('Feature Coming Soon')} style={{cursor:'pointer'}}>Learn more</a>
             </div>
             {allOrders.map((order) => {
                 subtotal += order?.quantity * order.products?.price
@@ -69,7 +69,7 @@ function CartOrders() {
                             <div className="ContainerNextToImg">
                                 <div className="ContainerHoldingItemDetails">
                                     <div className="ContainerItemNameColor">
-                                        <div>{order.products?.name} {order.products?.storage}GB -</div>
+                                        <div>{order.products?.name} {order.products?.model} {order.products?.storage}GB -</div>
                                         <div>{order.products?.color}</div>
                                     </div>
                                     <select className="SelectQuantityInput" onChange={(e) => {
@@ -130,21 +130,24 @@ function CartOrders() {
                     <div>Total</div>
                     <div>${subtotal + parseInt(Number.parseFloat(subtotal * .0887).toFixed(2))}.00</div>
                 </div>
-                <button className="CheckOutButtonInCart" onClick={() => handleCheckout()}>
+                {/* <button className="CheckOutButtonInCart" onClick={() => handleCheckout()}>
                     Check Out
-                </button>
-                {/* <ThankYouModal
-                    buttonText="Check Out"
-                    modalComponent={<thankYou />}
-                    onButtonClick={() => handleCheckout()}
-                /> */}
+                </button> */}
+                {!allOrders.length ? null :
+
+                    <ThankYouModal
+                        buttonText="Check Out"
+                        modalComponent={<ThankYouInfo />}
+                        onButtonClick={() => handleCheckout()}
+                    />
+                }
             </div>
 
 
             <div className="ArrivalsContainer">
                 <div className="NewArrivalsTitle">New Arrivals</div>
                 <div className="ArrivalText">Check out the lastest accessories.</div>
-                <a className="AtagForShop" href="">{'Shop >'}</a>
+                <a onClick={() => window.alert('Feature Coming Soon')} className="AtagForShop" style={{cursor:'pointer'}}>{'Shop >'}</a>
                 <img className="PictureOfNewArrivals" src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/apple-new-arrivals-checkout-201804_FMT_WHH?wid=1472&hei=880&fmt=jpeg" />
 
             </div>

@@ -1,0 +1,44 @@
+
+.DeleteReviewContainer{
+    width: 350px;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Delete-Review-Title{
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+
+.SureDeleteReview{
+    margin-bottom: 10px;
+}
+
+
+.Confirm-Delete-Review{
+    margin-bottom: 10px;
+    width: 170px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    background-color: #227dff;
+    cursor: pointer;
+}
+
+
+.Cancel-Delete-Review{
+    margin-bottom: 10px;
+    width: 170px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    background-color: rgb(172, 171, 171);
+    cursor: pointer;
+}

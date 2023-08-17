@@ -21,18 +21,30 @@ function LoginFormModal() {
     }
   };
 
+  const DemoUserSubmit = async () => {
+    // e.preventDefault();
+    const data = await dispatch(login('demo@aa.io', 'password'));
+    if (data) {
+      setErrors(data);
+    } else {
+        closeModal()
+    }
+  };
+
   return (
     <>
-      <h1>Log In</h1>
-      <form onSubmit={handleSubmit}>
-        <ul>
+    <div className="MainContainerForLogIn">
+      <img className="ImgForLogIn" src="https://images.squarespace-cdn.com/content/v1/5e949a92e17d55230cd1d44f/1636123980974-KO4VU46DMZG2AM56YOLZ/White2AppleIDiPad.png" />
+      <div className="LogInTitleText">Log In</div>
+      <form className="FormContainer" onSubmit={handleSubmit}>
+        <div className="ErrorsContainer">
           {errors.map((error, idx) => (
-            <li key={idx}>{error}</li>
+            <div key={idx}>{error}</div>
           ))}
-        </ul>
+        </div>
         <label>
-          Email
           <input
+            placeholder="Email"
             type="text"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -40,16 +52,18 @@ function LoginFormModal() {
           />
         </label>
         <label>
-          Password
           <input
+            placeholder="Password"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
         </label>
-        <button type="submit">Log In</button>
+        <button className="SignInButton" type="submit">Log In</button>
       </form>
+      <button className="DemoUserButton" onClick={() => DemoUserSubmit()}> <i class="fa-solid fa-user-secret"/> Demo User</button>
+      </div>
     </>
   );
 }

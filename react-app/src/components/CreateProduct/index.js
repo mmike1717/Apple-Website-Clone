@@ -13,7 +13,7 @@ function CreateProduct(){
     const [storage, setStorage] = useState(0)
     const [color, setColor] = useState('')
     const [errors, setErrors] = useState({})
-    // const [picked2, setPicked2] = useState('')
+    // const [noMatch, setNoMatch] = useState(true)
     // const [picked3, setPicked3] = useState('')
     // const [picked4, setPicked4] = useState('')
     // const [picked5, setPicked5] = useState('')
@@ -53,6 +53,7 @@ function CreateProduct(){
     // if(!Object.values(itemsInCart).length) return null
 
 
+    let match = true;
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -64,18 +65,33 @@ function CreateProduct(){
             setErrors({color: 'Need to pick the Color you would like.'})
         }
 
-        if(itemsInCart){
-                itemsInCart.map(cartItem => {
-                    if(cartItem.products.color === color && cartItem.products.storage === storage &&
-                        cartItem.products.name === item.name && cartItem.products.model === item.model){
-                            dispatch(thunkEditOrdersQuantity(cartItem.id, cartItem.quantity + 1))
-                            .then(() => history.push('/bag'))
-                            return
-                        }
-                })
-            }
+        // if(itemsInCart){
+        //         itemsInCart.map(cartItem => {
+        //             if(cartItem.products.color === color && cartItem.products.storage === storage &&
+        //                 cartItem.products.name === item.name && cartItem.products.model === item.model){
+        //                     setNoMatch(false)
+        //                     dispatch(thunkEditOrdersQuantity(cartItem.id, cartItem.quantity + 1))
+        //                     .then(() => dispatch(thunkGetOrdersForCart(sessionUser.id)))
+        //                     .then(() => history.push('/bag'))
 
-        if (storage && color){
+        //                 }
+        //         })
+        //     }
+
+        itemsInCart.map(cartItem => {
+            if(cartItem.products.color === color && cartItem.products.storage === storage &&
+                cartItem.products.name === item.name && cartItem.products.model === item.model){
+                    match = false
+                    dispatch(thunkEditOrdersQuantity(cartItem.id, cartItem.quantity + 1))
+                    // .then(() => dispatch(thunkGetOrdersForCart(sessionUser.id)))
+                    .then(() => history.push('/bag'))
+                    // return
+
+
+                }
+        })
+
+        if (match && storage && color){
             let data = {
                 name: item.name,
                 model: item.model,
@@ -100,7 +116,7 @@ function CreateProduct(){
 
     return (
         <div>
-            <div className="DivBelowNavBar">Get $200-$640 in credit when you trade in iPhone 11 or higher</div>
+            <div className="DivBelowNavBar">Get $200-$640 in credit when you trade in an {item.name}</div>
             <div>
                 <div className="CarrierPromoTextContainer">
                     <div>Carrier Deals at Apple</div>
@@ -125,7 +141,7 @@ function CreateProduct(){
                     </button>
 
                     <button className="NeedHelpButton">
-                        <div className="NeedHelpText">Need help? <i className="fa fa-circle-plus"/></div>
+                        <div onClick={() => window.alert('Feature Coming Soon')} className="NeedHelpText">Need help? <i className="fa fa-circle-plus"/></div>
                         <div className="TextBelowHelpText">Explore the differences in screen size and battery life.</div>
                     </button>
 
@@ -166,11 +182,11 @@ function CreateProduct(){
             </div>
 
 
-            <div className="AppleTradeInText">Apple Trade In. <div>Get $40–$640 credit toward your new iPhone.</div> </div>
+            <div className="AppleTradeInText">Apple Trade In. <div>Get $40–$640 credit toward your new {item.name}.</div> </div>
             <div className="ButtonsTradeInContainer">
-                <button className="SelectPhoneTradeInButton">Select a smartphone</button>
+                <button onClick={() => window.alert('Feature Coming Soon')} className="SelectPhoneTradeInButton">Select a smartphone</button>
                 <button id="border" className="SelectPhoneTradeInButton">No trade-in</button>
-                <button className="HelpTradeInButton">
+                <button onClick={() => window.alert('Feature Coming Soon')} className="HelpTradeInButton">
                     <i className="fa fa-circle-plus"/>
                     How does trade-in work?
                     <div className="MoreTextForButton">We’ll walk you through the step-by-step process.</div>
@@ -178,17 +194,17 @@ function CreateProduct(){
             </div>
 
 
-            <div className="AppleTradeInText">AppleCare+ Coverage. <div>Protect your new iPhone.</div> </div>
+            <div className="AppleTradeInText">AppleCare+ Coverage. <div>Protect your new {item.name}.</div> </div>
 
             <div className="AppleCareMainContainer">
-                <button className="AppleCareButtons">
+                <button onClick={() => window.alert('Feature Coming Soon')} className="AppleCareButtons">
                     <div className="AppleLogoAndTextInButton">
                         <img className="AppleCareLogo" src="https://i.pinimg.com/originals/06/f5/44/06f544c02a31f664f83a730e766fc3b0.png"/>
                         AppleCare+
                     </div>
                     <div>$179.00 or $8.99/mo.</div>
                 </button>
-                <button className="AppleCareButtons">
+                <button onClick={() => window.alert('Feature Coming Soon')} className="AppleCareButtons">
                     <div className="AppleLogoAndTextInButton">
                         <img className="AppleCareLogo" src="https://i.pinimg.com/originals/06/f5/44/06f544c02a31f664f83a730e766fc3b0.png"/>
                         AppleCare+ with Theft and Loss
@@ -208,20 +224,22 @@ function CreateProduct(){
                     <div className="ItemDescription">{item.name} {item.model !== 'reg' ? item.model : null} {storage === 0 ? '' : storage + 'GB'} {color}</div>
                     <div className="PriceForItem">${storage === 256 ? parseInt(item.price) + 100 : storage === 512 ? parseInt(item.price) + 200 : item.price}</div>
                     <div className="OnePaymentText">One-time payment</div>
-                    <a href="/">Get 3% Daily Cash with Apple Card</a>
+                    <a style={{cursor:'pointer'}} onClick={() => window.alert('Feature Coming Soon')}>Get 3% Daily Cash with Apple Card</a>
                 </div>
                 <div className="DescriptionItemMainContainer">
                     <div className="TruckLogoAndText"> <i className="fa-solid fa-truck"/>Order today. Delivers by</div>
                     <div className="DeliveryMonthDate">{date} {month[deliveryMonth]} - Free</div>
                     <div className="BagLogoAndText"><i className="fa-solid fa-bag-shopping"/>Pickup:</div>
-                    <div className="CurrentlyAvailableText">Currently available at <a>Your Store</a></div>
+                    <div className="CurrentlyAvailableText">Currently available at <a style={{cursor:'pointer'}} onClick={() => window.alert('Feature Coming Soon')}>Your Store</a></div>
                     {sessionUser && <button className="AddToBagButtonInItemPage" onClick={handleSubmit}>Add To Bag</button>}
                     <div className="ErrorDivUnderButton">{errors.storage ? <div>{errors.storage}</div> : errors.color ? <div>{errors.color}</div> : null}</div>
                 </div>
             </div>
 
-            <div>
+            <div className="ReviewsMainContainer">
+                <div className="ReviewTitleContainer">Reviews</div>
                 <Reviews itemId={itemId} />
+
             </div>
         </div>
     )

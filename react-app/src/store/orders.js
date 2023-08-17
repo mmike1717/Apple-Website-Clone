@@ -138,7 +138,7 @@ export default function reducer(state = initialState, action) {
 
         case CREATE_ORDER : {
             const newState = {...state}
-            newState.newToCart[action.data.id] = action.data
+            newState.cart[action.data.id] = action.data
             return newState
         }
 

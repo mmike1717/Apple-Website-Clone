@@ -18,7 +18,7 @@ function CreateReviewModal({
 
   };
 
-  return <button onClick={onClick}>{buttonText}</button>;
+  return <button className="CreateAReviewButton" onClick={onClick}>{buttonText}</button>;
 }
 
 export default CreateReviewModal;

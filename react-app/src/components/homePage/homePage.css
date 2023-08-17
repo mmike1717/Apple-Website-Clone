@@ -1,5 +1,9 @@
 
 
+.deadLinks{
+    cursor: pointer;
+}
+
 .GifLogo{
     display: flex;
     justify-content: center;
@@ -34,7 +38,7 @@ h1{
 
 .TextForHomePageMacBookPic{
     position: absolute;
-    z-index: 99;
+    /* z-index: 9; */
     top: 21%;
     left: 50%;
     transform: translate(-50%, -50%);

@@ -1,0 +1,17 @@
+.EachReviewStarRatingContainer{
+    display: flex;
+    column-gap: 5px;
+    font-size: 13px;
+}
+
+
+.filled1{
+    color: #227dff;
+}
+
+
+.MainContainerForEachReview{
+    display: flex;
+    flex-direction: column;
+    row-gap: 3px;
+}

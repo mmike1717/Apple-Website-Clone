@@ -9,6 +9,7 @@ import OpenModalButton from '../OpenModalButton';
 import LoginFormModal from '../LoginFormModal';
 import SignupFormModal from '../SignupFormModal';
 import { logout } from '../../store/session';
+import SearchBarInfo from '../searchBar/searchBar';
 
 function Navigation({ isLoaded }) {
 	const sessionUser = useSelector(state => state.session.user);
@@ -24,6 +25,7 @@ function Navigation({ isLoaded }) {
 	const [open6, setOpen6] = useState(false)
 	const [open7, setOpen7] = useState(false)
 	const [open8, setOpen8] = useState(false)
+	const [open9, setOpen9] = useState(false)
 
 	let totalQuant = 0;
 	let cartPreview;
@@ -39,6 +41,11 @@ function Navigation({ isLoaded }) {
 		else {setOpen8(false)}
 	}
 
+	const handleSearchClick = () => {
+		if (!open9) setOpen9(true)
+		else {setOpen9(false)}
+	}
+
 	const handleLogout = (e) => {
 		e.preventDefault();
 		setOpen8(false)
@@ -49,6 +56,32 @@ function Navigation({ isLoaded }) {
 	if(sessionUser && itemsInCart){
 		cartPreview = itemsInCart[itemsInCart.length - 1]
 		cartPreview2 = itemsInCart[itemsInCart.length - 2]
+	}
+
+
+	const extraLinks = (itemName) => {
+		return (
+			<>
+				<div className='SecondColumnInDropDown'>
+					<div className='TitleOfColumn'>Shop {itemName}</div>
+					<a>Shop {itemName}</a>
+					<a>{itemName} Accessories</a>
+					<a>Apple Trade In</a>
+					<a>Financing</a>
+					<a>College Student Offer</a>
+				</div>
+				<div className='SecondColumnInDropDown'>
+					<div className='TitleOfColumn'>More {itemName}</div>
+					<a>{itemName} Support</a>
+					<a>{itemName} Preview</a>
+					<a>AppleCare+ for {itemName}</a>
+					<a>Logic for {itemName}</a>
+					<a>Education</a>
+					<a>iCloud+</a>
+
+				</div>
+			</>
+		)
 	}
 
 
@@ -70,15 +103,20 @@ function Navigation({ isLoaded }) {
 					</NavLink>
 				</div>
 				<div>
-					<div className='NavBarATag1' onMouseOver={() => setOpen2(true)} onMouseLeave={() => setOpen2(false)}>
+					<div className='NavBarATag1' onMouseOver={() => setOpen2(true)} onMouseLeave={() => setOpen2(false)} >
 						<NavLink className='CategoryNavLink' exact to='/'>Mac</NavLink>
 						<div className={open2 ? "block" : "hidden"}>
 							{/* {console.log(category['1'], '-------')} */}
-							{category['1']?.items_in_cat.map((each) => {
-								return (
-									<NavLink className='EachLink' exact to={`/buy/${each.id}`}>{each.name}</NavLink>
-								)
-							})}
+							<div className='firstColumnInDropDown'>
+								<div className='TitleOfColumn'>Explore Mac</div>
+								{category['1']?.items_in_cat.map((each) => {
+									return (
+										<NavLink onClick={() => setOpen2(false)} className='EachLink' exact to={`/buy/${each.id}`}>{each.name}</NavLink>
+									)
+								})}
+
+							</div>
+							{extraLinks(category['1']?.category_name)}
 						</div>
 					</div>
 				</div>
@@ -87,11 +125,15 @@ function Navigation({ isLoaded }) {
 						<NavLink className='CategoryNavLink' exact to='/'>iPad</NavLink>
 						<div className={open3 ? "block" : "hidden"}>
 							{/* {console.log(category['1'], '-------')} */}
-							{category['2']?.items_in_cat.map((each) => {
-								return (
-									<NavLink className='EachLink' exact to={`/buy/${each.id}`}>{each.name} {each.model}</NavLink>
-								)
-							})}
+							<div className='firstColumnInDropDown'>
+								<div className='TitleOfColumn'>Explore iPad</div>
+								{category['2']?.items_in_cat.map((each) => {
+									return (
+										<NavLink onClick={() => setOpen3(false)} className='EachLink' exact to={`/buy/${each.id}`}>{each.name} {each.model}</NavLink>
+									)
+								})}
+							</div>
+							{extraLinks(category['2']?.category_name)}
 						</div>
 					</div>
 				</div>
@@ -99,12 +141,15 @@ function Navigation({ isLoaded }) {
 					<div className='NavBarATag1' onMouseOver={() => setOpen4(true)} onMouseLeave={() => setOpen4(false)}>
 						<NavLink className='CategoryNavLink' exact to='/'>iPhone</NavLink>
 						<div className={open4 ? "block" : "hidden"}>
-							{/* {console.log(category['1'], '-------')} */}
-							{category['3']?.items_in_cat.map((each) => {
-								return (
-									<NavLink className='EachLink' exact to={`/buy/${each.id}`}>{each.name} {each.model !== 'reg' ? each.model : null}</NavLink>
-								)
-							})}
+							<div className='firstColumnInDropDown'>
+								<div className='TitleOfColumn'>Explore iPhone</div>
+								{category['3']?.items_in_cat.map((each) => {
+									return (
+										<NavLink onClick={() => setOpen4(false)} className='EachLink' exact to={`/buy/${each.id}`}>{each.name} {each.model !== 'reg' ? each.model : null}</NavLink>
+									)
+								})}
+							</div>
+							{extraLinks(category['3']?.category_name)}
 						</div>
 					</div>
 				</div>
@@ -112,12 +157,16 @@ function Navigation({ isLoaded }) {
 					<div className='NavBarATag1' onMouseOver={() => setOpen5(true)} onMouseLeave={() => setOpen5(false)}>
 						<NavLink className='CategoryNavLink' exact to='/'>Watch</NavLink>
 						<div className={open5 ? "block" : "hidden"}>
-							{/* {console.log(category['1'], '-------')} */}
-							{category['4']?.items_in_cat.map((each) => {
-								return (
-									<NavLink className='EachLink' exact to={`/buy/${each.id}`}>{each.name}</NavLink>
-								)
-							})}
+							<div className='firstColumnInDropDown'>
+								<div className='TitleOfColumn'>Explore Watch</div>
+								{/* {console.log(category['1'], '-------')} */}
+								{category['4']?.items_in_cat.map((each) => {
+									return (
+										<NavLink onClick={() => setOpen5(false)} className='EachLink' exact to={`/buy/${each.id}`}>{each.name}</NavLink>
+									)
+								})}
+							</div>
+							{extraLinks(category['4']?.category_name)}
 						</div>
 					</div>
 				</div>
@@ -128,12 +177,16 @@ function Navigation({ isLoaded }) {
 					<div className='NavBarATag1' onMouseOver={() => setOpen6(true)} onMouseLeave={() => setOpen6(false)}>
 						<NavLink className='CategoryNavLink' exact to='/'>AirPods</NavLink>
 						<div className={open6 ? "block" : "hidden"}>
-							{/* {console.log(category['1'], '-------')} */}
-							{category['6']?.items_in_cat.map((each) => {
-								return (
-									<NavLink className='EachLink' exact to={`/buy/${each.id}`}>{each.name}</NavLink>
-								)
-							})}
+							<div className='firstColumnInDropDown'>
+								<div className='TitleOfColumn'>Explore AirPods</div>
+								{/* {console.log(category['1'], '-------')} */}
+								{category['6']?.items_in_cat.map((each) => {
+									return (
+										<NavLink onClick={() => setOpen6(false)} className='EachLink' exact to={`/buy/${each.id}`}>{each.name}</NavLink>
+									)
+								})}
+							</div>
+							{extraLinks(category['6']?.category_name)}
 						</div>
 					</div>
 				</div>
@@ -141,12 +194,16 @@ function Navigation({ isLoaded }) {
 					<div className='NavBarATag' onMouseOver={() => setOpen7(true)} onMouseLeave={() => setOpen7(false)}>
 						<NavLink className='CategoryNavLink' exact to='/'>TV & Home</NavLink>
 						<div className={open7 ? "block" : "hidden"}>
-							{/* {console.log(category['1'], '-------')} */}
-							{category['7']?.items_in_cat.map((each) => {
-								return (
-									<NavLink className='EachLink' exact to={`/buy/${each.id}`}>{each.name}</NavLink>
-								)
-							})}
+							<div className='firstColumnInDropDown'>
+								{/* {console.log(category['1'], '-------')} */}
+								<div className='TitleOfColumn'>Explore TV & Home</div>
+								{category['7']?.items_in_cat.map((each) => {
+									return (
+										<NavLink onClick={() => setOpen7(false)} className='EachLink' exact to={`/buy/${each.id}`}>{each.name}</NavLink>
+									)
+								})}
+							</div>
+							{extraLinks(category['7']?.category_name)}
 						</div>
 					</div>
 				</div>
@@ -160,7 +217,11 @@ function Navigation({ isLoaded }) {
 					<NavLink className='CategoryNavLink' exact to="/">Support</NavLink>
 				</div>
 
-				<button className='MagnifyingGlassIcon'><i className="fa fa-magnifying-glass"/></button>
+				<button onClick={() => handleSearchClick()} className='MagnifyingGlassIcon'><i className="fa fa-magnifying-glass"/></button>
+
+				<div className={open9 ? "searchblock" : "hidden"}>
+					{/* <SearchBarInfo /> */}
+				</div>
 
 				{isLoaded && (
 					<>
@@ -193,8 +254,8 @@ function Navigation({ isLoaded }) {
 										<div>{cartPreview2?.products?.name} {cartPreview2?.products?.model !== 'reg' ? cartPreview2?.products?.model : null} {cartPreview2?.products?.color}</div>
 									</div>) : null}
 									<div className='DropdownProfileText'>My Profile</div>
-									<div className='DropdownTextUnderProfile'> <i className="fa-regular fa-heart"/> Favorites</div>
 									<div className='DropdownTextUnderProfile'> <i class="fa-solid fa-box"/> Orders</div>
+									<div className='DropdownTextUnderProfile'> <i class="fa-regular fa-bookmark"/>Your Saves</div>
 									<div className='DropdownTextUnderProfile'> <i class="fa-solid fa-gear"/> Account</div>
 									<button className='LogOutButtonInDropDown' onClick={handleLogout}><i class="fa-regular fa-user"/> Log Out {sessionUser.first_name}</button>
 								</>
@@ -203,8 +264,8 @@ function Navigation({ isLoaded }) {
 									<div className='UserBagTitle'>Your Bag is Empty</div>
 									<div>Sign in to add to Your Bag</div>
 									<div className='DropdownProfileText' >Profile</div>
-									<div className='DropdownTextUnderProfile'> <i className="fa-regular fa-heart"/> Favorites</div>
 									<div className='DropdownTextUnderProfile'> <i class="fa-solid fa-box"/> Orders</div>
+									<div className='DropdownTextUnderProfile'> <i class="fa-regular fa-bookmark"/>Your Saves</div>
 									<div className='DropdownTextUnderProfile'> <i class="fa-solid fa-gear"/> Account</div>
 									<div onClick={ () => setOpen8(false)}>
 										<i class="fa-regular fa-user"/>

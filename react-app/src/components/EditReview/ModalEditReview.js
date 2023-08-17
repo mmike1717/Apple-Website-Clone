@@ -18,7 +18,7 @@ function EditReviewModal({
 
   };
 
-  return <button onClick={onClick}>{buttonText}</button>;
+  return <button className="EditButtonInReview" onClick={onClick}>{buttonText}</button>;
 }
 
 export default EditReviewModal;

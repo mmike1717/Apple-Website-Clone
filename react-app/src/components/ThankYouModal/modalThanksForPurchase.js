@@ -16,7 +16,7 @@ function ThankYouModal({
   };
 
   return (
-    <button  onClick={onClick} >{buttonText}</button>
+    <button className="CheckOutButtonInCart" onClick={onClick} >{buttonText}</button>
   );
 }
 

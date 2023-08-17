@@ -28,8 +28,8 @@ export default function Home(){
                 <div className='HomePageMacBookContainer'>
                     <h1>MacBook Air 15"</h1>
                     <div className='LearnAndBuyATag'>
-                        <a href='/'>{'Learn more >'}</a>
-                        <a href='/'>{'Buy >'}</a>
+                        <a onClick={() => window.alert('Page Comming Soon')} className='deadLinks'>{'Learn more >'}</a>
+                        <a href='/buy/11'>{'Buy >'}</a>
 
                     </div>
                     <img className='HomePageMacBookPic' src='https://assets-prd.ignimgs.com/2023/06/05/wwdc23-macbookair-blogroll-1685985335119.jpg'/>
@@ -43,8 +43,8 @@ export default function Home(){
                 <h2>iPhone 14</h2>
                 <div className='AmazingTextForPic'>Amazing.</div>
                 <div className='IphonePictureAtags'>
-                    <a href='/'>{'Learn more >'}</a>
-                    <a href='/'>{'Buy >'}</a>
+                    <a onClick={() => window.alert('Page Comming Soon')} className='deadLinks'>{'Learn more >'}</a>
+                    <a href='/buy/4'>{'Buy >'}</a>
                 </div>
                 <img  src='https://media.wired.com/photos/6318ec748990652479ff3765/master/w_1920,c_limit/Apple-iPhone-14-Pro-Colors-Gear.jpg'/>
             </div>
@@ -54,23 +54,23 @@ export default function Home(){
                 <div className='GridImg'>
                     <div className='GridIphonePicText'>iPhone 14 Pro</div>
                     <div className='GridLearnMoreATag'>
-                        <a href='/'>{'Learn more >'}</a>
-                        <a href='/'>{'Buy >'}</a>
+                        <a onClick={() => window.alert('Page Comming Soon')} className='deadLinks'>{'Learn more >'}</a>
+                        <a href='/buy/6'>{'Buy >'}</a>
                     </div>
                     <img src='https://media.shellypalmer.com/wp-content/images/2020/10/iphone12pro.jpg'/>
                 </div>
 
                 <div className='GridImg'>
                     <div className='LearnMoreATagPic2'>
-                        <a href='/'>{'Learn more >'}</a>
-                        <a href='/'>{'Buy >'}</a>
+                        <a onClick={() => window.alert('Page Comming Soon')} className='deadLinks'>{'Learn more >'}</a>
+                        <a href='/buy/9'>{'Buy >'}</a>
                     </div>
                     <img src='https://rukminim2.flixcart.com/image/800/600/cms-rpd-img/647cefff31384d6eac2616ab7d176cc3_183efc7b91f_image.jpeg'/>
                 </div >
 
                 <div className='GridImg'>
                     <div className='LearnMoreATagPic3'>
-                        <a href='/'>{'Learn more >'}</a>
+                        <a onClick={() => window.alert('Page Comming Soon')} className='deadLinks'>{'Learn more >'}</a>
                         <a href='/'>{'Buy >'}</a>
                     </div>
                     <img src='https://i.ytimg.com/vi/UfawgQJICU8/maxresdefault.jpg' />
@@ -78,7 +78,7 @@ export default function Home(){
 
                 <div className='GridImg'>
                     <div className='LearnMoreATagPic4'>
-                        <a href='/'>{'Learn more >'}</a>
+                        <a onClick={() => window.alert('Page Comming Soon')} className='deadLinks'>{'Learn more >'}</a>
                     </div>
                     <img src='https://i.ytimg.com/vi/TX9qSaGXFyg/maxresdefault.jpg' />
                 </div>
@@ -87,7 +87,7 @@ export default function Home(){
                 <div className='GridImg'>
                     <div className='TitleForGridPic5'> <img src='https://media.idownloadblog.com/wp-content/uploads/2018/07/Apple-logo-black-and-white.png' /> Trade In</div>
                     <div className='TestForGridPic5'>Upgrade and Save. It's that Easy.</div>
-                    <a className='AtagForPic5' href='/'>{'See what your device is worth >'}</a>
+                    <a className='AtagForPic5 deadLinks' onClick={() => window.alert('Page Comming Soon')} >{'See what your device is worth >'}</a>
                     <img src='https://images.macrumors.com/t/QF--wPMo9DoxNMzxamzL8rKka-A=/1600x0/article-new/2021/03/iPhone-trade-in-16x9.jpg' />
                 </div>
 
@@ -95,8 +95,8 @@ export default function Home(){
                     <div className='TitleForGridPic6'> <img src='https://media.idownloadblog.com/wp-content/uploads/2018/07/Apple-logo-black-and-white.png' /> Card</div>
                     <div className='TextForGridPic6'>Get up to 3% Daily Cash back with every purchase.</div>
                     <div className='LearnMoreATagPic6'>
-                        <a href='/'>{'Learn more >'}</a>
-                        <a href='/'>{'Apply now >'}</a>
+                        <a onClick={() => window.alert('Page Comming Soon')} className='deadLinks'>{'Learn more >'}</a>
+                        <a onClick={() => window.alert('Page Comming Soon')} className='deadLinks'>{'Apply now >'}</a>
                     </div>
                     <img src='https://i.blogs.es/d2c016/apple-card/840_560.jpeg' />
                 </div>

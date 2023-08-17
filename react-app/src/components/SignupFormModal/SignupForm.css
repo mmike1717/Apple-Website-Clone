@@ -1,0 +1,49 @@
+.SignUpMainContainer{
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.ImgForSignUp{
+    width: 200px;
+    height: 200px;
+
+}
+
+
+.SignUpTitle{
+    font-size: 25px;
+    margin-top: 15px;
+
+}
+
+
+.FormForSignUp{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin-top: -10px; */
+    margin-bottom: 20px;
+    row-gap: 10px;
+}
+
+
+.ButtonForSignUp{
+    width: 145px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: #227dff;
+    color: white;
+}
+
+
+.EachErrorContainer{
+    font-size: 15px;
+    color: red;
+    text-align: center;
+}

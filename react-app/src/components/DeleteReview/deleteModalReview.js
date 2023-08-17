@@ -18,7 +18,7 @@ function DeleteReviewModal({
 
   };
 
-  return <button onClick={onClick}>{buttonText}</button>;
+  return <button className="DeleteButtonInReview" onClick={onClick}>{buttonText}</button>;
 }
 
 export default DeleteReviewModal;

@@ -1,3 +1,42 @@
 .MainContainerForThanks{
-    width: 200px;
+    width: 550px;
+    height: 348px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    align-items: center;
+
+}
+
+
+.ThankYouImg{
+    width: 150px;
+}
+
+
+.ThankYouTitleText{
+    font-size: 28px;
+    margin-top: 8px;
+}
+
+
+.SmallParagraph{
+    width: 365px;
+    text-align: center;
+
+}
+
+
+.BackHomeButtonContainer{
+    width: 550px;
+    margin-top: 10px;
+}
+
+
+.BackHomeButton{
+    border: none;
+    background-color: transparent;
+    color: #227dff;
+    cursor: pointer;
+    font-size: 13px;
 }

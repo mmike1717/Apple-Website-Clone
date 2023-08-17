@@ -440,7 +440,7 @@
     column-gap: 40px;
     background-color: #ecebeb;
     margin: 90px 0;
-    height: 500px;
+    /* height: 500px; */
 }
 
 .ItemNameAndImgContainer{
@@ -546,4 +546,64 @@
     justify-content: center;
     margin-top: 13px;
     color: red;
+}
+
+
+/* ---------------------------- Reviews Section ------------------------ */
+
+
+.ReviewsMainContainer{
+    width: 980px;
+    margin: 0 auto 30px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 17px;
+}
+
+
+.ReviewTitleContainer{
+    font-size: 42px;
+    font-weight: bold;
+    /* margin-bottom: 20px; */
+}
+
+
+.EachReviewContainer{
+    display: flex;
+    column-gap: 5px;
+    margin-bottom: 30px;
+}
+
+.ContainerReviewUserImg{
+    width: 29px;
+    height: 19px;
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+
+.EditDeleteButtonsContainer{
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    justify-content: center;
+    row-gap: 10px;
+
+}
+
+
+.EditButtonInReview{
+    border: none;
+    background-color: transparent;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+
+.DeleteButtonInReview{
+    border: none;
+    background-color: transparent;
+    font-size: 15px;
+    cursor: pointer;
 }

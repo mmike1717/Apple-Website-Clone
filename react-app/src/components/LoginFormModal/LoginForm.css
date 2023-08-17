@@ -1,0 +1,58 @@
+
+.MainContainerForLogIn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+
+}
+
+
+.ImgForLogIn{
+    width: 200px;
+    height: 200px;
+}
+
+
+.LogInTitleText{
+    font-size: 25px;
+    margin-top: 10px;
+}
+
+
+.FormContainer{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    row-gap: 10px;
+    margin-bottom: 20px;
+    align-items: center;
+    /* margin-top: -13px; */
+
+
+}
+
+
+.SignInButton{
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    background-color: #227dff;
+    color: white;
+}
+
+
+.ErrorsContainer{
+    width: 217px;
+    color: red;
+}
+
+
+.DemoUserButton{
+    margin-bottom: 15px;
+    padding: 7px;
+    border: none;
+    border-radius: 10px;
+    background-color: lightgray;
+    cursor: pointer;
+}

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useModal } from "../../context/Modal";
 import { thunkGetSingleItem } from '../../store/products'
 import { thunkEditAReview, thunkGetAllReview } from '../../store/reviews'
+import './editReview.css'
 
 
 export default function EditReview ({reviewId, contents, ratings, itemId}) {
@@ -17,6 +18,7 @@ export default function EditReview ({reviewId, contents, ratings, itemId}) {
     // const { itemId } = useParams()
 
     const sessionUser = useSelector((state) => state.session.user);
+    const item = useSelector((state) => state.products.singleItem);
 
 
 
@@ -40,30 +42,32 @@ export default function EditReview ({reviewId, contents, ratings, itemId}) {
             .then(closeModal)
     }
 
-    const disabled = content.length < 10 || rating === 0 ? true : false
+    const disabled = content.length < 10 || rating === 0 || content.length > 500 ? true : false
 
 
 
 
     return (
-        <div>
+        <div className='MainContainerForReview'>
             {/* handleSubmit}> */}
 
-            <form onSubmit={onSubmit}>
-                <h3 id='RatingTitle'> How was your stay?</h3>
+            <form className='EditReviewFormContainer' onSubmit={onSubmit}>
+                <div className='TitleForEditReview' id='RatingTitle'> How did you like your {item?.name}?</div>
                 {/* <div>{errors.message && <div>Review already exists for this spot</div>}</div> */}
+                <div>{content.length < 10 ? <div className='EditReviewTextError'>Review needs to have 10 more more characters</div> : null}</div>
+                <div>{content.length > 500 ? <div className='EditReviewTextError'>Review needs to have 10 more more characters</div> : null}</div>
                 <textarea
-                    // className='ReviewTextContainer'
+                    className='EditReviewTextContainer'
                     placeholder='Leave your review here...'
                     type='text'
                     value={content}
                     onChange={(e) => setContent(e.target.value)}
                 />
 
-                {/* {errors.firstName && <h5>{errors.firstName}</h5>} */}
-                {/* disabled={!!errors.firstName} */}
-                {/* <label>Stars: </label> */}
-                {/* <input
+                {/* {errors.firstName && <h5>{errors.firstName}</h5>}
+                disabled={!!errors.firstName} */}
+                {/* <label>Stars: </label>
+                <input
                         value={stars}
                         onChange={(e) => setStars(e.target.value)}
                         type="number"

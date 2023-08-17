@@ -1,24 +1,23 @@
 import { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom'
 import { useModal } from "../../context/Modal";
 import { thunkGetSingleItem } from '../../store/products';
 import { thunkCreateAReview } from '../../store/reviews';
-
+import './createReview.css'
 
 
 
 export default function CreateReview({itemId}) {
     const [content, setContent] = useState('')
     const [rating, setRating] = useState(0)
-    // const [errors, setErrors] = useState({})
+    const [errors, setErrors] = useState({})
     const [fillStars, setFillStars] = useState(rating);
     const { closeModal } = useModal()
 
     const dispatch = useDispatch()
-    // const { itemId } = useParams()
 
     const sessionUser = useSelector((state) => state.session.user);
+    const item = useSelector((state) => state.products.singleItem);
 
 
 
@@ -33,42 +32,43 @@ export default function CreateReview({itemId}) {
         }
 
 
-        // if (reviewData.errors) {
-        //     setErrors(reviewData.errors)
-        // }
+        if (content.length < 10) {
+            setErrors({content1: 'Must have at least 10 characters'})
+        }
+        if(content.length > 500){
+            setErrors({content2: 'Must be less than 500 characters'})
+        }
+        if(rating === 0){
+            setErrors({rating: 'Must pick star rating'})
+        }
 
-        dispatch(thunkCreateAReview(reviewData))
-            .then(() => dispatch(thunkGetSingleItem(itemId)))
-            .then(closeModal)
+        else if(!Object.values(errors).length){
+            dispatch(thunkCreateAReview(reviewData))
+                .then(() => dispatch(thunkGetSingleItem(itemId)))
+                .then(closeModal)
+        }
     }
 
-    const disabled = content.length < 10 || rating === 0 ? true : false
+    // const disabled = content.length < 10 || content.length > 500 || rating === 0 ? true : false
 
 
 
     return (
-        <div>
-            {/* handleSubmit}> */}
+        <div className='CreateReviewMainContainer'>
 
-            <form onSubmit={onSubmit}>
-                <h3 id='RatingTitle'> How was your stay?</h3>
-                {/* <div>{errors.message && <div>Review already exists for this spot</div>}</div> */}
+            <form className='CreateReviewFormContainer' onSubmit={onSubmit}>
+                <div id='RatingTitle'> How did you like your {item?.name}?</div>
+                <div className='CreateReviewError'>{errors.content2 && <div>{errors.content2}</div>}</div>
+                <div className='CreateReviewError'>{errors.content1 && <div>{errors.content1}</div>}</div>
                 <textarea
-                    // className='ReviewTextContainer'
+                    className='CreateReviewTextContainer'
                     placeholder='Leave your review here...'
                     type='text'
                     value={content}
                     onChange={(e) => setContent(e.target.value)}
-                />
+                    />
 
-                {/* {errors.firstName && <h5>{errors.firstName}</h5>} */}
-                {/* disabled={!!errors.firstName} */}
-                {/* <label>Stars: </label> */}
-                {/* <input
-                        value={stars}
-                        onChange={(e) => setStars(e.target.value)}
-                        type="number"
-                        /> */}
+                <div className='CreateReviewStarsError'>{errors.rating && <div>{errors.rating}</div>}</div>
                 <div className='StarsContainer'>
                     <div onClick={() => { setRating(1) }} onMouseEnter={() => { setFillStars(1) }} onMouseLeave={() => setFillStars(rating)} className={fillStars >= 1 ? "filled" : "empty"} >
                         <i class="fa-sharp fa-solid fa-star"></i>
@@ -87,7 +87,10 @@ export default function CreateReview({itemId}) {
                     </div>
                     <div>Stars</div>
                 </div>
-                <button disabled={disabled} className={disabled? 'DisabledColorButton' : 'SubmitReviewButton'}>Submit Your Review</button>
+                <div className='SubmitCreatedReviewContainer'>
+                    <button className={'SubmitReviewButton'}>Submit Your Review</button>
+
+                </div>
             </form>
         </div>
     )
