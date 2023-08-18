@@ -64,20 +64,20 @@ function Navigation({ isLoaded }) {
 			<>
 				<div className='SecondColumnInDropDown'>
 					<div className='TitleOfColumn'>Shop {itemName}</div>
-					<a>Shop {itemName}</a>
-					<a>{itemName} Accessories</a>
-					<a>Apple Trade In</a>
-					<a>Financing</a>
-					<a>College Student Offer</a>
+					<a onClick={()=> window.alert('Page coming soon')}>Shop {itemName}</a>
+					<a onClick={()=> window.alert('Page coming soon')}>{itemName} Accessories</a>
+					<a onClick={()=> window.alert('Page coming soon')}>Apple Trade In</a>
+					<a onClick={()=> window.alert('Page coming soon')}>Financing</a>
+					<a onClick={()=> window.alert('Page coming soon')}>College Student Offer</a>
 				</div>
 				<div className='SecondColumnInDropDown'>
 					<div className='TitleOfColumn'>More {itemName}</div>
-					<a>{itemName} Support</a>
-					<a>{itemName} Preview</a>
-					<a>AppleCare+ for {itemName}</a>
-					<a>Logic for {itemName}</a>
-					<a>Education</a>
-					<a>iCloud+</a>
+					<a onClick={()=> window.alert('Page coming soon')}>{itemName} Support</a>
+					<a onClick={()=> window.alert('Page coming soon')}>{itemName} Preview</a>
+					<a onClick={()=> window.alert('Page coming soon')}>AppleCare+ for {itemName}</a>
+					<a onClick={()=> window.alert('Page coming soon')}>Logic for {itemName}</a>
+					<a onClick={()=> window.alert('Page coming soon')}>Education</a>
+					<a onClick={()=> window.alert('Page coming soon')}>iCloud+</a>
 
 				</div>
 			</>

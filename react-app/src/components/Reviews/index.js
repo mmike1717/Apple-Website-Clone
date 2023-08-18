@@ -61,7 +61,7 @@ export default function Reviews({ itemId }) {
                                     <i class="fa-sharp fa-solid fa-star"></i>
                                 </div>
                             </div>
-                            <div>{review?.content}</div>
+                            <div className="ReviewContentContainer">{review?.content}</div>
                         </div>
                         <div className="EditDeleteButtonsContainer">
                             {review?.user_id === sessionUser?.id ? <EditReviewModal buttonText={'Edit'} modalComponent={<EditReview reviewId={review.id} contents={review.content} ratings={review.rating} itemId={itemId} />} /> : null}
