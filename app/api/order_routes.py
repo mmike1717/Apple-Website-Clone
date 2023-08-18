@@ -60,6 +60,7 @@ def edit_order(order_id):
 def delete_order(order_id):
     order_to_delete = Order.query.get(order_id)
     db.session.delete(order_to_delete)
+    db.session.delete(order_to_delete.product)
     db.session.commit()
     return {'message':'deleted'}
 
