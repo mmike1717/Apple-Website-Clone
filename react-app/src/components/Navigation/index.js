@@ -208,16 +208,16 @@ function Navigation({ isLoaded }) {
 					</div>
 				</div>
 				<div>
-					<NavLink className='CategoryNavLink' exact to="/">Entertainment</NavLink>
+					<NavLink onClick={() => window.alert('Page Coming Soon')} className='CategoryNavLink' exact to="/">Entertainment</NavLink>
 				</div>
 				<div>
-					<NavLink className='CategoryNavLink' exact to="/">Accessories</NavLink>
+					<NavLink onClick={() => window.alert('Page Coming Soon')} className='CategoryNavLink' exact to="/">Accessories</NavLink>
 				</div>
 				<div>
-					<NavLink className='CategoryNavLink' exact to="/">Support</NavLink>
+					<NavLink onClick={() => window.alert('Page Coming Soon')} className='CategoryNavLink' exact to="/">Support</NavLink>
 				</div>
 
-				<button onClick={() => handleSearchClick()} className='MagnifyingGlassIcon'><i className="fa fa-magnifying-glass"/></button>
+				<button onClick={() => window.alert('Coming Soon')} className='MagnifyingGlassIcon'><i className="fa fa-magnifying-glass"/></button>
 
 				<div className={open9 ? "searchblock" : "hidden"}>
 					{/* <SearchBarInfo /> */}
