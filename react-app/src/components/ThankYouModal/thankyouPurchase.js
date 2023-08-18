@@ -1,17 +1,27 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import './thankyou.css'
+import { useModal } from "../../context/Modal";
+
+
 
 
 
 
 function ThankYouInfo(){
 const history = useHistory()
+const { closeModal } = useModal()
+
+const handleClick = () => {
+    history.push('/')
+    closeModal()
+}
+
 
     return (
         <div className="MainContainerForThanks">
             <div className="BackHomeButtonContainer">
-                <button className="BackHomeButton" onClick={() => history.push('/home')}> {'<'} Return Home</button>
+                <button className="BackHomeButton" onClick={() => handleClick()}> {'<'} Return Home</button>
             </div>
             <img className="ThankYouImg" src="https://www.amacusg.gatech.edu/wiki/images/e/e5/Apple_Logo.png" />
             <div className="ThankYouTitleText">Thank you for shopping with Apple.</div>

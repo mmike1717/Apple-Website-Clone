@@ -3,7 +3,7 @@ from flask_login import UserMixin
 
 
 
-class Order(db.Model, UserMixin):
+class Order(db.Model):
     __tablename__ = 'orders'
 
     if environment == "production":
@@ -26,6 +26,7 @@ class Order(db.Model, UserMixin):
 
     product = db.relationship(
             "Product",
+            # cascade = 'all, delete-orphan',
             back_populates="order"
         )
 

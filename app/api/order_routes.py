@@ -69,6 +69,7 @@ def delete_order(order_id):
 def checkout(user_id):
     all_orders = Order.query.filter(user_id == Order.user_id)
     for each in all_orders:
+        db.session.delete(each.product)
         db.session.delete(each)
         db.session.commit()
     return {'message':'deleted all cart'}

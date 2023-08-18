@@ -34,6 +34,7 @@ class Product(db.Model, UserMixin):
 
     order = db.relationship(
         "Order",
+        # cascade = 'all, delete-orphan',
         back_populates="product"
     )
 
