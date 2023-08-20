@@ -6,3 +6,4 @@ from .orders import Order
 from .products import Product
 from .reviews import Review
 from .items_in_store import InStoreItem
+from .profile_info import Profile

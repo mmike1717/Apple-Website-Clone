@@ -4,9 +4,11 @@ from wtforms.validators import DataRequired, Email, ValidationError
 
 
 class ProfileForm(FlaskForm):
-    address = StringField('address', validators=[DataRequired()]),
-    apt = StringField('apt'),
-    zip_code = IntegerField('zip_code', validators=[DataRequired()]),
-    city = StringField('city', validators=[DataRequired()]),
-    state = StringField('state', validators=[DataRequired()]),
-    country = StringField('country', validators=[DataRequired()])
+    image = StringField('image')
+    address = StringField('address')
+    apt = StringField('apt')
+    zip_code = IntegerField('zip_code')
+    city = StringField('city')
+    state = StringField('state')
+    country = StringField('country')
+    user_id = IntegerField('user_id')

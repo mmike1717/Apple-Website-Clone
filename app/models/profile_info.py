@@ -10,12 +10,14 @@ class Profile(db.Model, UserMixin):
 
 
     id = db.Column(db.Integer, primary_key=True)
+    image = db.Column(db.String)
     address = db.Column(db.String, nullable = False)
     apt = db.Column(db.String)
     zip_code = db.Column(db.Integer, nullable=False)
     city = db.Column(db.String, nullable = False)
     state = db.Column(db.String, nullable = False)
     country = db.Column(db.String, nullable = False)
+    user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')), nullable=False)
 
     user = db.relationship(
             "User",

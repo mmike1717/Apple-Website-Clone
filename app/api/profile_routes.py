@@ -1,7 +1,7 @@
 
 from flask import Blueprint, jsonify, session,request
 from flask_login import login_required,current_user
-from app.models import Profile, User
+from app.models import User, Profile
 from app.models import db
 from app.forms.profile_form import ProfileForm
 from sqlalchemy import create_engine
@@ -17,6 +17,20 @@ SessionFactory = sessionmaker(bind=engine)
 session = SessionFactory()
 
 
+@profile_routes.route('/get_profile/<int:user_id>')
+@login_required
+def get_single_profile(user_id):
+
+    if user_id:
+        profile = Profile.query.filter(user_id == Profile.user_id)
+        for each in profile:
+            return each.to_dict()
+
+    return {'error': 'no profile'}
+
+
+
+
 @profile_routes.route('/new', methods=['POST'])
 @login_required
 def create_Profile():
@@ -24,18 +38,21 @@ def create_Profile():
     form['csrf_token'].data = request.cookies['csrf_token']
     # print(form.data,'===========')
     if form.validate_on_submit():
+        print(form.data, '===========')
         profile_info = Profile(
+            image = form.data['image'],
             address = form.data['address'],
             apt = form.data['apt'],
             zip_code = form.data['zip_code'],
             city = form.data['city'],
             state = form.data['state'],
-            country = form.data['country']
+            country = form.data['country'],
+            user_id = form.data['user_id']
         )
         # print('backend-----------',channel)
         db.session.add(profile_info)
         db.session.commit()
-        # print(product.to_dict())
+        # print(profile_info.to_dict(), '-----------')
         return profile_info.to_dict()
 
 
@@ -44,13 +61,17 @@ def create_Profile():
 @login_required
 def edit_profile(user_id):
     form = ProfileForm()
-    user = User.query.get(user_id)
+    profile = Profile.query.get(user_id)
     form['csrf_token'].data = request.cookies['csrf_token']
-    user.profile_info.address = form.data['address']
-    user.profile_info.apt = form.data['apt']
-    user.profile_info.zip_code = form.data['zip_code']
-    user.profile_info.city = form.data['city']
-    user.profile_info.state= form.data['state']
-    user.profile_info.country = form.data['country']
+    print(profile, '-----------------')
+    profile.address = form.data['address']
+    profile.apt = form.data['apt']
+    profile.zip_code = form.data['zip_code']
+    profile.city = form.data['city']
+    profile.state= form.data['state']
+    profile.country = form.data['country']
     db.session.commit()
-    return user.profile.to_dict()
+    return profile.to_dict()
+    # for each in user.profile_info:
+    #     print(each.to_dict(), '==================')
+    #     return each.to_dict()

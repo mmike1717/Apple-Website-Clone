@@ -1,5 +1,6 @@
 
 const CREATE_PROFILE = 'profile/CREATE_PROFILE'
+const EDIT_PROFILE = 'profile/GET_PROFILE'
 
 
 const createProfile = (data) => ({
@@ -7,10 +8,49 @@ const createProfile = (data) => ({
     data
 })
 
+const editProfile= (data) => ({
+    type: EDIT_PROFILE,
+    data
+})
+
+
+export const thunkEditProfile = (profileId, data) => async(dispatch) => {
+    const res = await fetch(`api/profile/edit/${profileId}`,{
+        method:'PUT',
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify(data)
+    })
+    if (res.ok)    {
+        const result = await res.json()
+        dispatch(createProfile(result))
+        return result
+    }
+    else if (res.status < 500){
+    const err = await res.json()
+    return err
+}
+}
+
+
+
+export const thunkGetUserProfile = (userId) => async(dispatch) => {
+    const res = await fetch(`api/profile/get_profile/${userId}`)
+
+    if (res.ok)    {
+        const result = await res.json()
+        dispatch(createProfile(result))
+        return result
+    }
+    else if (res.status < 500){
+    const err = await res.json()
+    return err
+}
+}
+
 
 
 export const thunkCreateProfileInfo = (data) => async (dispatch) => {
-    const response = await fetch(`/api/product/new`, {
+    const response = await fetch(`/api/profile/new`, {
         method:'POST',
         headers:{"Content-Type":"application/json"},
         body:JSON.stringify(data)

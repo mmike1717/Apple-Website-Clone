@@ -8,6 +8,7 @@ import Navigation from "./components/Navigation";
 import CreateProduct from "./components/CreateProduct";
 import CartOrders from "./components/Orders/orders";
 import Home from "./components/homePage";
+import CreateProfile from "./components/CreateProfile/createProfile";
 
 function App() {
   const dispatch = useDispatch();
@@ -23,6 +24,9 @@ function App() {
         <Switch>
           <Route exact path='/'>
             <Home />
+          </Route>
+          <Route exact path='/account'>
+            <CreateProfile />
           </Route>
           <Route path="/login" >
             <LoginFormPage />
