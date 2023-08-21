@@ -14,7 +14,7 @@ export default function DeleteReview({ reviewId }) {
     const onSubmit = () => {
         dispatch(thunkDeleteAReview(reviewId))
             .then(() => dispatch(thunkGetSingleItem(itemId)))
-            .then(closeModal)
+            .then(()=>closeModal())
     }
 
     return (

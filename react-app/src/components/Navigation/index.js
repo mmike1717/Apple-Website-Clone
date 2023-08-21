@@ -92,7 +92,8 @@ function Navigation({ isLoaded }) {
 		<div className='NavBarContainer'>
 			<div className='ContainerInsideNavBar'>
 				<div>
-					<NavLink className='CategoryNavLink' exact to="/"> <img className='NavBarAppleLogo' src='https://media.idownloadblog.com/wp-content/uploads/2018/07/Apple-logo-black-and-white.png' /> </NavLink>
+				{/* https://media.idownloadblog.com/wp-content/uploads/2018/07/Apple-logo-black-and-white.png */}
+					<NavLink className='CategoryNavLink' exact to="/"> <img className='NavBarAppleLogo' src='https://www.logolynx.com/images/logolynx/a1/a150d5af2faa1c41533214a3ff8e580f.jpeg' /> </NavLink>
 				</div>
 				<div>
 					<NavLink className='CategoryNavLink' onMouseOver={() => setOpen1(true)} onMouseLeave={() => setOpen1(false)} exact to="/">Store
