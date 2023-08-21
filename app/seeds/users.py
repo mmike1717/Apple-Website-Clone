@@ -161,10 +161,12 @@ def seed_users():
     db.session.add(demo)
     db.session.add(marnie)
     db.session.add(bobbie)
-    db.session.add_all([iphone12, iphone13, iphone13mini, iphone14, iphone14plus, iphone14Pro, iphone14ProMax, iPadPro, iPadPro, iPadPro12, MacBookAir13, MacBookAir15])
+    db.session.add(alex)
+    db.session.add_all([iphone12, iphone13, iphone13mini, iphone14, iphone14plus, iphone14Pro, iphone14ProMax, iPadPro, iPadPro, iPadPro12, MacBookAir13, MacBookAir15,
+    iPadAir, iPad10th, iPadmini, MacBookPro14, MacBookPro16, WatchUltra, WatchSeries8, WatchSE, WatchNike])
     db.session.add_all([AppleWatchUltra, AirPodsPro2])
     db.session.add_all([Mac, iPad, iphone, watch, Vision, AirPods, Tv_Home, Entertainment, Accessories ])
-    db.session.add_all([review1, review2, review3, review4, review5, review6])
+    db.session.add_all([review1, review2, review3, review4, review5, review6, review7, review8])
     db.session.commit()
 
 
