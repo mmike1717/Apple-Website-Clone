@@ -21,6 +21,7 @@ class Profile(db.Model, UserMixin):
 
     user = db.relationship(
             "User",
+            cascade = 'all, delete',
             back_populates="profile_info"
         )
 

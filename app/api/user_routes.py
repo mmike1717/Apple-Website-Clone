@@ -36,7 +36,7 @@ def user(id):
 
 @user_routes.route('/delete/<int:id>')
 @login_required
-def user(id):
+def delete_user(id):
     """
     Query for a user by id and deletes user
     """

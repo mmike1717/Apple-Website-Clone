@@ -32,6 +32,11 @@ class User(db.Model, UserMixin):
             back_populates="user"
         )
 
+    save_list = db.relationship(
+            "Save",
+            back_populates="user"
+        )
+
     @property
     def password(self):
         return self.hashed_password

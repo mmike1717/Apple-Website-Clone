@@ -25,11 +25,11 @@ class Product(db.Model, UserMixin):
     #     )
 
 
-    # review = db.relationship(
-    #         "Review",
-    #         cascade = 'all, delete-orphan',
-    #         back_populates="product"
-    #     )
+    save_list  = db.relationship(
+            "Save",
+            # cascade = 'all, delete-orphan',
+            back_populates="product"
+        )
 
 
     order = db.relationship(
