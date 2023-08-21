@@ -11,6 +11,11 @@ def seed_users():
         first_name='marnie', last_name='winters', email='marnie@aa.io', password='password')
     bobbie = User(
         first_name='bobbie', last_name='lee', email='bobbie@aa.io', password='password')
+
+    alex = User(
+        first_name='Alex', last_name='Rogers', email='rogers@aa.io', password='password')
+
+
     iphone12 = InStoreItem(
         name='iPhone12', price=599.00, model='reg', category_id=3 , image='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/refurb-iphone-12-black-2020_AV1?wid=1144&hei=1144&fmt=jpeg'
     )
@@ -39,11 +44,49 @@ def seed_users():
         name='iPad Pro', price=1099.00, model='12-inch Display', category_id= 2, image='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-pro-model-select-gallery-1-202212?wid=5120&hei=2880&fmt=p-jpg'
     )
     MacBookAir15 = InStoreItem(
-        name='MacBook Air 15', price=1299.00, model='15-inch (M-2 Chip)', category_id= 1, image='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mba15-midnight-select-202306?wid=904&hei=840&fmt=jpeg'
+        name='MacBook Air', price=1299.00, model='15-inch (M-2 Chip)', category_id= 1, image='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mba15-midnight-select-202306?wid=904&hei=840&fmt=jpeg'
     )
     MacBookAir13 = InStoreItem(
-        name='MacBook Air 13', price=1099.00, model='13-inch (M-2 Chip)', category_id= 1, image='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/macbook-air-midnight-select-20220606?wid=904&hei=840&fmt=jpeg'
+        name='MacBook Air', price=1099.00, model='13-inch (M-2 Chip)', category_id= 1, image='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/macbook-air-midnight-select-20220606?wid=904&hei=840&fmt=jpeg'
     )
+
+    iPadAir = InStoreItem(
+        name='iPad', price=549.00, model='Air', category_id= 2, image='https://atstore.ba/wp-content/uploads/2020/10/iPad_Air_Wi-Fi_10.9_in_Space_Gray_PDP_Image_Position-1B_WWEN-scaled-1.jpg'
+    )
+
+    iPad10th = InStoreItem(
+        name='iPad', price=449.00, model='(10th generation)', category_id= 2, image='https://static.esrgear.com/blog/wp-content/uploads/2022/08/new-design-10th.jpg'
+    )
+
+    iPadmini = InStoreItem(
+        name='iPad', price=499.00, model='mini', category_id= 2, image='https://www.apple.com/newsroom/images/product/ipad/standard/Apple_iPad-mini_hero_09142021_big.jpg.large.jpg'
+    )
+
+    MacBookPro14 = InStoreItem(
+        name='MacBook Pro', price=1899.00, model='14-inch', category_id= 1, image='https://photos5.appleinsider.com/gallery/0-87822-14-design-xl.jpg'
+    )
+
+    MacBookPro16 = InStoreItem(
+        name='MacBook Pro', price=2399.00, model='16-inch', category_id= 1, image='https://www.apple.com/newsroom/images/product/mac/standard/Apple-MacBook-Pro-M2-Pro-and-M2-Max-hero-230117.jpg.landing-big_2x.jpg'
+    )
+
+    WatchUltra = InStoreItem(
+        name='Apple Watch', price=799.00, model='Ultra', category_id= 4, image='https://tech101.com.ph/wp-content/uploads/2023/02/APPLE-WATCH-ULTRA-3.jpg'
+    )
+
+
+    WatchSeries8 = InStoreItem(
+        name='Apple Watch', price=399.00, model='Series 8', category_id= 4, image='https://www.iphonelife.com/sites/iphonelife.com/files/series8.jpg'
+    )
+
+    WatchSE = InStoreItem(
+        name='Apple Watch', price=249.00, model='SE', category_id= 4, image='https://www.apple.com/newsroom/images/product/watch/lifestyle/Apple_announces-watch-se_09152020_big.jpg.large.jpg'
+    )
+
+    WatchNike = InStoreItem(
+        name='Apple Watch', price=249.00, model='Nike', category_id= 4, image='https://static1.xdaimages.com/wordpress/wp-content/uploads/2022/09/Apple-Watch-Nike.jpg'
+    )
+
 
     AppleWatchUltra = Product(
         name='Apple Watch Ultra', price=799.00, color='silver', storage=0, model='apple',
@@ -86,26 +129,33 @@ def seed_users():
     )
 
     review1= Review(
-        content='Phone was okay', rating=3.2, created_at=datetime(2023, 6, 14), user_id = 1, store_item_id = 1
+        content='Phone was okay. Should have gotten the 14 instead', rating=3.2, created_at=datetime(2023, 6, 14), user_id = 1, store_item_id = 1
     )
 
     review2= Review(
-        content='Phone was great', rating=4.0, created_at=datetime(2023, 8, 8), user_id = 1, store_item_id = 3
+        content="Phone and the photos are they besttttt I’m mean really great photos", rating=4.0, created_at=datetime(2023, 8, 8), user_id = 1, store_item_id = 3
     )
 
     review3= Review(
-        content='this was awesome', rating=4.5, created_at=datetime(2023, 7, 10), user_id = 2, store_item_id = 7
+        content='this was awesome. Im glad i bought the phone', rating=4.5, created_at=datetime(2023, 7, 10), user_id = 2, store_item_id = 7
     )
 
     review4= Review(
-        content='was really nice', rating=4.2, created_at=datetime(2023, 8, 8), user_id = 2, store_item_id = 8
+        content='was really nice. Needed an ipad and happy I got this one', rating=4.2, created_at=datetime(2023, 8, 8), user_id = 2, store_item_id = 8
     )
 
     review5= Review(
-        content='was really great', rating=4.0, created_at=datetime(2023, 8, 8), user_id = 3, store_item_id = 9
+        content='was really great, needed a second computer', rating=4.0, created_at=datetime(2023, 8, 8), user_id = 3, store_item_id = 13
     )
     review6= Review(
-        content='happy to have bought this', rating=4.3, created_at=datetime(2023, 8, 8), user_id = 3, store_item_id = 11
+        content='happy to have bought this, really needed a computer to be able to code.', rating=4.3, created_at=datetime(2023, 8, 8), user_id = 3, store_item_id = 11
+    )
+
+    review7= Review(
+        content='should have bought a different ipad ', rating=3.0, created_at=datetime(2023, 8, 8), user_id = 4, store_item_id = 14
+    )
+    review8= Review(
+        content='happy to have bought this, really needed a computer to be able to code.', rating=4.0, created_at=datetime(2023, 8, 8), user_id = 4, store_item_id = 15
     )
 
     db.session.add(demo)
