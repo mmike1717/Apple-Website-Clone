@@ -23,7 +23,7 @@ export default function Home(){
 
     return (
         <>
-            {/* <div className='GifLogo'><img src='https://cdn.dribbble.com/users/5342679/screenshots/11825480/media/763edad7f5502aab0fd5bc7fcb65568b.gif'/></div> */}
+            <div className='GifLogo'><img src='https://cdn.dribbble.com/users/5342679/screenshots/11825480/media/763edad7f5502aab0fd5bc7fcb65568b.gif'/></div>
             <div>
                 <div className='HomePageMacBookContainer'>
                     <h1>MacBook Air 15"</h1>

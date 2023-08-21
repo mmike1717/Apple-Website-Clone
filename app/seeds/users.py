@@ -17,7 +17,7 @@ def seed_users():
 
 
     iphone12 = InStoreItem(
-        name='iPhone12', price=599.00, model='reg', category_id=3 , image='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/refurb-iphone-12-black-2020_AV1?wid=1144&hei=1144&fmt=jpeg'
+        name='iPhone12', price=599.00, model='reg', category_id=3 , image='https://www.apple.com/newsroom/images/product/iphone/standard/apple_iphone-12_new-design_10132020_big.jpg.large.jpg'
     )
     iphone13mini = InStoreItem(
         name='iPhone13', price=599.00, model='mini', category_id=3 , image='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-13-model-unselect-gallery-1-202207?wid=5120&hei=2880&fmt=p-jpg'
@@ -29,7 +29,7 @@ def seed_users():
         name='iPhone14', price=799.00, model='reg', category_id=3 , image='https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6505/6505126cv2d.jpg'
     )
     iphone14plus = InStoreItem(
-        name='iPhone14', price=899.00, model='plus', category_id=3 , image='https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6505/6505126cv2d.jpg'
+        name='iPhone14', price=899.00, model='plus', category_id=3 , image='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-finish-select-202209-6-7inch_AV1?wid=5120&hei=2880&fmt=p-jpg'
     )
     iphone14Pro = InStoreItem(
         name='iPhone14', price=899.00, model='Pro', category_id= 3, image='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-pro-finish-select-202209-6-1inch-deeppurple?wid=5120&hei=2880&fmt=p-jpg'
@@ -44,10 +44,10 @@ def seed_users():
         name='iPad Pro', price=1099.00, model='12-inch Display', category_id= 2, image='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-pro-model-select-gallery-1-202212?wid=5120&hei=2880&fmt=p-jpg'
     )
     MacBookAir15 = InStoreItem(
-        name='MacBook Air', price=1299.00, model='15-inch (M-2 Chip)', category_id= 1, image='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mba15-midnight-select-202306?wid=904&hei=840&fmt=jpeg'
+        name='MacBook Air', price=1299.00, model='15-inch (M-2 Chip)', category_id= 1, image='https://images.macrumors.com/t/C_el-x2Ls_Kz9DDMbbzMsQfXl5Q=/1600x0/article-new/2023/06/MacBook-Air-15-Inch-Feature-Teal.jpg'
     )
     MacBookAir13 = InStoreItem(
-        name='MacBook Air', price=1099.00, model='13-inch (M-2 Chip)', category_id= 1, image='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/macbook-air-midnight-select-20220606?wid=904&hei=840&fmt=jpeg'
+        name='MacBook Air', price=1099.00, model='13-inch (M-2 Chip)', category_id= 1, image='https://www.apple.com/v/macbook-air-13-and-15-m2/b/images/overview/design/design-hero_endframe__olurqzgtbh6e_large.jpg'
     )
 
     iPadAir = InStoreItem(
@@ -145,7 +145,7 @@ def seed_users():
     )
 
     review5= Review(
-        content='was really great, needed a second computer', rating=4.0, created_at=datetime(2023, 8, 8), user_id = 3, store_item_id = 13
+        content='was really great, needed a second ipad', rating=4.0, created_at=datetime(2023, 8, 8), user_id = 3, store_item_id = 13
     )
     review6= Review(
         content='happy to have bought this, really needed a computer to be able to code.', rating=4.3, created_at=datetime(2023, 8, 8), user_id = 3, store_item_id = 11

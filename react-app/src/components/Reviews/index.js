@@ -21,7 +21,7 @@ export default function Reviews({ itemId }) {
 
     useEffect(() => {
         dispatch(thunkGetAllReview(itemId))
-    }, [dispatch])
+    }, [dispatch, itemId])
 
     let month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 

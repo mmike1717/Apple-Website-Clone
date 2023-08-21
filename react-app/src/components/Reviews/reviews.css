@@ -4,6 +4,10 @@
     font-size: 13px;
 }
 
+.EachReviewStarRatingContainer > .empty {
+    cursor: default;
+}
+
 
 .filled1{
     color: #227dff;

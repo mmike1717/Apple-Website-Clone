@@ -96,7 +96,7 @@ function Navigation({ isLoaded }) {
 					<NavLink className='CategoryNavLink' exact to="/"> <img className='NavBarAppleLogo' src='https://www.logolynx.com/images/logolynx/a1/a150d5af2faa1c41533214a3ff8e580f.jpeg' /> </NavLink>
 				</div>
 				<div>
-					<NavLink className='CategoryNavLink' onMouseOver={() => setOpen1(true)} onMouseLeave={() => setOpen1(false)} exact to="/">Store
+					<NavLink onClick={() => window.alert('Page Coming Soon')} className='CategoryNavLink' onMouseOver={() => setOpen1(true)} onMouseLeave={() => setOpen1(false)} exact to="/">Store
 						{/* <div onMouseLeave={()=> setOpen(false)}></div>
 					<ul className={open ? "block" : "hidden"}>
 
@@ -112,7 +112,7 @@ function Navigation({ isLoaded }) {
 								<div className='TitleOfColumn'>Explore Mac</div>
 								{category['1']?.items_in_cat.map((each) => {
 									return (
-										<NavLink onClick={() => setOpen2(false)} className='EachLink' exact to={`/buy/${each.id}`}>{each.name}</NavLink>
+										<NavLink onClick={() => setOpen2(false)} className='EachLink' exact to={`/buy/${each.id}`}>{each.name} {each.model}</NavLink>
 									)
 								})}
 
@@ -163,7 +163,7 @@ function Navigation({ isLoaded }) {
 								{/* {console.log(category['1'], '-------')} */}
 								{category['4']?.items_in_cat.map((each) => {
 									return (
-										<NavLink onClick={() => setOpen5(false)} className='EachLink' exact to={`/buy/${each.id}`}>{each.name}</NavLink>
+										<NavLink onClick={() => {setOpen5(false); window.alert('Page Comming Soon')}} className='EachLink' to={'/'}>{each.name} {each.model}</NavLink>
 									)
 								})}
 							</div>
