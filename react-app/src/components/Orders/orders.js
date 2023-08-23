@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { thunkDeleteAllOrdersFromCart, thunkEditOrdersQuantity, thunkGetOrdersForCart } from "../../store/orders";
+import { thunkDeleteAllOrdersFromCart, thunkEditOrdersQuantity, thunkGetOrdersForCart, thunkRemoveItemFromCart } from "../../store/orders";
+import { thunkAddToSaveLater } from "../../store/saveLater";
 import DeleteOrder from "../DeleteOrder/deleteOrder";
 import ThankYouModal from "../ThankYouModal/modalThanksForPurchase";
 import ThankYouInfo from "../ThankYouModal/thankyouPurchase";
@@ -50,6 +51,12 @@ function CartOrders() {
         .then(() => history.push('/'))
     }
 
+    const handleSaveLater = (e,productId, userId, orderId) => {
+        e.preventDefault()
+        dispatch(thunkAddToSaveLater(productId, userId))
+        .then(() => dispatch(thunkRemoveItemFromCart(orderId)))
+    }
+
 
     return (
         <div className="WholeContainerForCheckOut">
@@ -92,7 +99,7 @@ function CartOrders() {
                                     <div className="PriceAndRemoveContainer">
                                         <div>${order.quantity * order.products?.price + (order.products?.storage === 256 ? 100 : order.products?.storage === 512 ? 200 : 0)}.00</div>
                                         <DeleteOrder orderId={order?.id} userId={sessionUser.id} />
-                                        <a href="">Save for later</a>
+                                        <a onClick={(e) => handleSaveLater(e,order.products?.id, sessionUser.id, order?.id)} href="">Save for later</a>
                                     </div>
                                 </div>
                                 <div className="ContainerDeliverPickupTexts">

@@ -7,3 +7,4 @@ from .products import Product
 from .reviews import Review
 from .items_in_store import InStoreItem
 from .profile_info import Profile
+from .save import Save

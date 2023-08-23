@@ -55,6 +55,8 @@ def edit_order(order_id):
     return order.to_dict()
 
 
+
+# deletes the order from cart and deletes the product
 @order_routes.route('/delete/<int:order_id>', methods=['GET','POST','DELETE'])
 @login_required
 def delete_order(order_id):
@@ -74,3 +76,13 @@ def checkout(user_id):
         db.session.delete(each)
         db.session.commit()
     return {'message':'deleted all cart'}
+
+
+# removes the order from the database but doesnt delete the product
+@order_routes.route('/remove/from_cart/<int:order_id>', methods=['GET','POST','DELETE'])
+@login_required
+def remove_order_not_product(order_id):
+    order_to_delete = Order.query.get(order_id)
+    db.session.delete(order_to_delete)
+    db.session.commit()
+    return {'message':'deleted'}
