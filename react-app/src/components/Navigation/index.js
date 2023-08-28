@@ -46,11 +46,12 @@ function Navigation({ isLoaded }) {
 		else {setOpen9(false)}
 	}
 
-	const handleLogout = (e) => {
-		e.preventDefault();
+	const handleLogout = () => {
+		// e.preventDefault();
 		setOpen8(false)
+		history.push('/')
 		dispatch(logout())
-		.then(() => history.push('/'));
+		// .then(() => history.push('/'));
 	  }
 
 	if(sessionUser && itemsInCart){
@@ -257,7 +258,7 @@ function Navigation({ isLoaded }) {
 									<div className='DropdownTextUnderProfile'> <i class="fa-solid fa-box"/> Orders</div>
 									<div onClick={() => {history.push('/saved-list'); setOpen8(false)}} className='DropdownTextUnderProfile'> <i class="fa-regular fa-bookmark"/>Your Saves</div>
 									<div className='DropdownTextUnderProfile'> <i class="fa-solid fa-gear"/> Account</div>
-									<button className='LogOutButtonInDropDown' onClick={handleLogout}><i class="fa-regular fa-user"/> Log Out {sessionUser.first_name}</button>
+									<button className='LogOutButtonInDropDown' onClick={() => {handleLogout()}}><i class="fa-regular fa-user"/> Log Out {sessionUser.first_name}</button>
 								</>
 							) : (
 								<>
