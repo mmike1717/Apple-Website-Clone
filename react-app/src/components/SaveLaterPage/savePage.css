@@ -1,0 +1,256 @@
+.MainContainerHoldingAll{
+    width: 1000px;
+    margin: auto;
+}
+
+
+.SavePageTitle{
+    height: 100px;
+    display: flex;
+    align-items: center;
+    width: 1000px;
+    margin: 0px auto;;
+    font-size: 46px;
+    justify-content: center;
+    justify-content: center;
+    border-bottom: 1px solid lightgray;
+
+}
+
+
+.SavedImageAtTop{
+    width: 1000px;
+    margin: auto;
+}
+
+.SavedImgMainContainer{
+    display: flex;
+}
+
+.EachSavedItem{
+    width: 1000px;
+    margin: 0px auto 70px;
+    height: 300px;
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 70px;
+    column-gap: 70px;
+}
+
+
+
+.EachItemSavedImg{
+    width: 532px;
+    margin: auto;
+}
+
+
+.SavedItemInfoContainer{
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
+
+.ItemInfoText{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.SavedItemPrice{
+    font-size: 22px;
+}
+
+.AddSavedItemToCart{
+    width: 127px;
+    height: 44px;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    background-color: #227dff;
+    cursor: pointer;
+}
+
+.RemoveItemFromSaved{
+    width: 127px;
+    height: 44px;
+    border: none;
+    border-radius: 25px;
+    color: #227dff;
+    background-color: rgb(229, 229, 229);
+    cursor: pointer;
+
+}
+
+.EditButtonForSavedItem{
+    width: 1000px;
+    margin: 10px auto 40px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
+}
+
+
+.RemoveItemFromSaved:hover{
+    background-color: lightgray;
+    box-shadow: 2px 3px 4px #227dff;
+}
+
+
+.SeeDetailsDiv{
+    color: #227dff;
+    margin: 10px 0px;
+    width: fit-content;
+    cursor: pointer;
+
+}
+
+.HiddenDetailsContainer{
+    display: flex;
+    flex-direction: column;
+    row-gap: 3px;
+}
+
+
+.LighterTextDetails{
+    color: #646363;
+}
+
+
+.DarkerTextDetails{
+    font-weight: bold;
+}
+
+.DarkerTextDetails > a{
+    cursor: pointer;
+}
+
+
+.EditButtonForSavedItem{
+    width: 1000px;
+    margin: 10px auto 40px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
+}
+
+
+.EditButtonForSavedItem > a{
+    cursor: pointer;
+    font-size: 17px;
+}
+
+
+
+/* ------------------------------Share button--------------- */
+
+
+.DivHoldingShareButton{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 70px;
+}
+
+
+.DivHoldingShareButton > button{
+    padding: 15px 20px;
+    background-color: transparent;
+    border-radius: 28px;
+    border: 1px solid;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+.DivHoldingShareButton > button:hover{
+    box-shadow: 2px 4px 5px lightgray;
+}
+
+
+
+/* -------------------------- Container with qr code ------------ */
+
+
+.MainContainerForQueations{
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+    border-top: 1px solid lightgray;
+}
+
+
+.ContainerFor3-OtherContainers{
+    display: flex;
+    justify-content: center;
+    column-gap: 30px;
+    margin: 30px 0px 70px;
+}
+
+.ContainerForOtherFeatures{
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+}
+
+
+.QrCodeOutsideContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.QrCodeOutsideContainer > img{
+    width: 222px;
+    border-radius: 30px;
+}
+
+
+.TitleForQuestions{
+    font-size: 33px;
+    font-weight: bold;
+}
+
+
+.EachContainerInsideFeatures{
+    padding: 20px 110px 35px 20px;
+    background-color: #ececec;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    row-gap: 8px;
+}
+
+
+.TextForContainer{
+    font-size: 22px;
+}
+
+
+.MainContainerForQRCODE{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    background-color: #ececec;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+
+.fa-qrcode{
+    font-size: 24px;
+}
+
+
+.TitleForScan{
+    font-size: 28px;
+    font-weight: bold;
+
+}
+
+.OtherTextForScan{
+    font-size: 17px;
+
+}

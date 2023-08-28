@@ -13,6 +13,21 @@ const removeUser = () => ({
 
 const initialState = { user: null };
 
+
+export const thunkDeleteUser = (userId) => async (dispatch) => {
+	const res = await fetch(`/api/auth/delete/${userId}`)
+
+	if (res.ok) {
+		const data = await res.json();
+		if (data.errors) {
+			return;
+		}
+		dispatch(removeUser());
+	}
+
+}
+
+
 export const authenticate = () => async (dispatch) => {
 	const response = await fetch("/api/auth/", {
 		headers: {

@@ -15,6 +15,7 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(255), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
 
+
     reviews = db.relationship(
             "Review",
             back_populates="user"
@@ -23,6 +24,16 @@ class User(db.Model, UserMixin):
 
     orders = db.relationship(
             "Order",
+            back_populates="user"
+        )
+
+    profile_info = db.relationship(
+            "Profile",
+            back_populates="user"
+        )
+
+    save_list = db.relationship(
+            "Save",
             back_populates="user"
         )
 

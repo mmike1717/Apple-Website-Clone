@@ -8,6 +8,8 @@ import Navigation from "./components/Navigation";
 import CreateProduct from "./components/CreateProduct";
 import CartOrders from "./components/Orders/orders";
 import Home from "./components/homePage";
+import CreateProfile from "./components/CreateProfile/createProfile";
+import SaveListPage from "./components/SaveLaterPage/savePage";
 
 function App() {
   const dispatch = useDispatch();
@@ -24,6 +26,9 @@ function App() {
           <Route exact path='/'>
             <Home />
           </Route>
+          <Route exact path='/account'>
+            <CreateProfile />
+          </Route>
           <Route path="/login" >
             <LoginFormPage />
           </Route>
@@ -35,6 +40,9 @@ function App() {
           </Route>
           <Route exact path='/bag'>
             <CartOrders />
+          </Route>
+          <Route exact path = '/saved-list'>
+            <SaveListPage />
           </Route>
         </Switch>
       )}

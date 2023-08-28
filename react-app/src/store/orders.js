@@ -34,6 +34,23 @@ const createOrders = (data) => ({
 
 
 
+// this will remove the item from the cart but not delete the product from product table
+export const thunkRemoveItemFromCart = (orderId) => async(dispatch) => {
+    const res = await fetch(`/api/orders/remove/from_cart/${orderId}`, {
+        method:'DELETE'
+    })
+    if (res.ok)    {
+        const data = await res.json()
+        dispatch(deleteAOrder(orderId))
+        return data
+    }else {
+            const err = await res.json()
+            return {errors:err}
+        }
+}
+
+
+
 
 export const thunkDeleteAllOrdersFromCart = (userId) => async(dispatch) => {
     const res = await fetch(`/api/orders/delete/cart/${userId}`, {

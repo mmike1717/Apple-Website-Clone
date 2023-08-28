@@ -5,13 +5,17 @@ import products from './products'
 import orders from './orders'
 import reviews from './reviews'
 import category from './category'
+import profile from './profile'
+import saves from './saveLater'
 
 const rootReducer = combineReducers({
   session,
   products,
   orders,
   reviews,
-  category
+  category,
+  profile,
+  saves
 });
 
 
