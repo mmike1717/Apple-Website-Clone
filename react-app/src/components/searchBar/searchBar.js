@@ -49,8 +49,8 @@ export default function SearchBarInfo() {
 
     return (
         <>
-            {/* <div className="search">
-                <div className="searchInputs">
+            <div className="search">
+                {/* <div className="searchInputs">
                     <input
                         type="text"
                         id='ssssssssss'
@@ -64,20 +64,20 @@ export default function SearchBarInfo() {
                         setFilteredData([])
                         setWordInput('')
                     }} className="fa-solid fa-x"></i>}
-                </div>
-                {filteredData.length !== 0 &&
+                </div> */}
+                {/* {filteredData.length !== 0 &&
                     <div className="dataResult">
-                        {filteredData.slice(0, 15).map((value, key) => {
+                        {filteredData.slice(0, 10).map((value, key) => {
                             return (<div key={value.id}>
-                                <div className="dataItem" onClick={async () => {
-                                    history.push(`/books/${ value.id }`)
-                                    dispatch(thunkGetSingleBook(value.id))
+                                <div onClick={async () => {
+                                    history.push(`/buy/${ value.id }`)
+                                    // dispatch(thunkGetSingleBook(value.id))
                                 }}>{value.name}</div>
                             </div>
                             )
                         })}
-                    </div>}
-            </div> */}
+                    </div>} */}
+            </div>
             <div>
                 <input
                     type="text"
@@ -87,6 +87,23 @@ export default function SearchBarInfo() {
                     value={wordInput}
                     onChange={handleFilter}
                 />
+                {!wordInput ? <i className="fa-solid fa-magnifying-glass" ></i> : <i onClick={() => {
+                        setFilteredData([])
+                        setWordInput('')
+                    }} className="fa-solid fa-x"></i>}
+
+                {filteredData.length !== 0 &&
+                    <div className="dataResult">
+                        {filteredData.slice(0, 7).map((value, key) => {
+                            return (<div key={value.id}>
+                                <div onClick={async () => {
+                                    history.push(`/buy/${ value.id }`)
+                                    // dispatch(thunkGetSingleBook(value.id))
+                                }}>{value.name}</div>
+                            </div>
+                            )
+                        })}
+                    </div>}
 
             </div>
         </>

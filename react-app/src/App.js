@@ -10,6 +10,7 @@ import CartOrders from "./components/Orders/orders";
 import Home from "./components/homePage";
 import CreateProfile from "./components/CreateProfile/createProfile";
 import SaveListPage from "./components/SaveLaterPage/savePage";
+import UserProfile from "./components/UserProfile/profile";
 
 function App() {
   const dispatch = useDispatch();
@@ -27,6 +28,9 @@ function App() {
             <Home />
           </Route>
           <Route exact path='/account'>
+            <UserProfile />
+          </Route>
+          <Route exact path='/profile-info'>
             <CreateProfile />
           </Route>
           <Route path="/login" >
