@@ -1,0 +1,22 @@
+.EachImgInCarousel{
+    width: 680px;
+    height: 383px;
+}
+
+.DivHoldingImgs{
+    display: flex;
+    width: 800px;
+}
+
+.react-multi-carousel-item{
+    filter: opacity(0.5);
+}
+
+.react-multi-carousel-item--active{
+    filter: none;
+}
+
+.DivHoldingCarousel{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
