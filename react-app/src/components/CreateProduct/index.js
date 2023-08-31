@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect,Link,useParams, useHistory } from "react-router-dom";
 import { thunkAddToCart, thunkEditOrdersQuantity, thunkGetOrdersForCart } from "../../store/orders";
 import { thunkCreateProduct, thunkGetSingleItem } from "../../store/products";
+import Footer from "../Footer";
 import Reviews from "../Reviews";
 import './singleItem.css'
 
@@ -241,6 +242,8 @@ function CreateProduct(){
                 <Reviews itemId={itemId} />
 
             </div>
+
+            <Footer />
         </div>
     )
 
