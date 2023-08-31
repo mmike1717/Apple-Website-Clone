@@ -1,148 +1,160 @@
-# Flask React Project
+<h1>Pear</h1>
 
-This is the starter for the Flask React project.
+<p>Apple's website served as an inspiration, for the iconic design and user-friendly site. This ecommerce website lets users have that great online shopping experience.
+From selecting the device, the color, and the storage on the device they would like. Efficiently adding the product to their cart or to their 'Save for Late' list. </p>
 
-## Getting started
-1. Clone this repository (only this branch)
+<p>Wish to visit the site and experience it for yourself. Perfect!!😁 </p>
+<p>Here's the like https://pear-2ofk.onrender.com</p>
 
-2. Install dependencies
+<h2>Index</h2>
 
-      ```bash
-      pipenv install -r requirements.txt
-      ```
+[MVP Feature List](https://github.com/mmike1717/Apple-Website-Clone/wiki/MVP-Feature-List) |
+[Database Scheme](https://github.com/mmike1717/Apple-Website-Clone/wiki/Apple-Clone-Schema) |
+[User Stories](https://github.com/mmike1717/Apple-Website-Clone/wiki/User-Stories) |
+[Wire Frames](https://github.com/mmike1717/Apple-Website-Clone/wiki/Example-WireFrame) |
 
-3. Create a **.env** file based on the example with proper settings for your
-   development environment
+<h2>Technologies/Frameworks Used :</h2>
 
-4. Make sure the SQLite3 database connection URL is in the **.env** file
-
-5. This starter organizes all tables inside the `flask_schema` schema, defined
-   by the `SCHEMA` environment variable.  Replace the value for
-   `SCHEMA` with a unique name, **making sure you use the snake_case
-   convention**.
-
-6. Get into your pipenv, migrate your database, seed your database, and run your Flask app
-
-   ```bash
-   pipenv shell
-   ```
-
-   ```bash
-   flask db upgrade
-   ```
-
-   ```bash
-   flask seed all
-   ```
-
-   ```bash
-   flask run
-   ```
-
-7. To run the React App in development, checkout the [README](./react-app/README.md) inside the `react-app` directory.
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+![Github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
+![NPM](https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white)
+![AWS](https://img.shields.io/badge/Amazon_AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)
 
 
-## Deployment through Render.com
+<h2>HomePage</h2>
 
-First, refer to your Render.com deployment articles for more detailed
-instructions about getting started with [Render.com], creating a production
-database, and deployment debugging tips.
+<img width="1065" alt="Screenshot 2023-08-27 at 4 43 53 PM" src="https://github.com/mmike1717/Apple-Website-Clone/assets/125857252/9dfef7ca-6035-4dcd-b83b-a36d38a64bef">
 
-From the [Dashboard], click on the "New +" button in the navigation bar, and
-click on "Web Service" to create the application that will be deployed.
+<h2>Product Page</h2>
 
-Look for the name of the application you want to deploy, and click the "Connect"
-button to the right of the name.
+<img width="1224" alt="Screenshot 2023-08-30 at 1 43 51 AM" src="https://github.com/mmike1717/Apple-Website-Clone/assets/125857252/b4d9c551-ebb3-4496-9cc3-c50e1346addc">
 
-Now, fill out the form to configure the build and start commands, as well as add
-the environment variables to properly deploy the application.
+<h2>Cart Page</h2>
 
-### Part A: Configure the Start and Build Commands
+<img width="1043" alt="Screenshot 2023-08-30 at 7 14 30 PM" src="https://github.com/mmike1717/Apple-Website-Clone/assets/125857252/19596846-e362-4e71-aca3-fe537afd3134">
 
-Start by giving your application a name.
 
-Leave the root directory field blank. By default, Render will run commands from
-the root directory.
+<h2>Getting Started</h2>
 
-Make sure the Environment field is set set to "Python 3", the Region is set to
-the location closest to you, and the Branch is set to "main".
+1. Clone this repository:
 
-Next, add your Build command. This is a script that should include everything
-that needs to happen _before_ starting the server.
+   `
+   https://github.com/mmike1717/Apple-Website-Clone.git
+   `
+2. Install denpendencies into React-App:
 
-For your Flask project, enter the following command into the Build field, all in
-one line:
+   * `npm install`
+   * `npm i react-datepicker`
+   * `pip install -r requirements.txt`
+   * `pip install psycopg2`
+  
+3. At the root of the file run the following
+   * `npm install`
 
-```shell
-# build command - enter all in one line
-npm install --prefix react-app &&
-npm run build --prefix react-app &&
-pip install -r requirements.txt &&
-pip install psycopg2 &&
-flask db upgrade &&
-flask seed all
-```
+5. Create a **.env** file using the **.envexample** provided 
 
-This script will install dependencies for the frontend, and run the build
-command in the __package.json__ file for the frontend, which builds the React
-application. Then, it will install the dependencies needed for the Python
-backend, and run the migration and seed files.
+6. Set up your database with information from your .env and then run the following to create your database, migrate, and seed at the root of the entire folder: 
+ 
+   * `npm run build`
+   * `pipenv flask db upgrade`
+   * `pipenv flask seed all`
 
-Now, add your start command in the Start field:
+7. Start the app for both backend in the react-app folder:
+   * `pipenv run flask run`
 
-```shell
-# start script
-gunicorn app:app
-```
+9. At the root, start the frontend by using
 
-_If you are using websockets, use the following start command instead for increased performance:_
+   * `npm start`
 
-`gunicorn --worker-class eventlet -w 1 app:app`
+10. Now you can use the Demo User or Create an account
 
-### Part B: Add the Environment Variables
 
-Click on the "Advanced" button at the bottom of the form to configure the
-environment variables your application needs to access to run properly. In the
-development environment, you have been securing these variables in the __.env__
-file, which has been removed from source control. In this step, you will need to
-input the keys and values for the environment variables you need for production
-into the Render GUI.
 
-Click on "Add Environment Variable" to start adding all of the variables you
-need for the production environment.
+<h2>Future Implementation </h2>
 
-Add the following keys and values in the Render GUI form:
+1. AWS for each user profile so they can add a profile picture
+2. Make Order History Feature
+3. Make splashpage for each product
 
-- SECRET_KEY (click "Generate" to generate a secure secret for production)
-- FLASK_ENV production
-- FLASK_APP app
-- SCHEMA (your unique schema name, in snake_case)
-- REACT_APP_BASE_URL (use render.com url, located at top of page, similar to
-  https://this-application-name.onrender.com)
 
-In a new tab, navigate to your dashboard and click on your Postgres database
-instance.
+<h2>Contact Me at:</h2>
 
-Add the following keys and values:
+www.linkedin.com/in/michael-oyola
 
-- DATABASE_URL (copy value from Internal Database URL field)
 
-_Note: Add any other keys and values that may be present in your local __.env__
-file. As you work to further develop your project, you may need to add more
-environment variables to your local __.env__ file. Make sure you add these
-environment variables to the Render GUI as well for the next deployment._
+<h2>Endpoints</h2>
 
-Next, choose "Yes" for the Auto-Deploy field. This will re-deploy your
-application every time you push to main.
+1. GET 'api/category/get_all'
+    - Getting all the categories that are in the store and the products that associated with them.
+    - return Value:
+            - {
+            'id': Int,
+            'category_name': STRING,
+            'items_in_cat': OBJECT of each product in the categories
+        }
+      
+2.POST '/api/orders/add_order/:productid/:userid'
+      -Being able to add a product to your cart
+      - return: {   'id': Int,
+            'status': STRING,
+            'created_at': DATE,
+            'quantity': INT,
+            'user_id': INT,
+            'product_id': INT,
+            'products': Single Object of the product
+        }
 
-Now, you are finally ready to deploy! Click "Create Web Service" to deploy your
-project. The deployment process will likely take about 10-15 minutes if
-everything works as expected. You can monitor the logs to see your build and
-start commands being executed, and see any errors in the build process.
+3.GET  '/api/orders/in_cart/:userid'
+      -Getting all the orders that belongs to the user signed in
+      - Return: Array of Objects with each orders description
 
-When deployment is complete, open your deployed site and check to see if you
-successfully deployed your Flask application to Render! You can find the URL for
-your site just below the name of the Web Service at the top of the page.
+4. PUT  '/api/orders//edit/:order_id'
+      - Being able to edit a orders quantity if they wish to buy more then 1 product
+      - return: {   'id': Int,
+            'status': STRING,
+            'created_at': DATE,
+            'quantity': INT,
+            'user_id': INT,
+            'product_id': INT,
+            'products': Single Object of the product
+        }
 
-[Render.com]: https://render.com/
-[Dashboard]: https://dashboard.render.com/
+5. DELETE '/api/orders//delete/cart/:user_id'
+      - For now once the user checksout, the whole cart will be deleted.
+      - return: {'message':'deleted all cart'}
+  
+6. POST 'api/product/new'
+      - creating a new product a customer might like. The way they want it. They pick the color, storage and in the future more things.
+      - return: {
+            'id': INT,
+            'name': STRING,
+            'price': INT,
+            'color': STRING,
+            'storage': INT,
+            'model': STRING,
+            'image': STRING
+        }
+
+  7. GET 'api/product/item/:itemid'
+      - Getting that specific product the user created.
+      - return: {
+            'id': INT,
+            'name': STRING,
+            'price': INT,
+            'color': STRING,
+            'storage': INT,
+            'model': STRING,
+            'image': STRING
+        }
+
+
+
+
+
+
