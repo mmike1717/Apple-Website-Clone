@@ -70,7 +70,7 @@ export default function HomePageCarousel() {
             infinite={true}
             containerClass="carousel-container"
             dotListClass="custom-dot-list-style"
-            autoPlay={true}
+            // autoPlay={true}
             autoPlaySpeed={4000}
             // keyBoardControl={true}
             customTransition="transform 900ms ease-in-out"

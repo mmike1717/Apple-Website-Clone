@@ -1,0 +1,33 @@
+.MainContainerHoldingAllFooter{
+    display: flex;
+    /* width: 1000px; */
+    margin: 70px auto 0px;
+    justify-content: center;
+    padding: 55px 0px 100px;
+    background-color: #f5f5f7;
+    color: #666666;
+    column-gap: 80px;
+}
+
+
+.MainContainerForFooterIcons{
+    display: flex;
+    column-gap: 65px;
+}
+
+
+.HoldingTitleAndLinks{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+
+.ALinksTitle{
+    font-weight: bold;
+    color: #4d4d4d;
+}
+
+.account{
+    margin-top: 15px;
+}
