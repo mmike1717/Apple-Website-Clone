@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 // import { useHistory } from 'react-router-dom'
 import { thunkGetOrdersForCart } from '../../store/orders'
+import HomePageCarousel from '../HomePageCarousel/carousel';
 import './homePage.css'
 
 
@@ -103,6 +104,8 @@ export default function Home(){
 
 
             </div>
+
+            <HomePageCarousel />
 
 
         </>
