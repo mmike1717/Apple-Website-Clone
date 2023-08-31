@@ -31,7 +31,7 @@ def create_Review():
             store_item_id = form.data['store_item_id'],
             user_id = form.data['user_id']
         )
-        print(review,'here--------------')
+        # print(review,'here--------------')
     #     # print('backend-----------',review)
         db.session.add(review)
         db.session.commit()

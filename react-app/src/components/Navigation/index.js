@@ -94,7 +94,7 @@ function Navigation({ isLoaded }) {
 			<div className='ContainerInsideNavBar'>
 				<div>
 				{/* https://media.idownloadblog.com/wp-content/uploads/2018/07/Apple-logo-black-and-white.png */}
-					<NavLink className='CategoryNavLink' exact to="/"> <img className='NavBarAppleLogo' src='https://www.logolynx.com/images/logolynx/a1/a150d5af2faa1c41533214a3ff8e580f.jpeg' /> </NavLink>
+					<NavLink className='CategoryNavLink' exact to="/"> <img className='NavBarAppleLogo' src='https://media.idownloadblog.com/wp-content/uploads/2018/07/Apple-logo-black-and-white.png' /> </NavLink>
 				</div>
 				<div>
 					<NavLink onClick={() => window.alert('Page Coming Soon')} className='CategoryNavLink' onMouseOver={() => setOpen1(true)} onMouseLeave={() => setOpen1(false)} exact to="/">Store
@@ -219,10 +219,10 @@ function Navigation({ isLoaded }) {
 					<NavLink onClick={() => window.alert('Page Coming Soon')} className='CategoryNavLink' exact to="/">Support</NavLink>
 				</div>
 
-				<button onClick={() => window.alert('Coming Soon')} className='MagnifyingGlassIcon'><i className="fa fa-magnifying-glass"/></button>
+				<button onClick={() => setOpen9(true)} className='MagnifyingGlassIcon'><i className="fa fa-magnifying-glass"/></button>
 
 				<div className={open9 ? "searchblock" : "hidden"}>
-					{/* <SearchBarInfo /> */}
+					<SearchBarInfo />
 				</div>
 
 				{isLoaded && (
