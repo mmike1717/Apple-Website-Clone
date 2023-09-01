@@ -131,9 +131,9 @@ export default function UserProfile() {
                     <div className="AccountNameDiv">{user.first_name} {user.last_name}</div>
 
 
-                    <div className="DivWithEditButton">
+                    {/* <div className="DivWithEditButton">
                         <button onClick={handleEditButton}>Edit</button>
-                    </div>
+                    </div> */}
                     <div className="ContainerHoldingUserInfo">
 
                             <form className="EditInfoForm" onSubmit={handleSubmit} encType="multipart/form-data">
