@@ -6,6 +6,7 @@ from app.models import db
 from app.forms.profile_form import ProfileForm
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from .AWS_helper import upload_file_to_s3, get_unique_filename, remove_file_from_s3
 
 
 
@@ -38,9 +39,18 @@ def create_Profile():
     form['csrf_token'].data = request.cookies['csrf_token']
     # print(form.data,'===========')
     if form.validate_on_submit():
-        print(form.data, '===========')
+
+        image_file = form.data["image"]
+        image_file.filename = get_unique_filename(image_file.filename)
+        upload = upload_file_to_s3(image_file)
+
+        if "url" not in upload:
+            print(upload)
+            return {'errors':[upload]}
+        url = upload['url']
+
         profile_info = Profile(
-            image = form.data['image'],
+            image = url,
             address = form.data['address'],
             apt = form.data['apt'],
             zip_code = form.data['zip_code'],
@@ -62,8 +72,23 @@ def create_Profile():
 def edit_profile(user_id):
     form = ProfileForm()
     profile = Profile.query.get(user_id)
+
+    if len(profile.image) > 0:
+        remove_file_from_s3(profile.image)
+
+    image_file = form.data["image"]
+    image_file.filename = get_unique_filename(image_file.filename)
+    upload = upload_file_to_s3(image_file)
+
+    if "url" not in upload:
+        print(upload)
+        return {'errors':[upload]}
+    url = upload['url']
+
+
     form['csrf_token'].data = request.cookies['csrf_token']
-    print(profile, '-----------------')
+    # print(profile, '-----------------')
+    profile.image = url
     profile.address = form.data['address']
     profile.apt = form.data['apt']
     profile.zip_code = form.data['zip_code']

@@ -1,0 +1,179 @@
+
+
+#MainContainerForAccount{
+    display: flex;
+    flex-direction: row;
+    padding-top: 45px;
+    margin-bottom: -70px;
+    position: relative;
+}
+
+
+.SideBarDiv{
+    display: flex;
+    flex-direction: column;
+    width: 220px;
+    max-height: -webkit-fill-available;
+    background-color: whitesmoke;
+    font-size: 18px;
+    padding-left: 50px;
+    row-gap: 22px;
+}
+
+.EachNameInSidebar{
+    height: 45px;
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+}
+
+.clicked{
+    background-color: #80808094;
+}
+
+h5{
+    font-size: 26px;
+    margin-bottom: 20px;
+
+}
+
+
+.ProfileImg{
+    width: 143px;
+    border-radius: 87px;
+    margin: 40px;
+    box-shadow: 0px 14px 25px 0px;
+}
+
+
+.DivHoldingAllProfileInfo{
+    display: flex;
+    flex-direction: column;
+    width: -webkit-fill-available;
+    align-items: center;
+    row-gap: 20px;
+}
+
+
+.AccountNameDiv{
+    font-size: 22px;
+    margin-top: -27px;
+    font-size: 22px;
+    margin-top: -27px;
+    display: flex;
+    width: -webkit-fill-available;
+    justify-content: center;
+    padding-bottom: 18px;
+    border-bottom: 1px solid lightgray;
+
+}
+
+
+.DivWithEditButton{
+    display: flex;
+    width: -webkit-fill-available;
+    justify-content: flex-end;
+    margin-top: -8px;
+    padding-right: 30px;
+}
+
+
+.DivWithEditButton > button {
+    cursor: pointer;
+    font-size: 16px;
+    width: 63px;
+    border: none;
+    background-color: transparent;
+    color: gray;
+}
+
+.DivWithEditButton > button:hover{
+    /* box-shadow: 0px 0px 10px; */
+    color: black;
+}
+
+
+
+.ContainerHoldingUserInfo{
+    display: flex;
+    flex-direction: column;
+    width: -webkit-fill-available;
+    font-size: 19px;
+    /* text-align: center; */
+    align-items: center;
+}
+
+.EachUserDetail{
+    display: flex;
+    width: 700px;
+    grid-column-gap: 200px;
+    column-gap: 200px;
+    /* justify-content: space-evenly; */
+    min-width: 400px;
+    margin-bottom: 15px;
+    flex-direction: column;
+    border: 1px solid gray;
+    padding: 12px;
+    border-radius: 12px;
+
+}
+
+.DetailLabel{
+    font-size: 13px;
+    color: gray;
+}
+
+
+.EditInfoForm{
+    display: inherit;
+    flex-direction: inherit;
+    width: inherit;
+    font-size: inherit;
+    align-items: inherit;
+}
+
+.edit{
+    width: 166px
+}
+
+
+.SaveEditInfoButton{
+    margin: 50px;
+    font-size: 17px;
+    width: 100px;
+    height: 38px;
+    border-radius: 10px;
+    border: none;
+    background-color: #227dff;
+    color: white;
+    cursor: pointer;
+}
+
+
+.ContainerHolding2Details{
+    display: flex;
+    column-gap: 15px;
+    margin-bottom: 15px;
+}
+
+
+.UserNameDetials{
+    width: 328px;
+    border: 1px solid gray;
+    padding: 12px;
+    border-radius: 15px;
+
+}
+
+
+.height{
+    height: 40px;
+    font-size: 16px;
+    border: none;
+
+}
+
+
+.withInput{
+    padding-bottom: 0px;
+}

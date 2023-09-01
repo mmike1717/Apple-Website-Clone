@@ -29,6 +29,7 @@ class Profile(db.Model, UserMixin):
     def to_dict(self):
         return {
             'id': self.id,
+            'image': self.image,
             'address': self.address,
             'apt': self.apt,
             'zip_code': self.zip_code,
