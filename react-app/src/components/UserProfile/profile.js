@@ -14,7 +14,7 @@ export default function UserProfile() {
     const dispatch = useDispatch()
     const history = useHistory()
 
-    const profile = useSelector(state => state.profile.profile)
+    const profile = Object.values(useSelector(state => state.profile.profile))
 
     const [profileExits, setProfileExits] = useState(false)
 
@@ -60,6 +60,7 @@ export default function UserProfile() {
 
 
 
+
     const handleSubmit = async (e) => {
         // console.log(address, zipcode, country, 'thissssssssss')
         e.preventDefault()
@@ -85,7 +86,8 @@ export default function UserProfile() {
         // }
 
         if (profileExits || imageExits) {
-            dispatch(thunkEditProfile(profile['1'].id, formData))
+            await dispatch(thunkEditProfile(profile['0'].id, formData))
+            .then(() => history.push('/account'))
             setEditButton(false)
             setImageLoading(false)
         }
@@ -108,7 +110,7 @@ export default function UserProfile() {
     }
 
 
-    const imgUrl = useSelector(state => state.profile.profile.image)
+    const imgUrl = Object.values(useSelector(state => state.profile.profile))
 
 
 
@@ -126,7 +128,7 @@ export default function UserProfile() {
                 </div>
 
                 <div className="DivHoldingAllProfileInfo">
-                    <div> <img className="ProfileImg" src={imgUrl ? imgUrl : defaultImg} /> </div>
+                    <div> <img className="ProfileImg" src={imgUrl ? imgUrl['0']?.image : defaultImg} /> </div>
 
                     <div className="AccountNameDiv">{user.first_name} {user.last_name}</div>
 
