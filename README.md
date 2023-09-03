@@ -154,6 +154,143 @@ www.linkedin.com/in/michael-oyola
         }
 
 
+   8. GET '/api/profile/get_profile/:user_id'
+         - Queries for the users profile if they have a profile
+         - return: {
+            'id': INT,
+            'image': STRING,
+            'address': STRING,
+            'apt': STRING,
+            'zip_code': INT,
+            'city': STRING,
+            'state': STRING,
+            'country': STRING
+        }
+
+
+   9. POST '/api/profile/new'
+         - Creating a new profile that a user is logged in and returning there new profile
+         - return: {
+            'id': INT,
+            'image': STRING,
+            'address': STRING,
+            'apt': STRING,
+            'zip_code': INT,
+            'city': STRING,
+            'state': STRING,
+            'country': STRING
+        }
+
+
+   10. PUT '/api/profile/edit/:user_id'
+          - Editing the users profile information and profile picture and returning new profile
+          - return: {
+            'id': INT,
+            'image': STRING,
+            'address': STRING,
+            'apt': STRING,
+            'zip_code': INT,
+            'city': STRING,
+            'state': STRING,
+            'country': STRING
+        }
+
+
+   11. POST 'api/review/new_review'
+         - User creating a new review for each product on the website
+         - return {
+            'id': INT,
+            'content': STRING,
+            'rating': INT,
+            'created_at': STRING,
+            'user_id': INT,
+            'store_item_id': INit
+            'user_info': Object returning user info like name and email
+        }
+
+   12. PUT 'api/review/get_reviews/:itemid'
+         - Returning all the reviews for the product that is displayed.
+         - return [
+            {
+            'id': INT,
+            'content': STRING,
+            'rating': INT,
+            'created_at': STRING,
+            'user_id': INT,
+            'store_item_id': INit
+            'user_info': Object returning user info like name and email
+        }
+           ]
+
+   13. PUT 'api/review/edit/:review_id'
+          - User that created the review can edit the star rating and the content and returns new review
+          - return {
+            'id': INT,
+            'content': STRING,
+            'rating': INT,
+            'created_at': STRING,
+            'user_id': INT,
+            'store_item_id': INit
+            'user_info': Object returning user info like name and email
+        }
+
+   14. DELETE 'api/review/delete/:review_id'
+          - User that created the reivew can delete review
+          - return {'message': 'deleted'}
+
+
+
+
+
+   15. GET 'api/save/get_saved/:userid'
+          - Gets all the saved products that the user has saved and returns them in an array
+          - return {
+            'id': INT,
+            'user_id': INT,
+            'product_id': INT,
+            'products': Object with the products information
+
+        }
+
+   16. POST 'api/save/save_item/productid/:userid'
+          - Creates a new saved item and add it to the list that the user has
+          - return {
+            'id': INT,
+            'user_id': INT,
+            'product_id': INT,
+            'products': Object with the products information
+
+        }
+
+   17. DELETE 'api/save/delete/:saved_id'
+          - Will delete the users saved item
+          - {'message': 'deleted'}
+
+
+   18. GET 'api/user/'
+          - Query for all users and returns them in a list of user dictionaries
+          - return [{
+            'id': INT,
+            'first_name': STRING,
+            'last_name': STRING,
+            'email': STRING
+        }]
+
+   19. GET 'api/user/:id'
+          - Query for user by and returns user information in a dictionary
+          - return {
+            'id': INT,
+            'first_name': STRING,
+            'last_name': STRING,
+            'email': STRING
+        }
+
+   20. DELETE 'api/user/delete/:id'
+          - Query for user by and deletes user
+          - return { 'message': 'user deleted'}
+   
+
+
 
 
 
