@@ -145,7 +145,7 @@ export default function UserProfile() {
 
                             <form className="EditInfoForm" onSubmit={handleSubmit} encType="multipart/form-data">
                                 <div className="EachUserDetail">
-                                    <label className="DetailLabel edit" for="file-upload-button">Update Profile Image</label>
+                                    <label className="DetailLabel edit" >Update Profile Image</label>
                                     <input
                                         // className="EachUserDetail"
                                         type="file"
