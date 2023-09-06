@@ -273,14 +273,14 @@ function Navigation({ isLoaded }) {
 									<div className='DropdownTextUnderProfile'> <i class="fa-regular fa-bookmark"/>Your Saves</div>
 									<div className='DropdownTextUnderProfile'> <i class="fa-solid fa-gear"/> Account</div>
 									<div onClick={ () => setOpen8(false)}>
-										<i class="fa-regular fa-user"/>
+										<i className="fa-regular fa-user"/>
 										<OpenModalButton
 											buttonText="Log In"
 											modalComponent={<LoginFormModal />}
 										/>
 									</div>
 									<div onClick={ () => setOpen8(false)}>
-										<i class="fa-solid fa-user"/>
+										<i className="fa-solid fa-user"/>
 										<OpenModalButton
 											buttonText="Sign Up"
 											modalComponent={<SignupFormModal />}

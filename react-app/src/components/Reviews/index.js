@@ -38,7 +38,7 @@ export default function Reviews({ itemId }) {
                 return (
                     <div className="EachReviewContainer">
                         <div className="ContainerReviewUserImg">
-                            <i class="fa-solid fa-user-check" />
+                            <i className="fa-solid fa-user-check" />
                         </div>
                         <div className="MainContainerForEachReview">
                             <div>{review?.user_info?.first_name}</div>
@@ -46,19 +46,19 @@ export default function Reviews({ itemId }) {
                             <div className="EachReviewStarRatingContainer">
                                 {/* <div>{review?.rating}</div> */}
                                 <div className={review?.rating >= 1 ? "filled1" : "empty"} >
-                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i className="fa-sharp fa-solid fa-star"></i>
                                 </div>
                                 <div className={review?.rating >= 2 ? "filled1" : "empty"} >
-                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i className="fa-sharp fa-solid fa-star"></i>
                                 </div>
                                 <div className={review?.rating >= 3 ? "filled1" : "empty"} >
-                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i className="fa-sharp fa-solid fa-star"></i>
                                 </div>
                                 <div className={review?.rating >= 4 ? "filled1" : "empty"} >
-                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i className="fa-sharp fa-solid fa-star"></i>
                                 </div>
                                 <div className={review?.rating >= 5 ? "filled1" : "empty"} >
-                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i className="fa-sharp fa-solid fa-star"></i>
                                 </div>
                             </div>
                             <div className="ReviewContentContainer">{review?.content}</div>

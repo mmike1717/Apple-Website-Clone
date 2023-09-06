@@ -68,11 +68,13 @@ export const thunkGetUsersSavedItems = (userId) => async(dispatch) => {
 
     if(res.ok){
         const response = await res.json()
+        console.log(response, 'response from thunk for getting saves')
         dispatch(getAllSavedItems(response))
         return response
     }
     else if (res.status < 500){
         const err = await res.json()
+        console.log(err, 'err in get saves thunk')
         return err
     }
 
@@ -91,11 +93,13 @@ export const thunkAddToSaveLater = (productId, userId) => async(dispatch) => {
 
     if(res.ok){
         const response = await res.json()
+        console.log(response, 'response from thunk for save later')
         dispatch(addToSaveLater(response))
         return response
     }
     else if (res.status < 500){
         const err = await res.json()
+        console.log(err, 'err in adding saves thunk')
         return err
     }
 }

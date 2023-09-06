@@ -74,19 +74,19 @@ export default function EditReview ({reviewId, contents, ratings, itemId}) {
                         /> */}
                 <div className='StarsContainer'>
                     <div onClick={() => { setRating(1) }} onMouseEnter={() => { setFillStars(1) }} onMouseLeave={() => setFillStars(rating)} className={fillStars >= 1 ? "filled" : "empty"} >
-                        <i class="fa-sharp fa-solid fa-star"></i>
+                        <i className="fa-sharp fa-solid fa-star"></i>
                     </div>
                     <div onClick={() => { setRating(2) }} onMouseEnter={() => { setFillStars(2) }} onMouseLeave={() => setFillStars(rating)} className={fillStars >= 2 ? "filled" : "empty"} >
-                        <i class="fa-sharp fa-solid fa-star"></i>
+                        <i className="fa-sharp fa-solid fa-star"></i>
                     </div>
                     <div onClick={() => { setRating(3) }} onMouseEnter={() => { setFillStars(3) }} onMouseLeave={() => setFillStars(rating)} className={fillStars >= 3 ? "filled" : "empty"} >
-                        <i class="fa-sharp fa-solid fa-star"></i>
+                        <i className="fa-sharp fa-solid fa-star"></i>
                     </div>
                     <div onClick={() => { setRating(4) }} onMouseEnter={() => { setFillStars(4) }} onMouseLeave={() => setFillStars(rating)} className={fillStars >= 4 ? "filled" : "empty"} >
-                        <i class="fa-sharp fa-solid fa-star"></i>
+                        <i className="fa-sharp fa-solid fa-star"></i>
                     </div>
                     <div onClick={() => { setRating(5) }} onMouseEnter={() => { setFillStars(5) }} onMouseLeave={() => setFillStars(rating)} className={fillStars >= 5 ? "filled" : "empty"} >
-                        <i class="fa-sharp fa-solid fa-star"></i>
+                        <i className="fa-sharp fa-solid fa-star"></i>
                     </div>
                     <div>Stars</div>
                 </div>

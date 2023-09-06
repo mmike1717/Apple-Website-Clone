@@ -55,7 +55,7 @@ export default function SaveListPage(){
                 <div className="EditButtonForSavedItem"><a onClick={handleEdit}>Edit</a></div>
                 {allSaved.map((saveItem)=>{
                     return (
-                        <div className="EachSavedItem">
+                        <div key={saveItem.id} className="EachSavedItem">
                             <div>
                                 <img className="EachItemSavedImg" src={saveItem.products?.image} />
                             </div>
