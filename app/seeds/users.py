@@ -181,12 +181,14 @@ def undo_users():
         db.session.execute(f"TRUNCATE table {SCHEMA}.reviews RESTART IDENTITY CASCADE;")
         db.session.execute(f"TRUNCATE table {SCHEMA}.categories RESTART IDENTITY CASCADE;")
         db.session.execute(f"TRUNCATE table {SCHEMA}.products RESTART IDENTITY CASCADE;")
+        db.session.execute(f"TRUNCATE table {SCHEMA}.saves RESTART IDENTITY CASCADE;")
         db.session.execute(f"TRUNCATE table {SCHEMA}.in_store_items RESTART IDENTITY CASCADE;")
         db.session.execute(f"TRUNCATE table {SCHEMA}.users RESTART IDENTITY CASCADE;")
     else:
         db.session.execute(text("DELETE FROM reviews"))
         db.session.execute(text("DELETE FROM categories"))
         db.session.execute(text("DELETE FROM products"))
+        db.session.execute(text("DELETE FROM saves"))
         db.session.execute(text("DELETE FROM in_store_items"))
         db.session.execute(text("DELETE FROM users"))
 
