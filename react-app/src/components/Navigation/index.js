@@ -219,10 +219,13 @@ function Navigation({ isLoaded }) {
 					<NavLink onClick={() => window.alert('Page Coming Soon')} className='CategoryNavLink' exact to="/">Support</NavLink>
 				</div>
 
-				<button onClick={() => setOpen9(true)} className='MagnifyingGlassIcon'><i className="fa fa-magnifying-glass"/></button>
+				<button onClick={() => {
+					if(open9) setOpen9(false)
+					else{setOpen9(true)}
+					}} className='MagnifyingGlassIcon'><i className="fa fa-magnifying-glass"/></button>
 
-				<div className={open9 ? "searchblock" : "hidden"}>
-					<SearchBarInfo />
+				<div className={open9 ? "searchblock" : "hidden"} onMouseLeave = {()=> setOpen9(false)}>
+					<SearchBarInfo setOpen9={setOpen9} />
 				</div>
 
 				{isLoaded && (

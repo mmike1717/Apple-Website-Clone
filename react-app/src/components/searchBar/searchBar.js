@@ -5,7 +5,7 @@ import { thunkGetAllStoreItems } from '../../store/category';
 
 
 
-export default function SearchBarInfo() {
+export default function SearchBarInfo({setOpen9}) {
     const dispatch = useDispatch()
     const allItems = Object.values(useSelector(state => state.category.storeItems))
     const [filteredData, setFilteredData] = useState([]);
@@ -49,63 +49,40 @@ export default function SearchBarInfo() {
 
     return (
         <>
-            <div className="search">
-                {/* <div className="searchInputs">
-                    <input
-                        type="text"
-                        id='ssssssssss'
-                        className="textbox"
-                        placeholder="Search by Title"
-                        value={wordInput}
-                        onChange={handleFilter}
-
-                    />
-                    {!wordInput ? <i className="fa-solid fa-magnifying-glass" ></i> : <i onClick={() => {
-                        setFilteredData([])
-                        setWordInput('')
-                    }} className="fa-solid fa-x"></i>}
-                </div> */}
-                {/* {filteredData.length !== 0 &&
-                    <div className="dataResult">
-                        {filteredData.slice(0, 10).map((value, key) => {
-                            return (<div key={value.id}>
-                                <div onClick={async () => {
-                                    history.push(`/buy/${ value.id }`)
-                                    // dispatch(thunkGetSingleBook(value.id))
-                                }}>{value.name}</div>
-                            </div>
-                            )
-                        })}
-                    </div>} */}
-            </div>
-            <div>
+            <div className='ContainerHoldingSearchInput'>
+                <i className="fa-solid fa-magnifying-glass" ></i>
                 <input
                     type="text"
                     id='search'
                     // className="textbox"
-                    placeholder="Search"
+                    placeholder="Search Apple products"
                     value={wordInput}
                     onChange={handleFilter}
                 />
-                {!wordInput ? <i className="fa-solid fa-magnifying-glass" ></i> : <i onClick={() => {
+                {/* {!wordInput ? <i className="fa-solid fa-magnifying-glass" ></i> : <i onClick={() => {
                         setFilteredData([])
                         setWordInput('')
-                    }} className="fa-solid fa-x"></i>}
+                    }} className="fa-solid fa-x"></i>} */}
+                {wordInput && <i onClick={() => {
+                        setFilteredData([])
+                        setWordInput('')
+                    }} className="fa-solid fa-circle-xmark"></i>}
 
-                {filteredData.length !== 0 &&
-                    <div className="dataResult">
-                        {filteredData.slice(0, 7).map((value, key) => {
-                            return (<div key={value.id}>
-                                <div onClick={async () => {
-                                    history.push(`/buy/${ value.id }`)
-                                    // dispatch(thunkGetSingleBook(value.id))
-                                }}>{value.name}</div>
-                            </div>
-                            )
-                        })}
-                    </div>}
 
             </div>
+            {filteredData.length !== 0 &&
+                <div className="dataResult">
+                    <div className='TitleForSearchProducts'>iProducts</div>
+                    {filteredData.slice(0, 7).map((value, key) => {
+                        return (<div key={value.id}>
+                            <div className='eachSearchOption' onClick={async () => {
+                                history.push(`/buy/${ value.id }`)
+                                setOpen9(false)
+                            }}> <i className="fa-solid fa-arrow-right"></i> {value.name} {value.model}</div>
+                        </div>
+                        )
+                    })}
+                </div>}
         </>
     )
 
