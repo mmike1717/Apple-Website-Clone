@@ -26,9 +26,9 @@ function App() {
     })();
   }, [dispatch]);
 
-  if (!isLoaded) {
-    return null;
-  }
+  // if (!isLoaded) {
+  //   return null;
+  // }
 
   return (
     <>
