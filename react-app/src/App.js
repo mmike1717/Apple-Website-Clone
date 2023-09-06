@@ -15,9 +15,20 @@ import UserProfile from "./components/UserProfile/profile";
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
+  // useEffect(() => {
+  //   dispatch(authenticate()).then(() => setIsLoaded(true));
+  // }, [dispatch]);
+
   useEffect(() => {
-    dispatch(authenticate()).then(() => setIsLoaded(true));
+    (async() => {
+      await dispatch(authenticate());
+      setIsLoaded(true);
+    })();
   }, [dispatch]);
+
+  if (!isLoaded) {
+    return null;
+  }
 
   return (
     <>
