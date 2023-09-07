@@ -8,7 +8,13 @@ export default function Footer() {
 
     return (
         <div className="MainContainerHoldingAllFooter">
-            <div>Developed By</div>
+            <div className="DevelopedByDiv">
+                <div>Developed By Michael Oyola</div>
+                <div className="ATagsForDeveloped">
+                    <a href="www.linkedin.com/in/michael-oyola"> <i class="fa-brands fa-linkedin"></i> </a>
+                    <a href="https://github.com/mmike1717/Apple-Website-Clone.git"> <i class="fa-brands fa-github"></i> </a>
+                </div>
+            </div>
             <div className="MainContainerForFooterIcons">
                 <div className="HoldingTitleAndLinks">
                     <div className="ALinksTitle">Shop and Learn</div>
