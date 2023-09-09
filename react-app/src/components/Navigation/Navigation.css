@@ -85,8 +85,8 @@ body {
 
 
 .SecondColumnInDropDown>a {
-  cursor: pointer;
-  color: black;
+  /* cursor: pointer; */
+  color: #a4a4a4;
 }
 
 

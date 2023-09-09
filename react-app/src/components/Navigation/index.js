@@ -64,7 +64,7 @@ function Navigation({ isLoaded }) {
 		return (
 			<>
 				<div className='SecondColumnInDropDown'>
-					<div className='TitleOfColumn'>Shop {itemName}</div>
+					<div className='TitleOfColumn'>Shop {itemName} - Coming Soon</div>
 					<a onClick={()=> window.alert('Page coming soon')}>Shop {itemName}</a>
 					<a onClick={()=> window.alert('Page coming soon')}>{itemName} Accessories</a>
 					<a onClick={()=> window.alert('Page coming soon')}>Apple Trade In</a>
@@ -72,7 +72,7 @@ function Navigation({ isLoaded }) {
 					<a onClick={()=> window.alert('Page coming soon')}>College Student Offer</a>
 				</div>
 				<div className='SecondColumnInDropDown'>
-					<div className='TitleOfColumn'>More {itemName}</div>
+					<div className='TitleOfColumn'>More {itemName} - Coming Soon</div>
 					<a onClick={()=> window.alert('Page coming soon')}>{itemName} Support</a>
 					<a onClick={()=> window.alert('Page coming soon')}>{itemName} Preview</a>
 					<a onClick={()=> window.alert('Page coming soon')}>AppleCare+ for {itemName}</a>
