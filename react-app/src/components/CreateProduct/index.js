@@ -14,6 +14,8 @@ function CreateProduct(){
     const [storage, setStorage] = useState(0)
     const [color, setColor] = useState('')
     const [errors, setErrors] = useState({})
+    const [tradeIn, setTradeIn] = useState('noTrade')
+    const [appleCare, setAppleCare] = useState('noCare')
     // const [noMatch, setNoMatch] = useState(true)
     // const [picked3, setPicked3] = useState('')
     // const [picked4, setPicked4] = useState('')
@@ -185,8 +187,8 @@ function CreateProduct(){
 
             <div className="AppleTradeInText">Apple Trade In. <div>Get $40–$640 credit toward your new {item.name}.</div> </div>
             <div className="ButtonsTradeInContainer">
-                <button onClick={() => window.alert('Feature Coming Soon')} className="SelectPhoneTradeInButton">Select a smartphone</button>
-                <button id="border" className="SelectPhoneTradeInButton">No trade-in</button>
+                <button onClick={() => setTradeIn('select')} id={ tradeIn === 'select' ? 'border' : ''} className="SelectPhoneTradeInButton">Select a smartphone</button>
+                <button onClick={() => setTradeIn('noTrade')} id={ tradeIn === 'noTrade' ? 'border' : ''} className="SelectPhoneTradeInButton">No trade-in</button>
                 <button onClick={() => window.alert('Feature Coming Soon')} className="HelpTradeInButton">
                     <i className="fa fa-circle-plus"/>
                     How does trade-in work?
@@ -198,21 +200,21 @@ function CreateProduct(){
             <div className="AppleTradeInText">AppleCare+ Coverage. <div>Protect your new {item.name}.</div> </div>
 
             <div className="AppleCareMainContainer">
-                <button onClick={() => window.alert('Feature Coming Soon')} className="AppleCareButtons">
+                <button onClick={() => setAppleCare('plan1')} id={ appleCare === 'plan1' ? 'border' : ''} className="AppleCareButtons">
                     <div className="AppleLogoAndTextInButton">
                         <img className="AppleCareLogo" src="https://i.pinimg.com/originals/06/f5/44/06f544c02a31f664f83a730e766fc3b0.png"/>
                         AppleCare+
                     </div>
                     <div>$179.00 or $8.99/mo.</div>
                 </button>
-                <button onClick={() => window.alert('Feature Coming Soon')} className="AppleCareButtons">
+                <button onClick={() => setAppleCare('plan2')} id={ appleCare === 'plan2' ? 'border' : ''} className="AppleCareButtons">
                     <div className="AppleLogoAndTextInButton">
                         <img className="AppleCareLogo" src="https://i.pinimg.com/originals/06/f5/44/06f544c02a31f664f83a730e766fc3b0.png"/>
                         AppleCare+ with Theft and Loss
                     </div>
                     <div>$249.00 or $12.49/mo.</div>
                 </button>
-                <button className="NoAppleCareButton">No AppleCare+ Coverage</button>
+                <button onClick={() => setAppleCare('noCare')} id={ appleCare === 'noCare' ? 'border' : ''} className="NoAppleCareButton">No AppleCare+ Coverage</button>
             </div>
 
             <div className="MainContainerForCheckout">

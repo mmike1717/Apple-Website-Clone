@@ -9,7 +9,7 @@ export default function Footer() {
     return (
         <div className="MainContainerHoldingAllFooter">
             <div className="DevelopedByDiv">
-                <div>Developed By Michael Oyola</div>
+                <div className="developedByTitle">Developed By Michael Oyola</div>
                 <div className="ATagsForDeveloped">
                     <a href="https://www.linkedin.com/in/michael-oyola/"> <i class="fa-brands fa-linkedin"></i> </a>
                     <a href="https://github.com/mmike1717/Apple-Website-Clone.git"> <i class="fa-brands fa-github"></i> </a>
@@ -17,7 +17,7 @@ export default function Footer() {
             </div>
             <div className="MainContainerForFooterIcons">
                 <div className="HoldingTitleAndLinks">
-                    <div className="ALinksTitle">Shop and Learn</div>
+                    <div className="ALinksTitle">Shop and Learn - Coming Soon</div>
                     <div>Store</div>
                     <div>Mac</div>
                     <div>iPad</div>
@@ -33,7 +33,7 @@ export default function Footer() {
 
                 <div className="HoldingTitleAndLinks ">
                     <div className="HoldingTitleAndLinks ">
-                        <div className="ALinksTitle">Apple Wallet</div>
+                        <div className="ALinksTitle">Apple Wallet - Coming Soon</div>
                         <div>Wallet</div>
                         <div>Apple Card</div>
                         <div>Apple Pay</div>
@@ -41,7 +41,7 @@ export default function Footer() {
                     </div>
 
                     <div className="HoldingTitleAndLinks account">
-                        <div className="ALinksTitle">Account</div>
+                        <div className="ALinksTitle">Account - Coming Soon</div>
                         <div>Manage Your Apple ID</div>
                         <div>Apple Store Account</div>
                         <div>iCloud.com</div>
@@ -49,7 +49,7 @@ export default function Footer() {
                 </div>
 
                 <div className="HoldingTitleAndLinks">
-                    <div className="ALinksTitle">Entertainment</div>
+                    <div className="ALinksTitle">Entertainment - Coming Soon</div>
                     <div>Apple One</div>
                     <div>Apple TV+</div>
                     <div>Apple Music</div>
@@ -62,7 +62,7 @@ export default function Footer() {
                 </div>
 
                 <div className="HoldingTitleAndLinks">
-                    <div className="ALinksTitle">Apple Store</div>
+                    <div className="ALinksTitle">Apple Store - Coming Soon</div>
                     <div>Find a Store</div>
                     <div>Genius Bar</div>
                     <div>Today at Apple</div>
