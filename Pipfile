@@ -26,6 +26,11 @@ sqlalchemy = "==1.4.46"
 werkzeug = "==2.2.2"
 wtforms = "==3.0.1"
 boto3 = "*"
+google-auth = "*"
+google-auth-oauthlib = "*"
+oauthlib = "*"
+requests-oauthlib = "*"
+requests = "*"
 
 [dev-packages]
 
