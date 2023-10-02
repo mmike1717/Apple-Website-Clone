@@ -7,6 +7,7 @@ import { thunkGetOrdersForCart } from '../../store/orders'
 import Footer from '../Footer';
 import HomePageCarousel from '../HomePageCarousel/carousel';
 import './homePage.css'
+import appleWatchPic from './homepagepics/apple-watch-series-9-pic.jpeg'
 
 
 
@@ -75,7 +76,7 @@ export default function Home(){
                         <a onClick={() => window.alert('Page Comming Soon')} className='deadLinks'>{'Learn more >'}</a>
                         <a href='/'>{'Buy >'}</a>
                     </div>
-                    <img src='https://i.ytimg.com/vi/UfawgQJICU8/maxresdefault.jpg' />
+                    <img src={appleWatchPic} />
                 </div>
 
                 <div className='GridImg'>
