@@ -270,7 +270,7 @@ function Navigation({ isLoaded }) {
 									<div>Sign in to add to Your Bag</div>
 									<div className='DropdownProfileText' >Profile</div>
 									<div className='DropdownTextUnderProfile'> <i class="fa-solid fa-box"/> Orders</div>
-									<div className='DropdownTextUnderProfile'> <i class="fa-regular fa-bookmark"/>Your Saves</div>
+									<div className='DropdownTextUnderProfile'> <i class="fa-regular fa-bookmark"/> Your Saves</div>
 									<div className='DropdownTextUnderProfile'> <i class="fa-solid fa-gear"/> Account</div>
 									<div onClick={ () => setOpen8(false)}>
 										<i className="fa-regular fa-user"/>
