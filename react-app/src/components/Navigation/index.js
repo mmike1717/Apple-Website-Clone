@@ -259,7 +259,7 @@ function Navigation({ isLoaded }) {
 										<div>{cartPreview2?.products?.name} {cartPreview2?.products?.model !== 'reg' ? cartPreview2?.products?.model : null} {cartPreview2?.products?.color}</div>
 									</div>) : null}
 									<div className='DropdownProfileText'>My Profile</div>
-									<div className='DropdownTextUnderProfile'> <i class="fa-solid fa-box"/> Orders</div>
+									<div className='DropdownTextUnderProfile' onClick={() => window.alert('coming soon')}> <i class="fa-solid fa-box"/> Orders</div>
 									<div onClick={() => {history.push('/saved-list'); setOpen8(false)}} className='DropdownTextUnderProfile'> <i class="fa-regular fa-bookmark"/>Your Saves</div>
 									<div onClick={() => {history.push('/account'); setOpen8(false)}} className='DropdownTextUnderProfile'> <i class="fa-solid fa-gear"/> Account</div>
 									<button className='LogOutButtonInDropDown' onClick={() => {handleLogout()}}><i class="fa-regular fa-user"/> Log Out {sessionUser.first_name}</button>
@@ -279,14 +279,14 @@ function Navigation({ isLoaded }) {
 											modalComponent={<LoginFormModal />}
 										/>
 									</div>
-									<div onClick={ () => setOpen8(false)}>
+									{/* <div onClick={ () => setOpen8(false)}>
 										<i className="fa-solid fa-user"/>
 										<OpenModalButton
 											buttonText="Sign Up"
 											modalComponent={<SignupFormModal />}
 										/>
 
-									</div>
+									</div> */}
 								</>
 								)}
 						</div>

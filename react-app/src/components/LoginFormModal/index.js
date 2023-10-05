@@ -3,6 +3,10 @@ import { login } from "../../store/session";
 import { useDispatch } from "react-redux";
 import { useModal } from "../../context/Modal";
 import "./LoginForm.css";
+import OpenModalButton from "../OpenModalButton";
+import SignupFormModal from "../SignupFormModal";
+import SignUpModalButton from "../OpenModalButton/modalForSignUp";
+import loginPic from './loginPic.png'
 
 function LoginFormModal() {
   const dispatch = useDispatch();
@@ -34,7 +38,7 @@ function LoginFormModal() {
   return (
     <>
     <div className="MainContainerForLogIn">
-      <img className="ImgForLogIn" src="https://images.squarespace-cdn.com/content/v1/5e949a92e17d55230cd1d44f/1636123980974-KO4VU46DMZG2AM56YOLZ/White2AppleIDiPad.png" />
+      <img className="ImgForLogIn" src={loginPic} />
       <div className="LogInTitleText">Log In</div>
       <form className="FormContainer" onSubmit={handleSubmit}>
         <div className="ErrorsContainer">
@@ -44,6 +48,7 @@ function LoginFormModal() {
         </div>
         <label>
           <input
+            className="LoginInputField"
             placeholder="Email"
             type="text"
             value={email}
@@ -53,6 +58,7 @@ function LoginFormModal() {
         </label>
         <label>
           <input
+            className="LoginInputField"
             placeholder="Password"
             type="password"
             value={password}
@@ -62,6 +68,13 @@ function LoginFormModal() {
         </label>
         <button className="SignInButton" type="submit">Log In</button>
       </form>
+      <div>
+        Don't have an account?
+        <SignUpModalButton
+          buttonText="Create One"
+          modalComponent={<SignupFormModal />}
+        />
+      </div>
       <button className="DemoUserButton" onClick={() => DemoUserSubmit()}> <i class="fa-solid fa-user-secret"/> Demo User</button>
       </div>
     </>

@@ -9,8 +9,9 @@
 
 
 .ImgForLogIn{
-    width: 200px;
     height: 200px;
+    margin-top: 12px;
+
 }
 
 
@@ -25,7 +26,7 @@
     flex-direction: column;
     width: 300px;
     row-gap: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     align-items: center;
     /* margin-top: -13px; */
 
@@ -34,11 +35,13 @@
 
 
 .SignInButton{
-    height: 30px;
+    height: 35px;
+    width: 300px;
     border: none;
     border-radius: 10px;
     background-color: #227dff;
     color: white;
+    font-size: 16px;
 }
 
 
@@ -55,4 +58,18 @@
     border-radius: 10px;
     background-color: lightgray;
     cursor: pointer;
+}
+
+.LoginInputField{
+    width: 292px;
+    height: 25px;
+}
+
+.SignUpButton{
+    background-color: transparent;
+    border: none;
+    color: blue;
+    cursor: pointer;
+    margin-bottom: 10px;
+
 }
