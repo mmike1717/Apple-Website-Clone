@@ -15,7 +15,6 @@
 
 .SignUpTitle{
     font-size: 25px;
-    margin-top: 15px;
 
 }
 
@@ -32,8 +31,8 @@
 
 
 .ButtonForSignUp{
-    width: 145px;
-    height: 30px;
+    width: 247px;
+    height: 32px;
     border: none;
     border-radius: 10px;
     font-size: 16px;
@@ -46,4 +45,9 @@
     font-size: 15px;
     color: red;
     text-align: center;
+}
+
+.signUpInput{
+    width: 240px;
+    height: 20px;
 }

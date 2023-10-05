@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { useModal } from "../../context/Modal";
 import { signUp } from "../../store/session";
 import "./SignupForm.css";
+import signUpPic from './signupPic.png'
 
 function SignupFormModal() {
 	const dispatch = useDispatch();
@@ -36,7 +37,6 @@ function SignupFormModal() {
 		}
 
 		if (password === confirmPassword && firstName && lastName && email.includes('@') && email.includes('.com')) {
-			console.log('hereeeeee')
 			const data = await dispatch(signUp(firstName, lastName, email, password));
 			if (data) {
 				setErrors(data);
@@ -50,7 +50,7 @@ function SignupFormModal() {
 	return (
 		<>
 			<div className="SignUpMainContainer">
-				<img className="ImgForSignUp" src="https://i.pinimg.com/736x/66/e1/48/66e148eb3328fa3074863c37dee6012d.jpg" />
+				<img className="ImgForSignUp" src={signUpPic} />
 				<div className="SignUpTitle">Sign Up</div>
 				<form className="FormForSignUp" onSubmit={handleSubmit}>
 					<div>
@@ -61,6 +61,7 @@ function SignupFormModal() {
 					{err.email && <div style={{color: 'red'}}>{err.email}</div>}
 					<label>
 						<input
+							className="signUpInput"
 							placeholder="Email"
 							type="text"
 							value={email}
@@ -70,6 +71,7 @@ function SignupFormModal() {
 					</label>
 					<label>
 						<input
+							className="signUpInput"
 							placeholder="First Name"
 							type="text"
 							value={firstName}
@@ -79,6 +81,7 @@ function SignupFormModal() {
 					</label>
 					<label>
 						<input
+							className="signUpInput"
 							placeholder="Last Name"
 							type="text"
 							value={lastName}
@@ -88,6 +91,7 @@ function SignupFormModal() {
 					</label>
 					<label>
 						<input
+							className="signUpInput"
 							placeholder="Password"
 							type="password"
 							value={password}
@@ -97,6 +101,7 @@ function SignupFormModal() {
 					</label>
 					<label>
 						<input
+							className="signUpInput"
 							placeholder="Confirm Password"
 							type="password"
 							value={confirmPassword}
