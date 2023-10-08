@@ -17,7 +17,7 @@ def seed_users():
 
 
     iphone12 = InStoreItem(
-        name='iPhone12', price=599.00, model='reg', category_id=3 , image='https://www.apple.com/newsroom/images/product/iphone/standard/apple_iphone-12_new-design_10132020_big.jpg.large.jpg'
+        name='iPhone12', price=599.00, model='reg', category_id=3 , image='https://images.macrumors.com/t/3q1wCX8q2ny5ej3QuD9ERZJsWDA=/800x0/smart/article-new/2019/10/iphone12-lineup-wide.jpg'
     )
     iphone13mini = InStoreItem(
         name='iPhone13', price=599.00, model='mini', category_id=3 , image='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-13-model-unselect-gallery-1-202207?wid=5120&hei=2880&fmt=p-jpg'
@@ -51,7 +51,7 @@ def seed_users():
     )
 
     iPadAir = InStoreItem(
-        name='iPad', price=549.00, model='Air', category_id= 2, image='https://atstore.ba/wp-content/uploads/2020/10/iPad_Air_Wi-Fi_10.9_in_Space_Gray_PDP_Image_Position-1B_WWEN-scaled-1.jpg'
+        name='iPad', price=549.00, model='Air', category_id= 2, image='https://bgr.com/wp-content/uploads/2022/03/apple-event-iphone-se-3-ipad-air-5-49.jpg'
     )
 
     iPad10th = InStoreItem(
