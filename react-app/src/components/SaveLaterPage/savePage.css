@@ -73,6 +73,10 @@
     cursor: pointer;
 }
 
+.AddSavedItemToCart:hover{
+    box-shadow: 0px 3px 7px gray;
+}
+
 .RemoveItemFromSaved{
     width: 127px;
     height: 44px;
@@ -220,6 +224,11 @@
     flex-direction: column;
     width: 250px;
     row-gap: 8px;
+}
+
+
+.EachContainerInsideFeatures > a{
+    cursor: pointer;
 }
 
 
