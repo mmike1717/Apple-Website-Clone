@@ -94,8 +94,8 @@
 
 
 .RemoveItemFromSaved:hover{
-    background-color: lightgray;
-    box-shadow: 2px 3px 4px #227dff;
+    /* background-color: lightgray; */
+    box-shadow: 0px 3px 5px gray;
 }
 
 
