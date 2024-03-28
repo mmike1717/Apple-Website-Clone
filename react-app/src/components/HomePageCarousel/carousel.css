@@ -9,7 +9,7 @@
 }
 
 .react-multi-carousel-item{
-    filter: opacity(0.5);
+    filter: opacity(0.1);
 }
 
 .react-multi-carousel-item--active{
