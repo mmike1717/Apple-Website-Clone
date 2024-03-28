@@ -1,6 +1,6 @@
 
 const CREATE_PROFILE = 'profile/CREATE_PROFILE'
-const EDIT_PROFILE = 'profile/GET_PROFILE'
+// const EDIT_PROFILE = 'profile/GET_PROFILE'
 
 
 const createProfile = (data) => ({
@@ -8,10 +8,10 @@ const createProfile = (data) => ({
     data
 })
 
-const editProfile= (data) => ({
-    type: EDIT_PROFILE,
-    data
-})
+// const editProfile= (data) => ({
+//     type: EDIT_PROFILE,
+//     data
+// })
 
 
 export const thunkEditProfile = (profileId, formData) => async(dispatch) => {
