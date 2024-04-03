@@ -11,7 +11,7 @@ export default function SearchBarInfo({setOpen9}) {
     const [filteredData, setFilteredData] = useState([]);
     const [wordInput, setWordInput] = useState('');
     const history = useHistory()
-    const urlRef = useRef()
+    // const urlRef = useRef()
 
     useEffect(() => {
         dispatch(thunkGetAllStoreItems())
