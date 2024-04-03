@@ -31,7 +31,7 @@ export default function UserProfile() {
     const [state, setState] = useState('')
     const [country, setCountry] = useState('')
     const [editButton, setEditButton] = useState(false)
-    const [highLight, setHighlight] = useState(false)
+    // const [highLight, setHighlight] = useState(false)
 
 
 
@@ -105,12 +105,12 @@ export default function UserProfile() {
     }
 
 
-    const handleEditButton = () => {
-        if (!editButton) setEditButton(true)
-        else {
-            setEditButton(false)
-        }
-    }
+    // const handleEditButton = () => {
+    //     if (!editButton) setEditButton(true)
+    //     else {
+    //         setEditButton(false)
+    //     }
+    // }
 
 
     const imgUrl = Object.values(useSelector(state => state.profile.profile))
@@ -133,7 +133,7 @@ export default function UserProfile() {
                 </div>
 
                 <div className="DivHoldingAllProfileInfo">
-                    <div> <img className="ProfileImg" src={imgUrl['0']?.error || !imgUrl.length ? defaultImg : imgUrl['0']?.image} /> </div>
+                    <div> <img className="ProfileImg" alt="ProfileImage" src={imgUrl['0']?.error || !imgUrl.length ? defaultImg : imgUrl['0']?.image} /> </div>
 
                     <div className="AccountNameDiv">{user.first_name} {user.last_name}</div>
 
