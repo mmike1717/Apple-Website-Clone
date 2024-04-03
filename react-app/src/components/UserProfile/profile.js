@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { thunkCreateProfileInfo, thunkEditProfile, thunkGetUserProfile, thunkRemoveOnlyImage } from "../../store/profile";
+import { thunkCreateProfileInfo, thunkEditProfile, thunkGetUserProfile } from "../../store/profile";
 import Footer from "../Footer";
 import './profile.css'
 import defaultImg from './default.jpeg'
