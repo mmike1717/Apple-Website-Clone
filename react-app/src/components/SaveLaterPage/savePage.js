@@ -50,14 +50,14 @@ export default function SaveListPage(){
     return (
         <>
             <div className="MainContainerHoldingAll">
-                <div className="SavedImgMainContainer"> <img className="SavedImageAtTop" src="https://www.insight.com/content/dam/insight-web/en_US/store/apple/apple-multiproduct-hero-full-suite.png" /></div>
+                <div className="SavedImgMainContainer"> <img alt="Allproducts" className="SavedImageAtTop" src="https://www.insight.com/content/dam/insight-web/en_US/store/apple/apple-multiproduct-hero-full-suite.png" /></div>
                 <div className="SavePageTitle">Your Saved List</div>
                 <div className="EditButtonForSavedItem"><a onClick={handleEdit}>Edit</a></div>
                 {allSaved.map((saveItem)=>{
                     return (
                         <div key={saveItem.id} className="EachSavedItem">
                             <div>
-                                <img className="EachItemSavedImg" src={saveItem.products?.image} />
+                                <img alt="Each Product" className="EachItemSavedImg" src={saveItem.products?.image} />
                             </div>
                             <div className="SavedItemInfoContainer">
                                 <div className="ItemInfoText">{saveItem.products?.name} {saveItem.products?.model}</div>
@@ -101,7 +101,7 @@ export default function SaveListPage(){
                             <i className="fa-solid fa-qrcode"/>
                             <div className="TitleForScan">Scan this code</div>
                             <div className="OtherTextForScan">Easily have access to my LinkedIn account</div>
-                            <div className="QrCodeOutsideContainer"> <img src={qrCode} /> </div>
+                            <div className="QrCodeOutsideContainer"> <img alt="QRCode" src={qrCode} /> </div>
                         </div>
                     </div>
                 </div>
