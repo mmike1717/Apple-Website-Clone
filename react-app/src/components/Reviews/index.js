@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect, Link, useHistory } from "react-router-dom";
+// import { Redirect, Link, useHistory } from "react-router-dom";
 import { thunkGetAllReview } from "../../store/reviews";
 import DeleteReviewModal from "../DeleteReview/deleteModalReview";
 import DeleteReview from "../DeleteReview/deleteReview";
@@ -16,7 +16,7 @@ export default function Reviews({ itemId }) {
     const dispatch = useDispatch()
     const sessionUser = useSelector((state) => state.session.user);
     const reviews = Object.values(useSelector(state => state.reviews.allReviews))
-    const [starRating, setStarRating] = useState(0)
+    // const [starRating, setStarRating] = useState(0)
 
 
     useEffect(() => {
