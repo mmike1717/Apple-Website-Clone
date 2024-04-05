@@ -50,7 +50,7 @@ function SignupFormModal() {
 	return (
 		<>
 			<div className="SignUpMainContainer">
-				<img className="ImgForSignUp" src={signUpPic} />
+				<img alt="signUp" className="ImgForSignUp" src={signUpPic} />
 				<div className="SignUpTitle">Sign Up</div>
 				<form className="FormForSignUp" onSubmit={handleSubmit}>
 					<div>
