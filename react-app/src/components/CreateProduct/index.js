@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect,Link,useParams, useHistory } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { thunkAddToCart, thunkEditOrdersQuantity, thunkGetOrdersForCart } from "../../store/orders";
 import { thunkCreateProduct, thunkGetSingleItem } from "../../store/products";
 import Footer from "../Footer";
@@ -123,11 +123,11 @@ function CreateProduct(){
             <div>
                 <div className="CarrierPromoTextContainer">
                     <div>Carrier Deals at Apple</div>
-                    <img className="CarrierLogo" src="https://www.nicepng.com/png/detail/24-242649_at-t-globe-at-t-adworks-logo-png.png" />
+                    <img alt="Carrier Logo" className="CarrierLogo" src="https://www.nicepng.com/png/detail/24-242649_at-t-globe-at-t-adworks-logo-png.png" />
                     <div className="PriceTextForPromo">Pay as low as $0 after trade-in.</div>
-                    <img className="CarrierLogo" src="https://cdn.iconscout.com/icon/free/png-256/free-t-mobile-3521754-2945198.png" />
+                    <img alt="Carrier Logo" className="CarrierLogo" src="https://cdn.iconscout.com/icon/free/png-256/free-t-mobile-3521754-2945198.png" />
                     <div className="PriceTextForPromo2">Pay as low as $8.30/mo. after trade-in.</div>
-                    <img className="CarrierLogo" src="https://cdn.iconscout.com/icon/free/png-256/free-verizon-3629136-3030276.png" />
+                    <img alt="Carrier Logo" className="CarrierLogo" src="https://cdn.iconscout.com/icon/free/png-256/free-verizon-3629136-3030276.png" />
                     <div className="PriceTextForPromo2">Pay as low as $15.52/mo. after trade-in</div>
                 </div>
             </div>
@@ -135,7 +135,7 @@ function CreateProduct(){
                 <div className="MainTitleOfItem"> Buy {item.name} {item.model !== 'reg' ? item.model : null}</div>
             </div>
             <div className="MainImageAndPriceContainer">
-                <img className="ImageForItem" src={item.image}/>
+                <img alt="Item" className="ImageForItem" src={item.image}/>
                 <div className="PriceColorStorageContainer">
                     <div className="TextOfWordModel">Model. <div>The Model you picked</div></div>
                     <button className="ButtonPickingTheModel">
@@ -202,14 +202,14 @@ function CreateProduct(){
             <div className="AppleCareMainContainer">
                 <button onClick={() => setAppleCare('plan1')} id={ appleCare === 'plan1' ? 'border' : ''} className="AppleCareButtons">
                     <div className="AppleLogoAndTextInButton">
-                        <img className="AppleCareLogo" src="https://i.pinimg.com/originals/06/f5/44/06f544c02a31f664f83a730e766fc3b0.png"/>
+                        <img alt="Apple Care" className="AppleCareLogo" src="https://i.pinimg.com/originals/06/f5/44/06f544c02a31f664f83a730e766fc3b0.png"/>
                         AppleCare+
                     </div>
                     <div>$179.00 or $8.99/mo.</div>
                 </button>
                 <button onClick={() => setAppleCare('plan2')} id={ appleCare === 'plan2' ? 'border' : ''} className="AppleCareButtons">
                     <div className="AppleLogoAndTextInButton">
-                        <img className="AppleCareLogo" src="https://i.pinimg.com/originals/06/f5/44/06f544c02a31f664f83a730e766fc3b0.png"/>
+                        <img alt="Apple Care" className="AppleCareLogo" src="https://i.pinimg.com/originals/06/f5/44/06f544c02a31f664f83a730e766fc3b0.png"/>
                         AppleCare+ with Theft and Loss
                     </div>
                     <div>$249.00 or $12.49/mo.</div>
@@ -221,7 +221,7 @@ function CreateProduct(){
                 <div className="ItemNameAndImgContainer">
                     <div className="CheckOutItemName">Your new {item.name} {item.model !== 'reg' ? item.model : null} </div>
                     <div className="JustTheWayText">Just the way You want it.</div>
-                    <img src="https://149493502.v2.pressablecdn.com/wp-content/uploads/2015/04/apple-store-app-icon.jpg" />
+                    <img alt="Apple Store" src="https://149493502.v2.pressablecdn.com/wp-content/uploads/2015/04/apple-store-app-icon.jpg" />
                 </div>
                 <div className="DescriptionItemMainContainer">
                     <div className="ItemDescription">{item.name} {item.model !== 'reg' ? item.model : null} {storage === 0 ? '' : storage + 'GB'} {color}</div>
