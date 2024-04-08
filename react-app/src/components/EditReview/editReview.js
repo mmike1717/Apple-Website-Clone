@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 // import { useHistory } from "react-router-dom"
 import { useModal } from "../../context/Modal";
-import { thunkGetSingleItem } from '../../store/products'
+// import { thunkGetSingleItem } from '../../store/products'
 import { thunkEditAReview, thunkGetAllReview } from '../../store/reviews'
 import './editReview.css'
 
