@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import ProfileButton from './ProfileButton';
 import './Navigation.css';
 import { thunkGetAllCategory } from '../../store/category';
-import { thunkGetOrdersForCart } from '../../store/orders';
 import OpenModalButton from '../OpenModalButton';
 import LoginFormModal from '../LoginFormModal';
-import SignupFormModal from '../SignupFormModal';
 import { logout } from '../../store/session';
 import SearchBarInfo from '../searchBar/searchBar';
 
@@ -41,10 +38,10 @@ function Navigation({ isLoaded }) {
 		else {setOpen8(false)}
 	}
 
-	const handleSearchClick = () => {
-		if (!open9) setOpen9(true)
-		else {setOpen9(false)}
-	}
+	// const handleSearchClick = () => {
+	// 	if (!open9) setOpen9(true)
+	// 	else {setOpen9(false)}
+	// }
 
 	const handleLogout = () => {
 		// e.preventDefault();
@@ -94,7 +91,7 @@ function Navigation({ isLoaded }) {
 			<div className='ContainerInsideNavBar'>
 				<div>
 				{/* https://media.idownloadblog.com/wp-content/uploads/2018/07/Apple-logo-black-and-white.png */}
-					<NavLink className='CategoryNavLink' exact to="/"> <img className='NavBarAppleLogo' src='https://media.idownloadblog.com/wp-content/uploads/2018/07/Apple-logo-black-and-white.png' /> </NavLink>
+					<NavLink className='CategoryNavLink' exact to="/"> <img alt='Nav Bar Apple Logo' className='NavBarAppleLogo' src='https://media.idownloadblog.com/wp-content/uploads/2018/07/Apple-logo-black-and-white.png' /> </NavLink>
 				</div>
 				<div>
 					<NavLink onClick={() => window.alert('Page Coming Soon')} className='CategoryNavLink' onMouseOver={() => setOpen1(true)} onMouseLeave={() => setOpen1(false)} exact to="/">Store
@@ -250,12 +247,12 @@ function Navigation({ isLoaded }) {
 									</div>
 									{cartPreview ?
 									(<div className='MainClassForPreviewItem'>
-										<img className='PreviewImage' src={cartPreview?.products?.image}/>
+										<img alt='Preview' className='PreviewImage' src={cartPreview?.products?.image}/>
 										<div>{cartPreview?.products?.name} {cartPreview?.products?.model !== 'reg' ? cartPreview?.products?.model : null} {cartPreview?.products?.color}</div>
 									</div>) : null}
 
 									{cartPreview2 ? (<div className='MainClassForPreviewItem'>
-										<img className='PreviewImage' src={cartPreview2?.products?.image}/>
+										<img alt='Preview' className='PreviewImage' src={cartPreview2?.products?.image}/>
 										<div>{cartPreview2?.products?.name} {cartPreview2?.products?.model !== 'reg' ? cartPreview2?.products?.model : null} {cartPreview2?.products?.color}</div>
 									</div>) : null}
 									<div className='DropdownProfileText'>My Profile</div>
