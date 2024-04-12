@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import image1 from './imagesForCarousel/moviepic1.png'
 import image2 from './imagesForCarousel/moviepic2.jpg'
 import image3 from './imagesForCarousel/moviepic3.jpg'
@@ -78,19 +78,19 @@ export default function HomePageCarousel() {
 
             >
                 <div className="DivHoldingImgs">
-                    <img className="EachImgInCarousel" src={image1} />
+                    <img alt="1" className="EachImgInCarousel" src={image1} />
 
                 </div>
                 <div className="DivHoldingImgs">
-                    <img className="EachImgInCarousel" src={image2} />
+                    <img alt="2" className="EachImgInCarousel" src={image2} />
 
                 </div>
                 <div className="DivHoldingImgs">
-                    <img className="EachImgInCarousel" src={image3} />
+                    <img alt="3" className="EachImgInCarousel" src={image3} />
 
                 </div>
                 <div className="DivHoldingImgs">
-                    <img className="EachImgInCarousel" src={image4} />
+                    <img alt="4" className="EachImgInCarousel" src={image4} />
 
                 </div>
 
