@@ -3,7 +3,7 @@ import { login } from "../../store/session";
 import { useDispatch } from "react-redux";
 import { useModal } from "../../context/Modal";
 import "./LoginForm.css";
-import OpenModalButton from "../OpenModalButton";
+// import OpenModalButton from "../OpenModalButton";
 import SignupFormModal from "../SignupFormModal";
 import SignUpModalButton from "../OpenModalButton/modalForSignUp";
 import loginPic from './loginPic.png'
@@ -38,7 +38,7 @@ function LoginFormModal() {
   return (
     <>
     <div className="MainContainerForLogIn">
-      <img className="ImgForLogIn" src={loginPic} />
+      <img alt="" className="ImgForLogIn" src={loginPic} />
       <div className="LogInTitleText">Log In</div>
       <form className="FormContainer" onSubmit={handleSubmit}>
         <div className="ErrorsContainer">
