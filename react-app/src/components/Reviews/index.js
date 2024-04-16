@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 // import { Redirect, Link, useHistory } from "react-router-dom";
 import { thunkGetAllReview } from "../../store/reviews";
