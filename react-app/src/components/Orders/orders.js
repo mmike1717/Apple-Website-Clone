@@ -64,7 +64,7 @@ function CartOrders() {
             <div className="WholeContainerForCheckOut">
                 <div className="TitleForCheckoutBag">{ !allOrders.length ? 'Your Bag is Empty' : "Review your bag."}</div>
                 <div className="ReturnText">Free delivery and free returns.</div>
-                <div className="PromoForCard"> <img src="https://pbs.twimg.com/profile_images/1163895675513274368/gk5MAZvy_400x400.png" />
+                <div className="PromoForCard"> <img alt="" src="https://pbs.twimg.com/profile_images/1163895675513274368/gk5MAZvy_400x400.png" />
                     Items not purchased with a one time payment may be eligible for monthly installments at 0% APR when you check out with Apple Card Monthly Installments.
                     <a onClick={() => window.alert('Feature Coming Soon')} style={{cursor:'pointer'}}>Learn more</a>
                 </div>
