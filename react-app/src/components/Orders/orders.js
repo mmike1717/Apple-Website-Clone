@@ -74,7 +74,7 @@ function CartOrders() {
                     return (
                         <>
                             {order && order.products && <div className="EachItemMainContainer">
-                                <img className="ImgForEachItem" src={order.products?.image} />
+                                <img alt="" className="ImgForEachItem" src={order.products?.image} />
                                 <div className="ContainerNextToImg">
                                     <div className="ContainerHoldingItemDetails">
                                         <div className="ContainerItemNameColor">
@@ -107,7 +107,7 @@ function CartOrders() {
                                     <div className="ContainerDeliverPickupTexts">
                                         <div className="DeliveryText"> <i className="fa fa-box"/>Order today. Delivers to you by tomorrow — Free</div>
                                         <div className="PickUpText">
-                                            <img className="BagLogoForPickUp" src="https://jackboxgames.b-cdn.net/wp-content/uploads/2019/05/11-Mac-App-Store-e1558564279266.png"/>
+                                            <img alt="Bag Logo" className="BagLogoForPickUp" src="https://jackboxgames.b-cdn.net/wp-content/uploads/2019/05/11-Mac-App-Store-e1558564279266.png"/>
                                             Order now. Pick up, in-store: Today at
                                             <a href="">You Store</a>
                                         </div>
@@ -157,7 +157,7 @@ function CartOrders() {
                     <div className="NewArrivalsTitle">New Arrivals</div>
                     <div className="ArrivalText">Check out the lastest accessories.</div>
                     <a onClick={() => window.alert('Feature Coming Soon')} className="AtagForShop" style={{cursor:'pointer'}}>{'Shop >'}</a>
-                    <img className="PictureOfNewArrivals" src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/apple-new-arrivals-checkout-201804_FMT_WHH?wid=1472&hei=880&fmt=jpeg" />
+                    <img alt="" className="PictureOfNewArrivals" src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/apple-new-arrivals-checkout-201804_FMT_WHH?wid=1472&hei=880&fmt=jpeg" />
 
                 </div>
 
